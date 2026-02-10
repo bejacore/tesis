@@ -1,0 +1,63 @@
+\documentclass[a4paper,12pt,openright]{book}
+
+% -------------------------------
+% Idioma y codificación
+% -------------------------------
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% -------------------------------
+% Tipografía y página
+% -------------------------------
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\usepackage{setspace}
+\onehalfspacing   % Interlineado 1.5 
+
+% -------------------------------
+% Matemáticas
+% -------------------------------
+\usepackage{amsmath,amssymb,amsfonts}
+
+% -------------------------------
+% Figuras
+% -------------------------------
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+% -------------------------------
+% Hipervínculos PDF
+% -------------------------------
+\usepackage{hyperref}
+
+% -------------------------------
+% Bibliografía BibTeX
+% -------------------------------
+\bibliographystyle{apalike}
+
+% ======================================================
+\begin{document}
+% ======================================================
+
+% --------- Portada ----------
+\input{portada/portada}
+
+% --------- Material preliminar ----------
+\frontmatter
+\tableofcontents
+
+\input{portada/resumen}
+
+% --------- Contenido principal ----------
+\mainmatter
+
+\input{capitulos/marco_teorico}
+
+% --------- Bibliografía ----------
+\backmatter
+\bibliography{referencias}
+
+\end{document}
