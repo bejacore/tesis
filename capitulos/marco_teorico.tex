@@ -1,0 +1,342 @@
+% !TeX root = ../main.tex
+
+\chapter{Marco Teórico}
+
+\section{Misión Gaia}
+    La misión Gaia, desarrollada por la Agencia Espacial Europea (ESA), es un 
+    observatorio espacial de astrometría lanzado en diciembre de 2013 con el 
+    objetivo de cartografiar la Vía Láctea en tres dimensiones con una precisión 
+    sin precedentes. Su propósito fundamental es la construcción de un censo 
+    estereoscópico y cinemático de aproximadamente mil millones de estrellas, 
+    lo que corresponde a cerca del 1\% de la población estelar galáctica 
+    \cite{Perryman2002}. Para ello, Gaia mide con muy alta precisión las 
+    posiciones ecuatoriales ($\alpha$, $\delta$), los paralajes ($\bar{\omega}$) 
+    y los movimientos propios ($\mu_\alpha$, $\mu_\delta$) de cada fuente, 
+    complementados con información fotométrica multibanda y, para un subconjunto 
+    de estrellas brillantes, velocidades radiales.
+
+    En comparación con su predecesora, la misión Hipparcos que catalogó del 
+    orden de $10^5$ estrellas con una precisión significativamente menor, Gaia 
+    extiende su alcance a casi dos mil millones de fuentes, incrementando la 
+    exactitud astrométrica hasta en dos órdenes de magnitud \cite{ESA2013facts}. 
+    Este salto cualitativo permite no solo reconstruir la estructura 
+    tridimensional de la Galaxia, sino también abordar problemas fundamentales 
+    relacionados con su formación, evolución dinámica y la distribución de la 
+    materia oscura.
+
+    Gaia ha aportado uno de los conjuntos de datos astronómicos más completos y 
+    homogéneos disponibles en la actualidad. En la segunda publicación de datos 
+    (\textit{Gaia Data Release} 2, DR2), se incluyeron aproximadamente 1.7 mil 
+    millones de fuentes con fotometría en la banda $G$, de las cuales alrededor 
+    de 1.3 mil millones cuentan con medidas de paralaje y movimiento propio 
+    \cite{Brown2018}. Adicionalmente, se proporcionó fotometría en las bandas 
+    $G_{BP}$ y $G_{RP}$ para cerca de 1.4 mil millones de estrellas, así como 
+    velocidades radiales para unos 7 millones de objetos brillantes 
+    \cite{Brown2018}. Para una fracción significativa de estas fuentes, 
+    se derivaron parámetros físicos estelares como temperaturas efectivas, 
+    extinción interestelar y radios a partir de espectros de baja resolución.
+
+    Las versiones posteriores de los datos (EDR3 y DR3, publicadas entre 2020 y 
+    2022) han refinado sustancialmente la precisión de estas mediciones y han 
+    incorporado nuevas clases de objetos, incluyendo estrellas variables, 
+    asteroides y fuentes extragalácticas, gracias a un mayor intervalo temporal 
+    de observaciones.
+
+    La alta precisión astrométrica y fotométrica de Gaia resulta particularmente 
+    valiosa para el estudio de cúmulos estelares. Las estrellas miembros de un 
+    cúmulo abierto comparten propiedades cinemáticas similares, como paralajes y 
+    movimientos propios coherentes, además de definir secuencias bien 
+    delimitadas en el diagrama color-magnitud \cite{CastroGinard2019}. En 
+    consecuencia, los cúmulos pueden identificarse como sobredensidades en 
+    espacios de parámetros multidimensionales, típicamente definidos por la 
+    posición en el cielo, el paralaje y el movimiento propio. Diversos estudios 
+    han demostrado la eficacia de algoritmos de agrupamiento no supervisado, 
+    como DBSCAN, para la detección automática de cúmulos en los catálogos de 
+    Gaia \cite{CastroGinard2019}.
+
+    Por ejemplo, Castro-Ginard et al. (2019) aplicaron técnicas de detección 
+    basadas en aprendizaje automático a los datos de Gaia DR2 y descubrieron 
+    decenas de cúmulos abiertos previamente desconocidos en la región del 
+    anticentro galáctico, incrementando significativamente el censo conocido en 
+    esa zona \cite{CastroGinard2019}. De manera similar, Cantat-Gaudin et al. 
+    (2018) construyeron un catálogo homogéneo de más de mil cúmulos abiertos 
+    confirmados a partir de Gaia DR2 \cite{cantat2018gaia}. Y con el nuevo 
+    lanzamiento de Gaia DR3, Hunt y Reffert (2023) mejoraron el censo de cúmulos 
+    abiertos en la Vía Láctea reconociendo 7167 de estos objetos 
+    \cite{hunt2023improving}. En conjunto, estos trabajos evidencian que Gaia ha 
+    revolucionado la detección, confirmación y caracterización de cúmulos 
+    estelares, permitiendo estudiar su distribución espacial, edades, cinemática 
+    interna y procesos evolutivos con un gran nivel de detalle 
+    \cite{CastroGinard2019}.
+
+    La determinación de distancias estelares en Gaia se basa fundamentalmente en 
+    la medición del paralaje trigonométrico. En su forma más simple, la 
+    distancia $d$ (parsecs) se relaciona con el paralaje $\bar{\omega}$ (arcseg) 
+    mediante la expresión $d \approx 1 / \bar{\omega}$. No obstante, debido a 
+    las incertidumbres observacionales, esta aproximación resulta inadecuada 
+    cuando los errores relativos del paralaje son significativos o cuando se 
+    obtienen valores de paralaje pequeños o incluso negativos.
+
+    En este contexto, Luri et al. (2018) subrayan la necesidad de emplear 
+    enfoques estadísticos, particularmente métodos bayesianos, para inferir 
+    distancias fiables a partir de los datos de Gaia \cite{Luri2018}. Estos 
+    métodos combinan la información observacional con distribuciones previas 
+    basadas en modelos astrofísicos de la distribución estelar en la Galaxia, 
+    permitiendo explotar de manera óptima incluso mediciones con grandes 
+    incertidumbres. Un ejemplo destacado es el catálogo de distancias bayesianas 
+    publicado por Bailer-Jones et al. (2018) \cite{bailer2018estimating}, 
+    ampliamente utilizado en estudios galácticos y extragalácticos.
+
+    La precisión alcanzada por Gaia es excepcional. Para estrellas brillantes 
+    ($G < 15$), los errores típicos en posición son del orden de decenas de 
+    microsegundos de arco \newline \cite{ESA2013facts}, lo que se traduce en 
+    errores relativos en distancia extremadamente pequeños para objetos 
+    cercanos. Incluso para estrellas situadas a distancias de varios 
+    kiloparsecs, las incertidumbres en paralaje permiten estimaciones de 
+    distancia con precisiones del orden del 10-20 \% \cite{ESA2013facts}. Estas 
+    cifras superan ampliamente las capacidades de misiones anteriores, como 
+    Hipparcos, cuyas precisiones se limitaban al nivel de milisegundos de arco. 
+    Gracias a esta exactitud, Gaia proporciona distancias muy precisas para 
+    numerosos cúmulos estelares galácticos, obtenidas a partir del paralaje 
+    medio de sus miembros. Esto permite restringir de forma robusta parámetros 
+    fundamentales como la edad, la masa y la estructura interna de los cúmulos.
+
+\section{Cúmulos Estelares}
+    Estos son grupos gravitacionalmente ligados de decenas a miles de estrellas 
+    nacidas simultáneamente de la misma nube molecular. Existen cúmulos abiertos 
+    que se caracterizan por ser jóvenes de baja masa y se encuentran en el disco 
+    galáctico, y cúmulos globulares que son cúmulos antiguos, masivos y se 
+    encuentran en el halo. Su estudio aborda la identificación de miembros, 
+    propiedades físicas comunes y la dinámica interna. 
+
+    Para determinar qué estrellas pertenecen al cúmulo y cuáles al campo de la 
+    Galaxia clásicamente se usan métodos paramétricos: se ajustan distribuciones 
+    de velocidad y posición p. ej. mezcla de gaussianas para asignar 
+    probabilidades de membresía (el método de Sanders 1971 
+    \cite{sanders1971improved} es un ejemplo histórico). Con los datos modernos 
+    de Gaia se emplean cada vez más algoritmos no paramétricos y de aprendizaje 
+    automático. Un método ampliamente usado es UPMASK, que combina clustering 
+    por k-medias con pruebas de significancia en el espacio multivariado 
+    (posición, paralaje, movimiento propio) \cite{Elsanhoury2026}. Por ejemplo, 
+    Cantat-Gaudin et al. (2018) aplicaron UPMASK a los datos de Gaia DR2 para 
+    miles de cúmulos conocidos \cite{cantat2018gaia}. UPMASK demuestra alta 
+    puridad y completitud al separar estadísticamente las estrellas reales del 
+    cúmulo del fondo estelar \cite{Elsanhoury2026}\cite{cantat2018gaia}. Otros 
+    enfoques modernos incluyen métodos bayesianos, p. ej. análisis bayesiano de 
+    campo estelar, y algoritmos de agrupamiento como DBSCAN. En síntesis, la 
+    combinación de astrometría (coordenadas y movimientos propios) y fotometría 
+    en el espacio de fase permite identificar con robustez los miembros reales 
+    del cúmulo en presencia de contaminación de campo \cite{Elsanhoury2026} 
+    \cite{cantat2018gaia}.
+
+    Por otra parte, los cúmulos estelares comparten propiedades físicas 
+    medibles: masa total, radios característicos, densidad estelar, edad y 
+    metalicidad. La masa total suele estimarse sumando las masas individuales de 
+    estrellas miembros (usando modelos M/L), o bien dinámicamente mediante el 
+    teorema del virial. Según este último, un cúmulo en equilibrio obedece $2T + 
+    \Omega = 0$, donde $T$ y $\Omega$ son energía cinética y potencial, lo que 
+    lleva a una relación aproximada $M \thicksim \sigma^2 R/G$, donde $\sigma$ 
+    es la dispersión de velocidad y $R$ es el radio característico 
+    \cite{Elsanhoury2026}. Por ejemplo, Elsanhoury et al. (2026) usan 
+    dispersiones propias y radiales para derivar masas totales de cúmulos 
+    abiertos, encontrando desde unos $5 \times 10^2 \ \text{M}_\odot$ hasta 
+    $\thicksim 3 \times 10^3 \ \text{M}_\odot$ en sus sistemas estudiados 
+    \cite{Elsanhoury2026}.
+
+    La densidad interna y distribución radial se modelan con perfiles teóricos 
+    p. ej. modelos de King o Plummer que ajustan el brillo superficial 
+    observado. El radio tidal o de Jacobi es la distancia de equilibrio con el 
+    campo galáctico, estimado por equilibrio gravitacional. Para un cúmulo de 
+    masa $m$ orbitando a distancia $R$ de una galaxia de masa $M$, la fórmula de 
+    Spitzer aproxima $r_t \approx R(m/3M)^{1/3}$ \cite{Renaud2018}. Este radio 
+    indica hasta dónde domina la gravedad del cúmulo sobre las mareas 
+    galácticas. En la práctica, parámetros derivados de perfiles de brillo como 
+    los radios central, de medio perfil y tidal se extraen mediante ajuste de 
+    modelos isotrópicos de equilibrio.
+
+    El diagrama Hertzsprung-Russell (diagrama color-magnitud) es herramienta 
+    clave. Graficando magnitud absoluta versus color o temperatura, el cúmulo 
+    revela una secuencia principal común para todas sus estrellas integrantes, 
+    ya que estas nacieron casi a la vez, así como ramas evolutivas de gigantes 
+    jóvenes o viejas. Ajustando isócronas teóricas se determina la edad y en 
+    ocasiones metalicidad del cúmulo. El ajuste puede realizarse mediante 
+    técnicas bayesianas o MCMC tal como en Elsanhoury et al. (2026), donde 
+    usando Gaia DR3 y UPMASK para limpieza, obtuvieron edades entre $\log \tau = 
+    7.0 - 8.15$ para cúmulos jóvenes \cite{Elsanhoury2026}. Por otra parte, 
+    comprendiendo qué parte de los diagramas color-color de un cúmulo 
+    corresponde a su respectivo diagrama color-magnitud, se facilita la 
+    caracterización de la composición estelar de los cúmulos ya que los 
+    diagramas color-color no dependen de la distancia como sí lo hacen los 
+    diagramas color-magnitud.
+
+    Los cúmulos se forman en nubes moleculares gigantes. Los cúmulos embebidos 
+    (recién nacidos dentro de gas y polvo) son abundantes, sin embargo, tras 
+    algunas decenas de Myr muchos se disgregan (el gas es expulsado por 
+    retroalimentación masiva). Estudios como Lada \& Lada (2003) muestran que la 
+    mayoría de las estrellas nacen en agrupamientos embebidos, pero pocos 
+    sobreviven como cúmulos abiertos maduros \cite{Lada2003}. El efecto de marea 
+    como supernovas o viento estelar y la rotación diferencial galáctica 
+    determinan la vida útil. Un cúmulo inicialmente subvirial puede ``rebotar'' 
+    al expulsar gas; solo con una alta eficiencia de formación ($\gtrsim 50 \%$) 
+    se mantiene ligado. De esta forma, la evolución temprana, hasta $\thicksim 
+    100 \ \text{Myr}$, suele ser dinámicamente activa: los cúmulos jóvenes a 
+    menudo no están aún en equilibrio virial completo. Conforme envejecen, el 
+    cúmulo alcanza equipartición de energía y puede sufrir colapso del núcleo, 
+    expulsión lenta de estrellas, etc. \cite{Spitzer1987}\cite{heggie2003book}.
+
+    La función de luminosidad de un cúmulo describe el número de estrellas en 
+    función de su brillo, típicamente se mide combinando fotometría profunda con 
+    corrección de miembros. Esta está directamente relacionada con la función de 
+    masa inicial (IMF). Históricamente, Salpeter (1955) propuso una IMF de ley 
+    de potencia $\xi(M) \varpropto M^{-\alpha}$ con $\alpha \approx 2.35$, es 
+    decir una pendiente $-2.35$ en la escala $\log N$ vs $\log M$ 
+    \cite{salpeter1955luminosity}. En cúmulos abiertos se suele observar una 
+    pendiente próxima a Salpeter en masas medias-altas. Por ejemplo, Elsanhoury 
+    et al. (2026) hallan pendientes de IMF $\thicksim -2.26$, muy similares a 
+    $-2.35$, en cúmulos jóvenes \cite{Elsanhoury2026}. A bajas masas ($< 0.5 \ 
+    \text{M}_\odot$) la IMF se aplana (modelo de Kroupa 2001 
+    \cite{kroupa2001variation} o Chabrier 2003 \cite{chabrier2003galactic}). 
+    Estudios de cúmulos masivos revelan que, a pesar de distintas condiciones, 
+    la IMF parece casi universal (Kroupa 2002 \cite{kroupa2002initial}; 
+    Bastian et al. 2010 \cite{bastian2010universal}).
+
+    La función de luminosidad resulta de combinar la IMF con la función de 
+    masa-luminosidad dada por la evolución estelar y la edad. Es conveniente en 
+    cúmulos jóvenes, es decir, aún con mayoría de estrellas en secuencia 
+    principal, donde la transformación masa-brillo es monótona. Con estas 
+    funciones se infieren la masa total integrada y la población estelar. En 
+    trabajos recientes, se modela simultáneamente la IMF y la función de 
+    luminosidad usando datos fotométricos profundos y algoritmos bayesianos, 
+    para descartar estrellas de campo y estimar la pendiente $\alpha$ y la masa 
+    total \cite{Elsanhoury2026}\cite{cantat2018gaia}.
+
+    Ahora, para las condiciones dinámicas internas y equilibrio, Desde el punto 
+    de vista dinámico, un cúmulo puede aproximarse como un sistema 
+    auto-gravitante que busca un estado de equilibrio dinámico. Para cúmulos 
+    antiguos, p. ej. globulares, se asume a menudo un equilibrio virial, donde 
+    la energía cinética neta es la mitad en magnitud de la energía potencial 
+    (Teorema del virial). En dicho caso el cúmulo es isotrópico y estacionario. 
+    En cambio, cúmulos jóvenes o que estén disgregándose pueden estar fuera de 
+    equilibrio; su virialización depende de factores como la expulsión de gas, 
+    colisiones y perturbaciones externas.
+
+    El tiempo de relajación $t_\text{relax}$ es el lapso en que las 
+    interacciones de dos cuerpos (colisiones gravitacionales débiles) 
+    redistribuyen la energía cinética interna. Aproximadamente $t_\text{relax} 
+    \thicksim (0.1N /\ln N)t_\text{cross}$, con $N$ el número de estrellas y 
+    $t_\text{cross}$ el tiempo de cruce. Si la edad del cúmulo supera 
+    $t_\text{relax}$, alcanza equipartición parcial y se dice que está relajado. 
+    En Elsanhoury et al. (2026) se encuentra que sólo los cúmulos más viejos del 
+    estudio, NGC 2301 y NGC 2384b habían relajado su población; los más jóvenes 
+    aún evolucionan dinámicamente \cite{Elsanhoury2026}. Esto concuerda con la 
+    idea de que la mayoría de los cúmulos abiertos persisten pocos cientos de 
+    Myr antes de evaporarse hacia el campo galáctico.
+
+    Por otra parte, según la densidad, los cúmulos pueden ser colisionales 
+    (frecuentes interacciones de trayectorias estelares) o no colisionales. Los 
+    cúmulos globulares densos tienen $t_\text{relax}$ más corto que la edad del 
+    universo, por lo que la dinámica colisional es esencial (core-collapse, 
+    procesos de Spitzer, etc.). Muchos cúmulos abiertos, al ser poco masivos, 
+    son casi no colisionales en su halo. La frontera entre ambos regímenes se 
+    ilustra comparando $t_\text{relax}$ con la edad: si $t_\text{relax} \ll$ 
+    edad, el cúmulo tiende al equilibrio térmico, es colisional; si 
+    $t_\text{relax} \gg $ edad, sigue más un flujo libre colisional, es no 
+    colisional. Esta distinción determina la validez de la aproximación de 
+    Boltzmann no colisional: en cúmulos con larga relajación, la ecuación de 
+    Boltzmann sin término de colisión (Jeans) describe bien el equilibrio medio; 
+    si no, hay que añadir términos de difusión de Boltzmann o simulaciones 
+    N-cuerpos completas (Heggie \& Hut 2003) \cite{heggie2003book}.
+
+    Los cúmulos se caracterizan por radios típicos:
+
+    \begin{itemize}
+        \item \textbf{Radio central o core} ($r_c$): donde la densidad cae a la 
+            mitad del centro.
+
+        \item \textbf{Radio de mitad de masa} ($r_h$): radio que encierra la 
+            mitad de la masa total.
+
+        \item \textbf{Radio tidal} ($r_t$): límite externo impuesto por las 
+            mareas galácticas; en modelos de King (1962) aparece como radio 
+            donde la densidad proyectada alcanza cero. Matemáticamente, la 
+            aproximación clásica para órbita circular en potencial esférico da 
+            $r_t \simeq R(m/3M)^{1/3}$ \cite{Spitzer1987}. Este radio tidal 
+            también llamado radio de Jacobi, define el volumen de influencia 
+            gravitacional del cúmulo. En la práctica, se ajustan modelos 
+            teóricos como King, Plummer, o modelos modernos ``limepy'' 
+            \cite{Cheng2023}, a perfiles de brillo superficial para inferir 
+            estos radios y la concentración (cociente $r_t/r_c$). 
+    \end{itemize}
+
+    En las observaciones, se utilizan perfiles de densidad o brillo radial: los 
+    modelos isotrópicos clásicos (King 1966) ajustan bien los cúmulos 
+    globulares, mostrando un núcleo plano y caída acentuada cerca de $r_t$. 
+    El modelo de Plummer (1911) es otro perfil simétrico con densidad $\rho(r) 
+    \varpropto \left(1 + (r/a)^2\right)^{-5/2}$, donde $a$ es el radio 
+    característico, que no se trunca naturalmente, aunque puede aproximar 
+    regiones internas. Según Cheng \& Jiang (2023), su familia de modelos 
+    ``limepy'' incorpora King y Plummer como casos especiales: el modelo de 
+    King surge restando una energía de corte al DF isotrópico \cite{Cheng2023}, 
+    y el Plummer corresponde a un caso particular $g=3.5$ con masa finita e 
+    extensión infinita \cite{Cheng2023}. Estas modelizaciones dinámicas permiten 
+    relacionar observaciones proyectadas con distribuciones de masa 
+    tridimensional.
+
+    La masa de un cúmulo se estima cinemáticamente midiendo la dispersión de 
+    velocidades de las estrellas, tanto radiales como tangenciales, y aplicando 
+    los esquemas anteriores (teorema del virial o ecuaciones de Jeans). En la 
+    forma más simple, es decir, asumiendo un cúmulo esférico o isotrópico, el 
+    teorema del virial da $M \approx \frac{5\sigma^2 r_h}{G}$ o similar, donde 
+    el factor de 5 depende del perfil. Alternativamente, integrando la ecuación 
+    de Jeans radial se obtiene la masa interior a $r$: $$\frac{\mathrm{d}(\rho
+    \sigma^2_r)}{\mathrm{d}r} + \frac{2\beta\rho\sigma^2_r}{r} = -\rho
+    \frac{\mathrm{d}\Phi}{\mathrm{d}r}$$ donde $\rho(r)$ es la densidad estelar, 
+    $\sigma_r$ la dispersión radial y $\beta$ el parámetro de anisotropía. Al 
+    conocer $\sigma(r)$ y $\rho(r)$, se inferiría el potencial $\Phi(r)$ y por 
+    ende la masa. Sin embargo, sin $\beta$ se suele asumir isotropía ($\beta = 
+    0$). En la práctica se comparan perfiles de velocidad con modelos como King, 
+    Plummer u otros de distribución, que que fijan masa total y M/L. Por 
+    ejemplo, Cantat-Gaudin et al. usaron UPMASK más isocronas para encontrar 
+    masa integrada y distribución de masa \cite{cantat2018gaia}, y Elsanhoury et 
+    al. obtuvieron masas totales directamente de tales ajustes MCMC de Gaia 
+    \cite{Elsanhoury2026}. Los cúmulos más masivos o densos requieren explicar 
+    por qué su valor M/L dinámico puede exceder el de la población de estrellas 
+    visibles, esto puede ser por la presencia de enanas blancas, estrellas 
+    binarias, etc.
+
+    Una técnica actual es ajustar conjuntamente brillo superficial y perfil de 
+    dispersión de velocidad con modelos de DF (King/Michie o limepy). Cheng \& 
+    Jiang (2023) aplicaron precisamente esta estrategia con limepy a 18 cúmulos 
+    globulares, determinando masa total, radio de mitad de masa y relaciones M/L 
+    que describen bien los datos \cite{Cheng2023}. La modelización detallada 
+    permite inferir también la anisotropía radial que es el exceso de órbitas 
+    radiales frente a tangenciales, parámetro importante para la estabilidad 
+    futura del cúmulo.
+
+    Para describir la estructura interna de cúmulos en equilibrio se usan 
+    modelos de distribución de velocidades. Los modelos de King (1962) suponen 
+    una distribución de Maxwell con energía truncada: la función de distribución 
+    dependiente de la energía específica $E$ toma la forma $f(E) \varpropto 
+    \exp{(-E/\sigma^2)}$ para $E < 0$ y $f = 0$ para $E > 0$, donde la energía 
+    cero corresponde a la energía en el radio tidal. Esto genera un perfil de 
+    densidad esférico con núcleo plano y corte abrupto en $r_t$. Como explican 
+    Cheng \& Jiang (2023), el modelo de King se obtiene al restar sucesivas 
+    constantes del DF para truncar la distribución hasta energía cero 
+    \cite{Cheng2023}. En cambio, el modelo de Plummer (1911) es un caso de 
+    esfera isotrópica sin truncación; su densidad $\rho_P(r) = \frac{3M}{4\pi 
+    a^3}\left(1 + r^2/a^2\right)^{-5/2}$ se extiende infinitamente sin llegar a 
+    cero \cite{Cheng2023}. Cheng \& Jiang señalan que la familia “limepy” 
+    generaliza ambos: el caso de Plummer (finita la masa pero sin corte) 
+    equivale a un parámetro de truncamiento $g = 3.5$ \cite{Cheng2023}, mientras 
+    que $g = 1$ recupera el perfil de King isotrópico \cite{Cheng2023}.
+
+    Estas soluciones estacionarias surgen de imponer la ecuación de Jeans en 
+    equilibrio. En su forma radial simplificada, la ecuación de Jeans liga el 
+    gradiente de la presión cinética ($\rho\sigma_r^2$) con la pendiente del 
+    potencial gravitarorio. Así, dado un perfil de densidad $\rho(r)$, la 
+    dispersión $\sigma(r)$ viene determinada por la masa interior. Los modelos 
+    mencionados son casos particulares de soluciones auto-consistentes de dicha 
+    ecuación bajo supuestos de isotropía o anisotropía. En la práctica se 
+    utiliza software de ajuste que, dado perfiles observados de brillo y 
+    dispersión, explora parámetros como la concentración, radio de anisotropía y 
+    masa total \cite{Cheng2023}.
