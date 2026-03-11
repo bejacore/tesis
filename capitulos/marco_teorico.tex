@@ -340,3 +340,152 @@
     utiliza software de ajuste que, dado perfiles observados de brillo y 
     dispersión, explora parámetros como la concentración, radio de anisotropía y 
     masa total \cite{Cheng2023}.
+
+\section{Corrección de la Distorsión Astrométrica en la Línea de la Visual}
+    En el estudio cinemático y dinámico de cúmulos estelares utilizando datos 
+    astrométricos, como los dados por Gaia, existe una asimetría inherente en la 
+    precisión de las mediciones. Mientras que las coordenadas ecuatoriales 
+    transversales, ascensión recta ($\alpha$) y declinación ($\delta$), poseen 
+    precisiones del orden de microsegundos de arco, los paralajes ($\varpi$) 
+    exhiben errores relativos significativamente mayores, los cuales se propagan 
+    a las distancias fotogeométricas inferidas.
+
+    Al transformar estas coordenadas observacionales a un sistema cartesiano 3D 
+    heliocéntrico ($X$, $Y$, $Z$), la incertidumbre en la distancia se 
+    manifiesta como una elongación del cúmulo a lo largo de la línea de la 
+    visual. Este artefacto geométrico destruye la morfología esférica real del 
+    sistema estelar, impidiendo un análisis espacial y dinámico correcto. Para 
+    mitigar este efecto, se propone un método estadístico que asume simetría 
+    esférica en el cúmulo, dictada por un perfil de densidad de King, para 
+    redistribuir espacialmente las estrellas a lo largo de la línea de la visual 
+    conservando sus posiciones proyectadas en el cielo.
+
+    \subsection{Proyección Gnomónica y Definición del Sistema Local}
+        Para evitar las imprecisiones inherentes a la aproximación de ángulos 
+        pequeños en astrometría esférica, las coordenadas ecuatoriales 
+        ($\alpha$, $\delta$) de cada estrella se proyectan sobre un plano 
+        tangente a la esfera celeste en el centro del cúmulo ($\alpha_c$, 
+        $\delta_c$).
+
+        Se utilizan las ecuaciones de las coordenadas estándar ($\xi$, $\eta$), 
+        donde el denominador de proyección $d$ está dado por: $$d = \sin{(
+        \delta_c)}\sin{(\delta)} + \cos{(\delta_c)}\cos{(\delta)}\cos{(\alpha - 
+        \alpha_c)}$$
+
+        Las coordenadas estándar en radianes se definen como: 
+        $$\xi = \frac{\cos(\delta)\sin(\alpha - \alpha_c)}{d}$$ 
+        $$\eta = \frac{\cos(\delta_c)\sin(\delta) - \sin(\delta_c)\cos(\delta)
+        \cos(\alpha - \alpha_c)}{d}$$
+
+        Multiplicando estas coordenadas angulares por la distancia heliocéntrica 
+        al centro del cúmulo ($d_c$) se obtienen las coordenadas cartesianas 
+        locales transversales ($X$, $Y$) en parsecs: $$X = d_c \xi \qquad Y = 
+        d_c \eta$$
+
+        En este sistema local de referencia, el centro del cúmulo se ubica en el 
+        origen $(0,0,0)$ y el radio proyectado de cualquier estrella es $R = 
+        \sqrt{X^2 + Y^2}$.
+
+    \subsection{El modelo de King}
+        Los cúmulos estelares dinámicamente relajados se describen adecuadamente 
+        mediante los modelos isotérmicos truncados propuestos por Ivan King 
+        (1962). Físicamente, este modelo asume que el cúmulo posee un núcleo 
+        isotérmico de densidad constante y una envoltura que decrece hasta 
+        llegar a cero en el radio de marea ($r_t$), punto en el cual el campo 
+        gravitacional de la galaxia anfitriona domina sobre la autogravedad del 
+        cúmulo.
+
+        A partir del ajuste del perfil de densidad superficial: $$\Sigma(R) =  k
+        \left(\frac{1}{[1+(r/r_c)^2]^\frac{1}{2}} - \frac{1}{[1+(r_t/r_c)^2]^
+        \frac{1}{2}}\right)^2$$ a las coordenadas $(X, Y)$, se obtienen 
+        empíricamente el radio del núcleo $(r_c)$, el radio de marea ($r_t$) y 
+        la constante de normalización $k$ relacionada con la densidad central. 
+        Con estos parámetros, la densidad espacial volumétrica 3D, $\rho(r)$, se 
+        define como: $$\rho(r) = \frac{k}{\pi r_c \left[1+(r_t/r_c)^2 \right]^{
+        \frac{3}{2}}} \frac{1}{w^2}\left[\frac{1}{w}\cos^{-1}w - (1-w^2)^
+        \frac{1}{2}\right]$$ donde $r$ es la distancia espacial tridimensional 
+        de la estrella al centro del cúmulo ($r = \sqrt{X^2 + Y^2 + Z^2}$), y 
+        $w$ es un parámetro adimensional definido como: $$w = \left[\frac{1+
+        (r/r_c)^2}{1+(r_t/r_c)^2}\right]^\frac{1}{2}$$
+
+    \subsection{Corrección de la Profundidad por Monte Carlo (\textit{Rejection 
+    Sampling})}
+        Conociendo que la distribución radial tridimensional real del cúmulo 
+        obedece la función $\rho(r)$, pero la coordenada $Z$ observacional está 
+        severamente contaminada por el error astrométrico, se procede a simular 
+        estadísticamente el valor de $Z$ para cada estrella condicionándolo a su 
+        posición transversal conocida $R$.
+
+        Se emplea el algoritmo de \textit{Rejection Sampling}, un método de 
+        Monte Carlo utilizado para generar observaciones a partir de una función 
+        de densidad de probabilidad arbitraria.
+
+        El procedimiento para cada estrella observada a un radio proyectado $R$ 
+        es el siguiente:
+
+        \begin{enumerate}
+            \item \textbf{Definición del dominio:} La estrella debe estar 
+            confinada gravitacionalmente, por lo que su coordenada $Z$ máxima 
+            posible está acotada por el radio de marea: $Z_{\text{max}} = 
+            \sqrt{r_t^2 - R^2}$.
+
+            \item \textbf{Cota de probabilidad máxima:} Para un $R$ fijo, la 
+            densidad volumétrica es máxima en el plano medio del cúmulo ($Z = 0$
+            , equivalente a $r = R$). Se evalúa este máximo como $\rho_{
+            \text{max}} = \rho(R)$.
+
+            \item \textbf{Generación de candidatos:} Se muestrea un valor 
+            candidato $Z_{\text{cand}} \sim \mathcal{U}(-Z_{\text{max}},\\ 
+            Z_{\text{max}})$ a partir de una distribución uniforme. 
+            Simultáneamente, se muestrea una variable auxiliar $u \sim 
+            \mathcal{U}(0, \rho_{\text{max}})$.
+
+            \item \textbf{Criterio de aceptación:} Se calcula el radio espacial 
+            tridimensional del candidato $r_{\text{cand}} = \sqrt{R^2 + 
+            Z_{\text{cand}}^2}$. El candidato $Z_{\text{cand}}$ es aceptado como 
+            la verdadera coordenada en la línea de la visual si y solo si $u 
+            \leq \rho(r_{\text{cand}})$. En caso contrario, el candidato es 
+            rechazado y el ciclo se repite.
+        \end{enumerate}
+
+        Este proceso garantiza que la nueva distribución espacial $(X, Y, Z)$ 
+        sea tridimensionalmente consistente con el potencial gravitacional 
+        inferido del modelo de King, eliminando la dispersión artificial.
+
+    \subsection{Reconstrucción Astrométrica al Sistema de Referencia Global}
+        El paso final consiste en transformar el sistema cartesiano local, ahora 
+        físicamente coherente, de vuelta al sistema de coordenadas observables 
+        ecuatoriales. Esto se realiza mediante una transformación vectorial en 
+        el espacio euclidiano tridimensional.
+
+        Se definen los vectores base ortonormales del plano local en función de 
+        la posición central del cúmulo $(\alpha_c, \delta_c)$:
+
+        \begin{itemize}
+            \item Vector Este ($\hat{u}_x$): $(-\sin\alpha_c, \cos\alpha_c, 0)$
+        
+            \item Vector Norte ($\hat{u}_y$): $(-\sin\delta_c\cos\alpha_c, -\sin
+            \delta_c\sin\alpha_c, \cos\delta_c)$
+
+            \item Vector Radial ($\hat{u}_z$): $(\cos\delta_c\cos\alpha_c, \cos
+            \delta_c\sin\alpha_c, \sin\delta_c)$
+        \end{itemize}
+
+        La posición cartesiana heliocéntrica global $(X_g, Y_g, Z_g)$ de cada 
+        estrella se determina sumando su componente transversal proyectada a su 
+        nueva distancia radial total $(d_c + Z)$, multiplicadas por sus 
+        respectivos vectores direccionales:$$\vec{r} = X \hat{u}_x + Y \hat{u}_y 
+        + (d_c + Z) \hat{u}_z$$ 
+
+        Finalmente, las nuevas coordenadas ecuatoriales observacionales y la 
+        distancia corregida se extraen aplicando las transformaciones esféricas 
+        inversas: $$d_{\text{nuevo}} = |\vec{r}| = \sqrt{X_g^2 + Y_g^2 + Z_g^2}
+        $$ $$\alpha_{\text{nuevo}} = \arctan\left(\frac{Y_g}{X_g}\right)$$ $$
+        \delta_{\text{nuevo}} = \arcsin\left(\frac{Z_g}{d_{\text{nuevo}}}\right)
+        $$
+
+        Como resultado, $\alpha_\text{nuevo}$ y $\delta_\text{nuevo}$ mantienen 
+        casi una correspondencia uno a uno con el catálogo, preservando la alta 
+        precisión angular de Gaia, mientras que $d_\text{nuevo}$ refleja la 
+        verdadera estructura espacial compacta del cúmulo, depurada de la 
+        dispersión de la línea de la visual.
