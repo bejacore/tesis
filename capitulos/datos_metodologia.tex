@@ -1,0 +1,104 @@
+% !TeX root = ../main.tex
+
+\chapter{Datos y Metodología}
+
+\section{El Catálogo de Hunt y Reffert}
+
+    Este trabajo utiliza como base fundamental el catálogo de cúmulos estelares 
+    desarrollado por Hunt y Reffert, el cual es el resultado de un esfuerzo 
+    sistemático por actualizar y limpiar el censo de agrupaciones estelares en 
+    la Vía Láctea utilizando aprendizaje automático no supervisado. El catálogo 
+    final es el producto de una metodología desarrollada a lo largo de tres 
+    estudios consecutivos, evolucionando desde la selección de algoritmos de 
+    agrupamiento espacial, pasando por la implementación a nivel de todo el 
+    cielo, hasta la limpieza dinámica del censo basada en masas y radios de 
+    Jacobi.
+
+    \subsection{Descripción de los datos}
+
+        El censo se construye utilizando los datos astrométricos y fotométricos 
+        del tercer conjunto de datos de la misión Gaia (Gaia DR3). A diferencia 
+        de catálogos anteriores que operaban con el catálogo Gaia DR2 y cortes 
+        de magnitud muy restrictivos ($G \le 18$), el catálogo definitivo de 
+        Hunt y Reffert procesa una base de aproximadamente 729.7 millones de 
+        fuentes estelares.
+
+        Los autores utilizan el espacio de cinco dimensiones (5D) proporcionado 
+        por la astrometría de Gaia para la búsqueda de cúmulos:
+
+        \begin{itemize}
+            \item \textbf{Posiciones espaciales:} Ascensión recta ($\alpha$) y 
+            declinación ($\delta$).
+
+            \item \textbf{Cinemática:} Movimientos propios en ambas coordenadas 
+            espaciales ($\mu_{\alpha*}$, $\mu_\delta$).
+
+            \item \textbf{Distancia:} Paralaje ($\varpi$).
+        \end{itemize}
+
+        Para evitar distorsiones esféricas e inhomogeneidades en la densidad de 
+        los datos, el cielo se divide utilizando la teselación HEALPix en 
+        diferentes niveles según la profundidad de la búsqueda, y los datos de 
+        las cinco dimensiones son re-escalados y centrados antes de aplicar los 
+        algoritmos de agrupamiento.
+
+    \subsection{Criterios de Selección y Preprocesamiento}
+        La metodología de selección de miembros y validación de cúmulos 
+        realizada por los autores se destaca por aplicar rigurosos filtros de 
+        calidad, tanto a nivel de estrellas individuales como a nivel de la 
+        agrupación candidata:
+
+        \begin{enumerate}
+            \item \textbf{Corte de calidad astrométrica:} En lugar de aplicar un 
+            corte estricto de magnitud, se utiliza una red neuronal indicadora 
+            de calidad astrométrica (específicamente la bandera de calidad v1 de 
+            Rybizki et al. con un valor $> 0.5$). Esto permite recuperar 
+            estrellas miembro más débiles de hasta magnitudes $G \sim 20$ que 
+            aún poseen astrometría confiable, aumentando drásticamente la 
+            relación señal-ruido de los cúmulos distantes.
+
+            \item \textbf{Algoritmo de agrupamiento:} El catálogo emplea el 
+            algoritmo HDBSCAN, seleccionado por su sensibilidad superior para 
+            detectar cúmulos en conjuntos de datos con densidades variables.
+
+            \item \textbf{Validación fotométrica:} Las agrupaciones detectadas 
+            son filtradas mediante Redes Neuronales Convolucionales Bayesianas 
+            entrenadas con isocronas PARSEC sintéticas, para confirmar que el 
+            Diagrama Color-Magnitud (CMD) de la agrupación es estadísticamente 
+            compatible con una población estelar simple y co-evolutiva.
+
+            \item \textbf{Criterio de ligadura gravitacional:} Para el catálogo 
+            final y ``limpio'', los autores filtran grupos de movimiento no 
+            ligados (asociaciones) calculando la masa fotométrica total de cada 
+            agrupación y derivando su Superficie de Roche o Radio de Jacobi 
+            ($r_\text{J}$). Solo se retienen en la muestra de alta calidad 
+            aquellos cúmulos con una probabilidad mayor al 50\% de poseer un 
+            radio de Jacobi válido ($P(r_\text{J}) \ge 0.5$) y una masa mínima 
+            ligada de $40\ \text{M}_\odot$. Esto redujo el censo drásticamente, 
+            garantizando que los objetos de estudio son auténticos cúmulos 
+            abiertos unidos gravitacionalmente.
+        \end{enumerate}
+
+    \subsection{Parámetros disponibles}
+        
+        El catálogo provee una parametrización exhaustiva que resulta ideal para 
+        el análisis dinámico y estructural, proporcionando las siguientes 
+        variables fundamentales para cada cúmulo:
+
+        \begin{itemize}
+            \item \textbf{Astrométricos y cinemáticos:} Posiciones medias, 
+            paralajes medios, y movimientos propios medios derivados de los 
+            miembros de alta probabilidad.
+
+            \item \textbf{Parámetros Estructurales:} Radio que contiene el 50\% 
+            de los miembros ($r_{50}$), radios del núcleo ($r_\text{c}$), radios 
+            de marea aparentes ($r_\text{t}$), y radios de Jacobi 
+            ($r_\text{J}$).
+
+            \item \textbf{Parámetros Físicos y Fotométricos:} Edad ($\log t$), 
+            extinción interestelar ($A_\text{V}$), extinción diferencial 
+            ($\Delta A_\text{V}$) y módulo de distancia ($m-M$), todos inferidos 
+            utilizando técnicas de Inferencia Variacional.
+        \end{itemize}
+
+
