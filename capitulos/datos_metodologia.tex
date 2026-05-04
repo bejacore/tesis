@@ -101,4 +101,85 @@
             utilizando técnicas de Inferencia Variacional.
         \end{itemize}
 
+\section{Tratamiento de Datos}
 
+        \subsection{Criterios de Selección y Limpieza de la Muestra}
+
+            El conjunto de datos inicial para este trabajo se obtuvo a partir 
+            del catálogo de Hunt y Reffert, el cual consta originalmente de 7167 
+            cúmulos estelares y 1291929 estrellas miembro. Dado que los archivos 
+            originales de este catálogo se encuentran en formato FITS, se empleó 
+            la librería Astropy para la lectura y extracción inicial de las 
+            tablas.
+
+            El catálogo original clasifica las estructuras detectadas en 
+            diversas categorías mediante la columna \texttt{Type}, tales como 
+            Open Clusters (OC), Globular clusters (GC), Moving groups (MG), Too 
+            distant y Rejected. Mediante la aplicación de una máscara lógica 
+            sobre esta columna, la muestra de trabajo se restringió 
+            exclusivamente a los cúmulos abiertos (OC) y los cúmulos globulares 
+            (GC). Una vez aislados los tipos de cúmulos de interés, se 
+            identificaron sus respectivas estrellas miembro realizando un cruce 
+            de datos mediante la columna \texttt{Name}, presente tanto en la 
+            tabla de cúmulos como en la de miembros.
+
+            Posteriormente, se llevó a cabo un proceso de limpieza del catálogo 
+            de miembros para eliminar entradas duplicadas, utilizando la 
+            librería Pandas y tomando como identificador único la columna 
+            \texttt{GaiaDR3}. Para optimizar la manipulación de los datos en las 
+            fases posteriores y aprovechar las herramientas de análisis de 
+            Pandas, las tablas resultantes se exportaron a formato CSV. Durante 
+            esta conversión, fue necesario realizar un preprocesamiento de las 
+            cadenas de caracteres (strings) en las columnas \texttt{Name} y 
+            \texttt{Type}, las cuales se importaban inicialmente como objetos de 
+            bytes (\texttt{b'...'}); estos caracteres adicionales fueron 
+            suprimidos para garantizar la correcta interpretación de las 
+            etiquetas.
+
+            Con el objetivo de realizar los cálculos estructurales adecuados, se 
+            incorporaron a la base de datos las distancias fotométricas de 
+            Bailer-Jones, disponibles en el archivo de Gaia. Estas distancias, 
+            junto con sus respectivas incertezas, fueron extraídas mediante 
+            consultas ADQL utilizando el identificador de Gaia. La integración 
+            de esta información espacial geométrica al catálogo principal de 
+            miembros se realizó mediante una unión en Pandas usando la columna 
+            \texttt{GaiaDR3} en común, almacenando el resultado final nuevamente 
+            en formato CSV.
+
+            Para asegurar que el análisis de la dinámica interna de los sistemas 
+            contará con suficiente significancia estadística, se impuso un 
+            criterio de selección estricto, requiriendo un límite inferior de 
+            mil miembros por cúmulo. Este criterio inicial redujo la muestra a 
+            114 cúmulos masivos. Finalmente, se realizó una inspección 
+            morfológica de estos sistemas, descartando 12 cúmulos que no 
+            presentaban una simetría esférica suficiente, condición fundamental 
+            para el posterior ajuste de los modelos teóricos de densidad. De 
+            este modo, se consolidó una muestra final de 102 cúmulos estelares 
+            para el análisis.
+
+        \subsection{Sistemas de Referencia y Transformaciones}
+
+            Durante el desarrollo del flujo de trabajo, se conservaron en su 
+            mayoría las unidades físicas estándar empleadas en el catálogo 
+            original: grados ($\text{deg}$) para coordenadas espaciales, 
+            milisegundos de arco ($\text{mas}$) para paralajes, milisegundos de 
+            arco por año ($\text{mas/yr}$) para movimientos propios, magnitudes 
+            ($\text{mag}$) para fotometría, kilómetros por segundo 
+            ($\text{km/s}$) para velocidades cinemáticas, masas solares 
+            ($\text{M}_\odot$) y pársecs ($\text{pc}$) para distancias físicas. 
+            Como única excepción, y con el fin de garantizar la compatibilidad 
+            operativa con las funciones trigonométricas de la librería NumPy, 
+            las coordenadas angulares se convirtieron sistemáticamente de grados 
+            ($\text{deg}$) a radianes ($\text{rad}$).
+
+            El sistema de referencia base adoptado corresponde al Sistema 
+            Internacional de Referencia Celeste (ICRS) en la época J2016.0, 
+            provisto por el catálogo. Sin embargo, para el análisis de cada 
+            estructura individual, se definió un sistema de coordenadas relativo 
+            centrado en cada cúmulo. El origen temporal de este sistema local se 
+            hizo coincidir con el punto de mayor densidad del cúmulo, valor 
+            reportado previamente en el catálogo de Hunt y Reffert. Esta 
+            traslación del origen de coordenadas es de vital importancia, ya que 
+            facilita directamente el cálculo de las distancias radiales de cada 
+            estrella respecto al centro, paso indispensable para la construcción 
+            de los perfiles radiales de densidad.
