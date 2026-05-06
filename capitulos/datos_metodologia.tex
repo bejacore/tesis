@@ -183,3 +183,53 @@
             facilita directamente el cálculo de las distancias radiales de cada 
             estrella respecto al centro, paso indispensable para la construcción 
             de los perfiles radiales de densidad.
+
+\section{Procesamiento de Datos y Modelamiento}
+
+        \subsection{Análisis Radial de Propiedades Físicas y Cinemáticas}
+
+            Como paso preliminar para la exploración de las características 
+            físicas de los cúmulos estelares, se seleccionaron los sistemas con 
+            mayor población estelar dentro del conjunto de datos. Para cada 
+            cúmulo analizado, se estableció como centro de referencia el punto 
+            de mayor densidad estelar, cuyas coordenadas ecuatoriales de 
+            ascensión recta ($\alpha_c$) y declinación ($\delta_c$) fueron 
+            extraídas directamente del catálogo de Hunt y Reffert.
+
+            A partir de este centro geométrico, se determinó la separación 
+            angular ($d$) de cada estrella miembro del cúmulo respecto al núcleo 
+            utilizando métricas esféricas, de acuerdo con la siguiente 
+            expresión:
+
+            $$d = 2 \arcsin \left( \sqrt{ \sin^2\left(\frac{\delta - \delta_c}
+            {2}\right) + \cos(\delta_c) \cos(\delta) \sin^2\left(\frac{\alpha - 
+            \alpha_c}{2}\right) } \right)$$
+
+           donde $\alpha$ y $\delta$ corresponden a las coordenadas individuales 
+           de cada estrella. Una vez calculadas las distancias radiales de todos 
+           los miembros, el área espacial del cúmulo se discretizó mediante la 
+           construcción de anillos concéntricos desde el centro hasta la 
+           distancia angular máxima observada.
+
+           Para estimar el perfil de densidad de número estelar, se contabilizó 
+           la cantidad de estrellas presentes en cada intervalo radial. La 
+           densidad superficial por anillo se calculó dividiendo este conteo 
+           poblacional sobre el área geométrica del anillo correspondiente, dada 
+           por $A = \pi \left(r_\text{ext}^2 - r_\text{int}^2\right)$, donde 
+           $r_\text{ext}$ y $r_\text{int}$ denotan el radio exterior e interior 
+           de cada intervalo, respectivamente. Los valores de densidad 
+           resultantes se asignaron al radio medio de cada anillo para su 
+           posterior representación gráfica.
+
+           De manera análoga al cálculo del perfil de densidad, se determinó el 
+           comportamiento espacial de otras propiedades astrofísicas y 
+           cinemáticas del sistema a partir de los datos astrométricos y 
+           fotométricos de la tercera publicación de datos de la misión Gaia. 
+           Tras categorizar a cada estrella dentro de su anillo correspondiente, 
+           se calculó para cada subdivisión radial el valor medio del índice de 
+           color, la velocidad radial observada, el movimiento propio en 
+           declinación ($\mu_\delta$) y el movimiento propio en ascensión recta 
+           ($\mu_{\alpha*} = \mu_\alpha \cos\delta$). Este proceso de 
+           agrupamiento espacial permitió obtener perfiles radiales promediados, 
+           facilitando la caracterización de los gradientes dinámicos y 
+           fotométricos desde el centro hacia las regiones externas del cúmulo.
