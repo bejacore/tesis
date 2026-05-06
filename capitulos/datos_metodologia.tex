@@ -265,3 +265,40 @@
             diagramas CC y CMD, lo que permitió correlacionar empíricamente la 
             posición fotométrica de las estrellas con su masa estelar y validar 
             la segregación de las distintas poblaciones evolutivas del sistema.
+
+        \subsection{Imputación de Masas Estelares mediante Cuadrículas 
+        Fotométricas}
+
+            Con el fin de solventar la incompletitud en los datos de masa 
+            estelar provenientes del catálogo original, se implementó un método 
+            estadístico de imputación basado en el espacio fotométrico de los 
+            cúmulos. Como paso de validación preliminar, se contrastó la 
+            distribución espacial de la población con masas conocidas frente a 
+            la población sin asignación de masa en el diagrama color-color. Esta 
+            superposición permitió confirmar que ambos subconjuntos 
+            poblacionales ocupaban regiones análogas dentro del dominio 
+            fotométrico, justificando así la viabilidad de la estimación.
+
+            El procedimiento consistió en la construcción de una cuadrícula 
+            bidimensional sobre el espacio definido por los índices de color 
+            $BP-G$ y $G-RP$. El dominio se discretizó en 40 intervalos, 
+            configurando una resolución espacial que permitiera un equilibrio 
+            óptimo entre el nivel de detalle fotométrico y la significancia 
+            estadística. Para cada celda de la cuadrícula, se calculó la mediana 
+            de las masas utilizando exclusivamente la submuestra de estrellas 
+            con valores reportados en el catálogo.
+
+            Posteriormente, cada estrella carente de datos de masa fue 
+            proyectada sobre esta misma cuadrícula. A cada una de estas 
+            estrellas se le asignó el valor de la mediana correspondiente a su 
+            respectiva celda fotométrica. En los casos donde una estrella sin 
+            registro de masa se ubicó en un bin carente de ejemplares con masa 
+            conocida para el cálculo de la mediana, dicha entrada fue descartada 
+            del análisis. Se determinó que las estrellas excluidas bajo este 
+            criterio representaban menos del 1 % de la población total de los 
+            cúmulos, garantizando que su remoción no afectara la 
+            representatividad de la muestra. Para las estrellas situadas en los 
+            límites extremos del dominio, se realizó una asignación al bin de 
+            frontera más cercano. Este procedimiento permitió generar un 
+            registro poblacional completo y robusto para el análisis dinámico 
+            posterior.
