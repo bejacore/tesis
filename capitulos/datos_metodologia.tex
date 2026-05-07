@@ -334,3 +334,51 @@
             en la transformación de coordenadas, lo cual constituye una 
             limitación metodológica importante para la interpretación de la 
             forma real de los cúmulos en el eje radial.
+
+        \subsection{Corrección de la Distorsión Radial mediante Proyección 
+        Gnomónica y Muestreo de Monte Carlo}
+
+            Para mitigar la elongación artificial a lo largo de la línea de la 
+            visual detectada en las reconstrucciones iniciales, se implementó un 
+            protocolo de corrección geométrica e imputación probabilística. Como 
+            caso de estudio inicial, se usó la muestra de los cúmulos con mayor 
+            significancia estadística (poblaciones superiores a mil miembros).
+
+            El primer paso consistió en desacoplar las coordenadas transversales 
+            de la coordenada radial mediante una proyección gnomónica centrada 
+            en las coordenadas del punto de mayor densidad del cúmulo 
+            ($\alpha_c, \delta_c$). Esta transformación proyectó las posiciones 
+            estelares sobre un plano tangente bidimensional, produciendo 
+            coordenadas angulares locales ($\xi, \eta$) que fueron escaladas por 
+            la distancia central del sistema ($d_0$) para obtener las distancias 
+            físicas transversales ($X_{\text{local}}, Y_{\text{local}}$).
+
+            A partir de las posiciones proyectadas $R = \sqrt{X^2 + Y^2}$, se 
+            modeló la distribución de densidad superficial. Para los cúmulos con 
+            poblaciones superiores a mil miembros, el dominio radial se 
+            discretizó en 30 intervalos, mientras que para el procesamiento 
+            automatizado para estos sistemas se empleó una resolución de 10 
+            bines para asegurar la estabilidad estadística. Mediante rutinas de 
+            optimización no lineal, se ajustó un modelo de King a estos datos 
+            para derivar el radio del núcleo ($r_c$), el radio de marea ($r_t$) 
+            y la constante de normalización ($k$) para cada cúmulo.
+
+            Una vez caracterizada la morfología bidimensional, se procedió a la 
+            reconstrucción de la tercera dimensión ($Z_{\text{sim}}$). La 
+            profundidad de cada estrella fue imputada utilizando un algoritmo de 
+            muestreo de rechazo de Monte Carlo. La probabilidad de posición se 
+            definió en proporción a la densidad espacial de King, 
+            $\rho(\sqrt{R^2 + Z^2})$. Para la ejecución del muestreo, se 
+            evaluaron coordenadas $Z$ aleatorias dentro de los límites físicos 
+            del cúmulo. Como criterio de aceptación del algoritmo, se utilizó la 
+            densidad máxima local calculada para cada estrella individual, 
+            garantizando la convergencia del perfil dinámico simulado con las 
+            restricciones estructurales del modelo.
+
+            Finalmente, el conjunto de coordenadas locales ($X_{\text{local}}, 
+            Y_{\text{local}}, Z_{\text{sim}}$) fue transformado de vuelta a un 
+            sistema de coordenadas globales heliocéntricas. Este procedimiento 
+            permitió obtener un catálogo tridimensional depurado de la 
+            dispersión radial originada por los errores observacionales, 
+            facilitando una representación física más fiel de la estructura 
+            interna de los cúmulos.
