@@ -382,3 +382,52 @@
             dispersión radial originada por los errores observacionales, 
             facilitando una representación física más fiel de la estructura 
             interna de los cúmulos.
+
+        \subsection{Análisis Estadístico de la Reconstrucción Espacial mediante 
+        Simulaciones de Monte Carlo}
+
+            Para validar la robustez y el comportamiento estadístico de las 
+            imputaciones radiales en la línea de la visual, se implementó un 
+            análisis detallado de las distribuciones de probabilidad marginales 
+            $P(Z)$ y condicionales $P(Z|R)$ resultantes del algoritmo de 
+            muestreo de rechazo. Con este fin, se seleccionó un subconjunto de 
+            control compuesto por cuatro sistemas: tres cúmulos dinámicamente 
+            estables y bien delimitados (King 11, NGC 1912 y NGC 6475), y un 
+            caso límite (NGC 2437) que presentaba miembros con distancias 
+            proyectadas superiores al radio de marea estimado ($R > r_t$).
+
+            Para asegurar la validez física del proceso, se aplicó un criterio 
+            de filtrado para estrellas anómalas: aquellas cuya posición 
+            proyectada excediera el límite gravitacional del sistema ($R > r_t$) 
+            fueron excluidas del análisis. Esta decisión metodológica se 
+            fundamentó en que, bajo las premisas del modelo de King, la 
+            probabilidad de encontrar un miembro más allá de dicho radio es 
+            nula, lo que anula la función de probabilidad y hace inviable la 
+            ejecución del muestreo de rechazo en tales registros.
+
+            El procedimiento de corrección y reconstrucción se sometió a un 
+            proceso iterativo de $m = 1000$ realizaciones para cada cúmulo. Este 
+            volumen de iteraciones se seleccionó bajo un criterio de 
+            convergencia estadística, garantizando que las distribuciones 
+            resultantes fueran estables y representativas de la incertidumbre 
+            intrínseca del modelo sin comprometer la eficiencia computacional 
+            del procesamiento. Tras aplicar la proyección gnomónica y calcular 
+            los parámetros estructurales ($r_c, r_t, k$), se inicializó una 
+            matriz de dimensiones $N \times m$, donde $N$ es el número de 
+            miembros, para almacenar las profundidades simuladas 
+            ($Z_{\text{sim}}$).
+
+            El análisis de esta matriz permitió extraer las propiedades 
+            estadísticas fundamentales de los sistemas. La distribución global 
+            de los valores almacenados representó la función de densidad de 
+            probabilidad total en la línea de la visual, $P(Z)$, mientras que 
+            cada fila individual capturó la distribución condicional $P(Z|R)$ 
+            para una estrella específica. Finalmente, se examinó la variación de 
+            la dispersión probabilística mediante el estudio de estrellas de 
+            prueba ubicadas en distintas regiones radiales: el centro 
+            ($R \sim 0$), el radio del núcleo ($R \sim r_c$), la zona de 
+            transición intermedia y la frontera del radio de marea 
+            ($R \sim r_t$). Este muestreo estratificado documentó cómo la 
+            restricción física del modelo de King acota progresivamente la 
+            incertidumbre en la profundidad simulada conforme la posición 
+            estelar se aproxima al límite de marea.
