@@ -302,3 +302,35 @@
             frontera más cercano. Este procedimiento permitió generar un 
             registro poblacional completo y robusto para el análisis dinámico 
             posterior.
+
+        \subsection{Reconstrucción de la Estructura Espacial Tridimensional}
+
+            Con el propósito de caracterizar la morfología espacial de los 
+            sistemas estelares, se analizó la estructura tridimensional de los 
+            cúmulos más poblados, estableciendo como criterio de selección 
+            aquellos con un censo superior a los mil miembros confirmados. Para 
+            llevar a cabo esta reconstrucción, se transformaron las coordenadas 
+            esféricas observacionales de cada estrella a un sistema de 
+            coordenadas cartesianas heliocéntricas. Esta conversión espacial se 
+            ejecutó utilizando la ascensión recta ($\alpha$), la declinación 
+            ($\delta$) y las distancias geométricas ($d$) estimadas por 
+            Bailer-Jones et al. (2021) para el catálogo Gaia EDR3/DR3, mediante 
+            las siguientes relaciones geométricas:
+
+            \begin{align*}
+                X &= d \cos\delta \cos\alpha \\
+                Y &= d \cos\delta \sin\alpha \\
+                Z &= d \sin\delta
+            \end{align*}
+
+            Una vez obtenidas las posiciones cartesianas, se generaron 
+            proyecciones bidimensionales sobre los planos $XY$ y $XZ$ para 
+            inspeccionar la arquitectura espacial de los cúmulos. Durante este 
+            proceso de visualización, se identificó una distorsión sistemática 
+            en la dirección de la línea de la visual en todos los sistemas 
+            analizados. Esta elongación artificial, inherente a la 
+            reconstrucción cartesiana, se atribuyó a la propagación del error 
+            asociado a la determinación de la distancia fotométrica y su efecto 
+            en la transformación de coordenadas, lo cual constituye una 
+            limitación metodológica importante para la interpretación de la 
+            forma real de los cúmulos en el eje radial.
