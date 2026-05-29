@@ -341,6 +341,137 @@
     dispersión, explora parámetros como la concentración, radio de anisotropía y 
     masa total \cite{Cheng2023}.
 
+\section{El modelo de King}
+    \subsection{Contexto Histórico y Motivación del Modelo}
+        El estudio dinámico de los cúmulos globulares ha sido siempre un área de 
+        gran interés en la astrofísica debido a la riqueza estelar y simetría de 
+        estos sistemas. Históricamente, uno de los primeros intentos por 
+        describir su estructura matemática fue la ley de Jeans, la cual proponía 
+        teóricamente que las regiones externas de un cúmulo debían presentar una 
+        densidad estelar decreciente proporcional a $r^{-4}$ (lo que se traduce 
+        en $r^{-3}$ al proyectarse en el plano del cielo). Sin embargo, el 
+        trabajo de Ivan King en 1962 demostró que la ley de Jeans partía de 
+        asunciones teóricas incorrectas, como suponer una distribución de 
+        velocidades isotrópica en todo punto del cúmulo y emplear una expansión 
+        matemática injustificada para el potencial gravitacional.
+
+        Gracias al uso de observaciones fotográficas profundas, como las 
+        obtenidas con la cámara Schmidt del Observatorio de Palomar, se hizo 
+        evidente que la densidad estelar no decae asintóticamente hacia el 
+        infinito, sino que cae abruptamente a cero en un límite físico finito. 
+        Este comportamiento empírico motivó la formulación del modelo de King, 
+        el cual unifica la descripción del denso núcleo del cúmulo y su frontera 
+        truncada por efectos gravitacionales externos \cite{king1962structure}.
+
+    \subsection{Fundamentos Físicos y Parámetros del Modelo}
+        El modelo de King se fundamenta en la idea de que la estructura de un 
+        cúmulo estelar no requiere de matemáticas arbitrarias, sino que está 
+        regida por las mínimas condiciones impuestas por su entorno físico e 
+        historial dinámico. Este modelo asume que todos los cúmulos alcanzan un 
+        cuasi-equilibrio derivado de procesos de relajación (mezcla inicial y 
+        encuentros estelares) que producen efectos casi idénticos en su 
+        arquitectura.
+
+        Físicamente, el modelo se describe de manera invariante empleando 
+        únicamente tres parámetros fundamentales, el número mínimo permitido por 
+        las restricciones físicas del sistema \cite{king1962structure}:
+
+        \begin{itemize}
+            \item \textbf{Factor de escala $k$:} Es un parámetro asociado al 
+            número total de estrellas y está directamente relacionado con la 
+            densidad superficial central del cúmulo.
+            
+            \item \textbf{Radio del núcleo ($r_c$):} Actúa como un factor de 
+            escala espacial que describe la región interior del cúmulo, y se 
+            encuentra intrínsecamente determinado por la energía interna del 
+            sistema estelar.
+
+            \item \textbf{Radio límite o de marea ($r_t$):} Representa la 
+            distancia desde el centro del cúmulo a la cual la densidad estelar 
+            cae a cero. Físicamente, este radio marca el punto donde las 
+            estrellas escapan del cúmulo debido a que la fuerza gravitacional 
+            del cúmulo es superada por el campo de fuerzas de marea de la Vía 
+            Láctea.
+        \end{itemize}
+
+        Además, aunque este no es un parámetro independiente, el parámetro de 
+        concentración, se define como la razón $c = r_t/r_c$. Este valor 
+        clasifica cuán concentrado es un cúmulo en su centro en relación con su 
+        extensión total dictada por las fuerzas de marea.
+
+    \subsection{Interpretación de las Distribuciones de Densidad}
+        El aporte fundamental del modelo de King radica en la formulación de 
+        ecuaciones que describen de forma empírica y coherente la densidad del 
+        cúmulo en diferentes dominios dimensionales.
+
+        \subsubsection{Densidad Proyectada o Superficial}
+            En la práctica observacional, la astronomía mide la distribución 
+            bidimensional de las estrellas proyectadas sobre el plano del cielo. 
+            Para ello, King introdujo una ecuación fundamental que rige la 
+            densidad superficial estelar $f$ a una distancia radial $r$ del 
+            centro del cúmulo:
+
+            $$f = k \left[ \frac{1}{\sqrt{1 + (r/r_c)^2}} - \frac{1}{\sqrt{1 + 
+            (r_t/r_c)^2}} \right]^2$$
+
+            Esta ecuación integra armónicamente dos comportamientos: en las 
+            proximidades del centro ($r \ll r_t$), reproduce una distribución 
+            dominada por el radio del núcleo $r_c$; mientras que en las 
+            fronteras externas, fuerza a la densidad a caer a cero exactamente 
+            cuando $r = r_t$.
+
+        \subsubsection{Densidad Espacial o Tridimensional}
+            Para comprender la dinámica real del cúmulo, es imperativo 
+            transformar la densidad proyectada bidimensional en una densidad 
+            espacial volumétrica $\varphi(r)$. Esta cantidad, que representa la 
+            concentración tridimensional de estrellas, se obtiene integrando la 
+            densidad superficial. El modelo de King define esta densidad como:
+
+            $$\varphi(r) = \frac{k}{\pi r_c [1 + (r_t/r_c)^2]^{3/2}} 
+            \frac{1}{w^2} \left[ \frac{1}{w} \cos^{-1} w - (1 - w^2)^{1/2} 
+            \right]$$
+
+            Para simplificar la notación geométrica y relacionar la posición $r$ 
+            con los radios característicos del cúmulo, se introduce la variable 
+            auxiliar adimensional $w$, expresada de la siguiente manera:
+
+            $$w = \sqrt{ \frac{1 + (r/r_c)^2}{1 + (r_t/r_c)^2} }$$
+
+            Al observar la composición de $w$, resulta evidente que en el límite 
+            físico del cúmulo, cuando $r$ tiende a $r_t$, el valor de $w$ tiende 
+            a $1$. Al evaluar la ecuación de la densidad espacial con $w=1$, el 
+            término entre corchetes se anula, garantizando matemáticamente que 
+            la densidad volumétrica $\varphi(r)$ sea exactamente cero en la 
+            frontera de marea del sistema.
+
+        \subsubsection{Densidad de Franja}
+            Adicional a la densidad volumétrica y superficial, King explora la 
+            densidad de franja, la cual evalúa el número total de estrellas 
+            contenidas a lo largo de una franja transversal de anchura unitaria 
+            que cruza completamente el cúmulo a una distancia $r$ del centro. 
+            Aunque es una medida menos común hoy en día, proporciona una 
+            integral alternativa para comparar perfiles de densidad en recuentos 
+            unidimensionales sobre placas fotográficas.
+
+    \subsection{Importancia y Relevancia en la Astrofísica}
+        El modelo empírico propuesto por King demostró que, a pesar de sus 
+        complejas historias de formación, los cúmulos estelares y por extensión 
+        algunas galaxias enanas elípticas son estructuras tan similares como las 
+        leyes físicas lo permiten. La simplicidad de la formulación encapsula 
+        una verdad física profunda: la morfología gravitacional de un sistema 
+        estelar relajado está constreñida enteramente por el número de 
+        partículas, la conservación de la energía y las fuerzas de marea 
+        externas \cite{king1962structure}.
+
+        Medio siglo después de su publicación, las formulaciones de King 
+        continúan siendo el estándar analítico primordial para el ajuste de 
+        perfiles de brillo superficial y dispersión de velocidades. El éxito del 
+        modelo radica en su capacidad para ofrecer un puente analítico directo 
+        entre el recuento observacional de estrellas y las propiedades puramente 
+        dinámicas de la materia confinada gravitacionalmente, manteniéndose 
+        indispensable para los conductos modernos de arqueología galáctica y las 
+        simulaciones computacionales de evolución estelar.
+
 \section{Corrección de la Distorsión Astrométrica en la Línea de la Visual}
     En el estudio cinemático y dinámico de cúmulos estelares utilizando datos 
     astrométricos, como los dados por Gaia, existe una asimetría inherente en la 
@@ -385,28 +516,6 @@
         En este sistema local de referencia, el centro del cúmulo se ubica en el 
         origen $(0,0,0)$ y el radio proyectado de cualquier estrella es $R = 
         \sqrt{X^2 + Y^2}$.
-
-    \subsection{El modelo de King}
-        Los cúmulos estelares dinámicamente relajados se describen adecuadamente 
-        mediante los modelos isotérmicos truncados propuestos por Ivan King 
-        (1962). Físicamente, este modelo asume que el cúmulo posee un núcleo 
-        isotérmico de densidad constante y una envoltura que decrece hasta 
-        llegar a cero en el radio de marea ($r_t$), punto en el cual el campo 
-        gravitacional de la galaxia anfitriona domina sobre la autogravedad del 
-        cúmulo.
-
-        A partir del ajuste del perfil de densidad superficial: $$\Sigma(R) =  k
-        \left(\frac{1}{[1+(r/r_c)^2]^\frac{1}{2}} - \frac{1}{[1+(r_t/r_c)^2]^
-        \frac{1}{2}}\right)^2$$ a las coordenadas $(X, Y)$, se obtienen 
-        empíricamente el radio del núcleo $(r_c)$, el radio de marea ($r_t$) y 
-        la constante de normalización $k$ relacionada con la densidad central. 
-        Con estos parámetros, la densidad espacial volumétrica 3D, $\rho(r)$, se 
-        define como: $$\rho(r) = \frac{k}{\pi r_c \left[1+(r_t/r_c)^2 \right]^{
-        \frac{3}{2}}} \frac{1}{w^2}\left[\frac{1}{w}\cos^{-1}w - (1-w^2)^
-        \frac{1}{2}\right]$$ donde $r$ es la distancia espacial tridimensional 
-        de la estrella al centro del cúmulo ($r = \sqrt{X^2 + Y^2 + Z^2}$), y 
-        $w$ es un parámetro adimensional definido como: $$w = \left[\frac{1+
-        (r/r_c)^2}{1+(r_t/r_c)^2}\right]^\frac{1}{2}$$
 
     \subsection{Corrección de la Profundidad por Monte Carlo (\textit{Rejection 
     Sampling})}
