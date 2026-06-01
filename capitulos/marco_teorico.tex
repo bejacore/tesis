@@ -471,3 +471,80 @@
         dinámicas de la materia confinada gravitacionalmente, manteniéndose 
         indispensable para los conductos modernos de arqueología galáctica y las 
         simulaciones computacionales de evolución estelar.
+
+\section{Ecuaciones de Jeans y Dinámica de Sistemas Gravitacionales}
+        La dinámica estelar constituye una rama cardinal de la astrofísica que 
+        se enfoca en el estudio del movimiento colectivo de un gran número de 
+        masas puntuales como estrellas, remanentes estelares o partículas de 
+        materia oscura, bajo  la influencia de su campo gravitacional 
+        autogenerado. A diferencia de la mecánica celeste clásica, que resuelve 
+        analítica o numéricamente las órbitas exactas de un número reducido de 
+        cuerpos, a dinámica de sistemas macroscópicos como las galaxias, los 
+        halos de materia oscura, los cúmulos globulares y los cúmulos abiertos 
+        demanda un enfoque fundamentado en la mecánica estadística y la teoría 
+        cinética. 
+
+        El estado microscópico de un sistema estelar de $N$ partículas queda 
+        completamente especificado en un espacio de fase de $6N$ dimensiones. 
+        Sin embargo, para sistemas con un número suficientemente masivo de 
+        componentes, resulta físicamente riguroso y matemáticamente tratable 
+        describir el sistema a través de una función de distribución continua 
+        en el espacio de fase de una sola partícula, de seis dimensiones, esto 
+        es, tres coordenadas espaciales y tres coordenadas de velocidad. Esta 
+        función, denotada clásicamente como $f(\mathbf{x}, \mathbf{v}, t)$, 
+        representa la densidad de probabilidad o el número de estrellas 
+        localizadas en un volumen diferencial del espacio de fase $d^3x d^3v$ 
+        centrado en la posición $\mathbf{x}$ y con velocidad $\mathbf{v}$ en un 
+        instante de tiempo $t$ \cite{binney_tremaine_2008}.
+        
+        De acuerdo con el teorema de Liouville, en ausencia de disipación y 
+        fenómenos de creación o aniquilación, la densidad en el espacio de fase 
+        alrededor de un punto representativo del sistema se conserva a lo largo 
+        de su trayectoria \cite{binney_tremaine_2008}. Las ecuaciones de Jeans 
+        nacen precisamente como un corolario hidrodinámico de esta conservación, 
+        proveyendo un andamiaje teórico que conecta la cinemática inobservable 
+        tridimensional con las proyecciones observables, constituyendo así el 
+        núcleo fundamental de cualquier modelado dinámico de cúmulos estelares 
+        \cite{ciotti_2021_jeans}. Originalmente derivadas por James Clerk 
+        Maxwell en el contexto de la teoría cinética de gases, fueron adaptadas 
+        e introducidas formalmente a la astronomía por James Jeans en 1919. Hoy 
+        en día, son la herramienta primaria para deducir la masa gravitante 
+        total y la estructura orbital de sistemas astronómicos.
+
+        \subsection{La Ecuación de Boltzmann No Colisional}
+            Para comprender el origen de las ecuaciones de Jeans, es imperativo 
+            partir de la Ecuación de Boltzmann No Colisional (CBE, por sus 
+            siglas en inglés), frecuentemente referida en la literatura física 
+            como la ecuación de Vlasov.
+
+            Si un sistema evoluciona bajo un potencial gravitacional medio 
+            $\Phi(\mathbf{x}, t)$, y si los encuentros gravitacionales locales 
+            entre pares de estrellas (colisiones dinámicas) son insignificantes 
+            frente al campo global, la evolución temporal de la función de 
+            distribución $f(\mathbf{x}, \mathbf{v}, t)$ obedece a la ecuación de 
+            continuidad en el espacio de fase \cite{mamon2010kinematic}:
+
+            $$\frac{\partial f}{\partial t} + \mathbf{v} \cdot \nabla_x f - 
+            \nabla_x \Phi \cdot \nabla_v f = 0$$
+
+            donde $\nabla_x$ y $\nabla_v$ denotan los operadores gradiente 
+            respecto a las coordenadas espaciales y de velocidad, 
+            respectivamente. El término $-\nabla_x \Phi$ representa la 
+            aceleración gravitacional experimentada por una estrella en la 
+            posición $\mathbf{x}$.
+
+            La CBE dictamina que el flujo de probabilidad en el espacio de fase 
+            es incompresible. Sin embargo, encontrar soluciones analíticas 
+            directas a la CBE, $f(\mathbf{x}, \mathbf{v}, t)$, es un gran 
+            desafío, ya que su dominio natural es el espacio hexadimensional 
+            \cite{ciotti_2021_jeans}. Es virtualmente imposible medir 
+            observacionalmente las seis coordenadas de fase para cada estrella 
+            en un sistema denso. Usualmente, las observaciones astronómicas 
+            están limitadas a proveer información proyectada bidimensional 
+            sobre el plano del cielo y una única componente de velocidad radial 
+            o a lo largo de la línea de visión inferida por efecto Doppler 
+            espectroscópico. Frente a esta severa restricción,  el tratamiento 
+            de momentos integrados sobre el espacio de velocidades, las 
+            ecuaciones de Jeans, reduce la dimensionalidad del problema del 
+            espacio de fase al espacio de configuración tridimensional regular 
+            \cite{courteau2014galaxy}.
