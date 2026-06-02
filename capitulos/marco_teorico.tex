@@ -548,3 +548,356 @@
             ecuaciones de Jeans, reduce la dimensionalidad del problema del 
             espacio de fase al espacio de configuración tridimensional regular 
             \cite{courteau2014galaxy}.
+
+        \subsection{Hipótesis Fundamentales y Límites de Aplicabilidad}
+            La construcción teórica de las ecuaciones de Jeans en sistemas 
+            estelares requiere el cumplimiento de algunas suposiciones 
+            fundamentales.  La validez de un modelo de masa derivado para un 
+            cúmulo estelar depende enteramente de cuán precisamente la 
+            naturaleza del cúmulo se adhiera a las siguientes hipótesis.
+
+            \subsubsection{Sistemas Colisionales, No Colisionales y el Tiempo 
+            de Relajación}
+                El andamiaje de la CBE y, consecuentemente, de las ecuaciones de 
+                Jeans estándar, descansa sobre la presunción de que el sistema 
+                es "no colisional". En dinámica gravitacional, una colisión no 
+                implica el impacto físico de las superficies estelares, sino una 
+                interacción de dos cuerpos lo suficientemente cercana como para 
+                que la trayectoria de una estrella se desvíe significativamente 
+                respecto a la órbita dictada exclusivamente por el potencial 
+                global suavizado \cite{hamilton_2021_kinetic}.
+
+                La escala temporal que demarca la transición entre un régimen 
+                gobernado por el potencial medio (no colisional) y uno dominado 
+                por interacciones discretas (colisional) es el tiempo de 
+                relajación de dos cuerpos, $t_\text{relax}$ . Este se define 
+                heurísticamente como el tiempo necesario para que las pequeñas 
+                deflexiones acumuladas por encuentros estelares generen un 
+                cambio en la velocidad de la estrella del mismo orden de 
+                magnitud que su velocidad inicial \cite{hamilton_2021_kinetic}.
+
+                Siguiendo el formalismo clásico de Chandrasekhar y Spitzer, si 
+                consideramos una estrella cruzando un sistema de tamaño $R$ con 
+                una velocidad típica $v$, el cambio cumulativo en la varianza de 
+                su velocidad ortogonal debido a encuentros sucesivos conduce a 
+                una caminata aleatoria en el espacio de velocidades. El tiempo 
+                de relajación se relaciona íntimamente con el tiempo dinámico o 
+                tiempo de cruce, $t_\text{cross} \sim R/v$, y el número total de 
+                estrellas del sistema $N$ mediante la relación aproximada :
+
+                $$t_\text{relax} \approx \frac{N}{10 \ln \Lambda} t_\text{cross}
+                $$
+
+                donde $\ln \Lambda \approx \ln(N)$ es el logaritmo de Coulomb, 
+                un factor proveniente de la integración sobre todos los posibles 
+                parámetros de impacto entre un mínimo que produce una deflexión 
+                de 90 grados y un máximo típicamente el tamaño del sistema 
+                \cite{binney_tremaine_2008}.
+
+                La distinción entre sistemas astronómicos basada en 
+                $t_\text{relax}$ es drástica:
+
+                \begin{itemize}
+                    \item \textbf{Galaxias y halos de materia oscura:} Con $N 
+                    \sim 10^{11}$, los tiempos de relajación exceden los 
+                    $10^{14}$ años, siendo varios órdenes de magnitud mayores a 
+                    la edad del universo \cite{hamilton_2021_kinetic}. Son 
+                    sistemas estrictamente no colisionales donde las ecuaciones 
+                    de Jeans operan en su forma más pura.
+
+                    \item \textbf{Cúmulos Globulares:} Compuestos por 
+                    $N \sim 10^5 - 10^6$ estrellas confinadas en radios de 
+                    escasos parsecs. Su tiempo de relajación oscila entre $10^8$ 
+                    y $10^9$ años. Al ser menores que sus edades intrínsecas que 
+                    son usualmente $> 10^{10}$ años, os cúmulos globulares han 
+                    experimentado una evolución secular mediada por la 
+                    relajación colisional, e.g., colapso del núcleo, segregación 
+                    de masa y evaporación estelar 
+                    \cite{chandrasekhar2005principles}. No obstante, el tiempo 
+                    de cruce orbital sigue siendo muy inferior a 
+                    $t_\text{relax}$, permitiendo que las ecuaciones de Jeans 
+                    describan acertadamente el equilibrio instantáneo 
+                    cuasi-estático sobre el cual operan los lentos procesos 
+                    colisionales \cite{hamilton_2021_kinetic}.
+
+                    \item \textbf{Cúmulos Abiertos:} Entornos escasamente 
+                    poblados, $N \sim 10^2 - 10^4$, que habitan en los discos 
+                    galácticos. Su $t_\text{relax}$ puede ser del orden de 
+                    $10^7$ años \cite{clarke1999formation}. Representan el 
+                    límite desafiante del análisis de Jeans. Las formulaciones 
+                    no colisionales deben emplearse con cautela y acompañarse de 
+                    simulaciones de N-cuerpos directas, ya que las colisiones 
+                    proporcionan la semilla ruidosa inicial de interacciones 
+                    rápidas y disrupción por el campo de marea galáctico 
+                    \cite{bamber2025evolution}.
+                \end{itemize}
+
+            \subsubsection{Equilibrio Dinámico}
+                La aplicación práctica de la teoría asume que el sistema ha 
+                alcanzado un estado estacionario, lo que matemáticamente se 
+                traduce en que la derivada parcial respecto al tiempo de 
+                cualquier propiedad macroscópica es idénticamente nula, 
+                $\partial / \partial t = 0$ \newline 
+                \cite{binney_tremaine_2008}. Un sistema estelar naciente alcanza 
+                este equilibrio a través de un mecanismo conocido como 
+                relajación violenta, postulado por Donald Lynden-Bell, en el 
+                cual las fluctuaciones macroscópicas y rápidas del potencial 
+                gravitacional global termalizan la distribución estelar en unos 
+                pocos tiempos de cruce. Para aplicar las ecuaciones de Jeans a 
+                un cúmulo estelar, es indispensable que este no se encuentre en 
+                un estado de fusión con otro sistema, ni sufriendo un desgarre 
+                severo de marea reciente que distorsione gravemente su estado 
+                estacionario subyacente \cite{mamon2010kinematic}.
+
+            \subsubsection{Relación con el Potencial Gravitacional}
+                La densidad generadora de gravedad y la densidad del trazador 
+                cinemático no son intrínsecamente equivalentes 
+                \cite{mamon2010kinematic}. Las ecuaciones de Jeans modelan un 
+                "trazador", representado por una densidad espacial poblacional 
+                $\nu(\mathbf{x})$, que se asume en equilibrio dentro del 
+                potencial gravitacional $\Phi(\mathbf{x})$. Este potencial 
+                obedece a la Ecuación de Poisson generalizada 
+                \cite{binney_tremaine_2008}:
+
+                $$\nabla^2 \Phi = 4\pi G \rho_\text{tot}$$
+
+                donde $\rho_{tot}$ es la densidad de masa total. En cúmulos 
+                estelares simples, $\rho_{tot}$ es esencialmente equivalente a 
+                la masa de las estrellas, es decir, $\rho_{tot} = \Upsilon \nu$, 
+                donde $\Upsilon$ es la razón masa-luminosidad 
+                \cite{wolf_etal_2010}. Sin embargo, en galaxias esferoidales 
+                enanas o cúmulos inmersos en densas concentraciones bariónicas y 
+                materia oscura, el campo gravitacional total está dominado por 
+                constituyentes invisibles ($\rho_{tot} \neq \nu$), haciendo que 
+                la resolución de las ecuaciones de Jeans sea un problema de 
+                inferencia paramétrica del perfil de masa oculta 
+                \cite{walker2007velocity}.
+
+        \subsection{Derivación de las Ecuaciones de Jeans y los Momentos de 
+        Velocidad}
+            Para transformar la CBE del espacio de fase al espacio de 
+            configuración, se calcula la integral de la ecuación sobre todo el 
+            dominio local de velocidades. Esto genera una serie infinita de 
+            ecuaciones interconectadas conocida como la jerarquía de Jeans 
+            \cite{ciotti_2021_jeans}. A nivel teórico, esta jerarquía nunca se 
+            cierra por sí sola; el momento de orden $n$ siempre depende del 
+            momento de orden $n+1$. Para hacerla tratable, la jerarquía se 
+            trunca en el segundo momento introduciendo hipótesis físicas sobre 
+            la asimetría de la varianza.
+
+            Definimos la densidad espacial estelar (momento de orden cero de 
+            $f$) como:
+
+            $$\nu(\mathbf{x}, t) = \int f(\mathbf{x}, \mathbf{v}, t) d^3v$$
+
+            La velocidad media o campo de velocidades sistemático local 
+            (momento de primer orden) es: \cite{binney_tremaine_2008}
+
+            $$\bar{v}_i(\mathbf{x}, t) = \frac{1}{\nu} \int v_i f(\mathbf{x}, 
+            \mathbf{v}, t) d^3v$$
+
+            \subsubsection{Ecuación de Momento de Orden Cero}
+                Integrando la CBE término a término sobre el dominio de 
+                velocidad $d^3v$:
+
+                $$\int \frac{\partial f}{\partial t} d^3v + \int v_i 
+                \frac{\partial f}{\partial x_i} d^3v - \int \frac{\partial 
+                \Phi}{\partial x_i} \frac{\partial f}{\partial v_i} d^3v = 0$$
+
+                Dado que la integración es sobre $\mathbf{v}$ y las coordenadas 
+                $\mathbf{x}$ y $t$ son independientes, las derivadas espaciales 
+                y temporales pueden salir de la integral. El tercer término se 
+                anula aplicando el teorema de la divergencia sobre el espacio de 
+                velocidades, bajo el pre-requisito físico de que $f \to 0$ con 
+                la suficiente rapidez cuando $|\mathbf{v}| \to \infty$, el 
+                sistema está gravitacionalmente ligado y no posee partículas de 
+                energía infinita. El resultado es la ecuación de continuidad 
+                \cite{binney_tremaine_2008}:
+
+                $$\frac{\partial \nu}{\partial t} + \frac{\partial (\nu 
+                \bar{v}_i)}{\partial x_i} = 0$$
+
+                Esta expresión dicta la conservación del número de estrellas: 
+                cualquier variación temporal en la densidad espacial estelar en 
+                una región está forzosamente compensada por el flujo neto o 
+                divergencia de la velocidad media en las fronteras de dicha 
+                región.
+
+            \subsubsection{Ecuación de Momento de Primer Orden}
+                Para derivar la ecuación central que vincula la dispersión de 
+                velocidades con el gradiente gravitacional, multiplicamos la CBE 
+                por la componente de velocidad $v_j$ y repetimos la integración:
+
+                $$\int v_j \frac{\partial f}{\partial t} d^3v + \int v_j v_i 
+                \frac{\partial f}{\partial x_i} d^3v - \int v_j \frac{\partial 
+                \Phi}{\partial x_i} \frac{\partial f}{\partial v_i} d^3v = 0$$
+
+                La integral del último término, empleando integración por partes 
+                y asumiendo nuevamente que $f$ se desvanece en el infinito, 
+                produce un conmutador tensorial:
+
+                $$- \int v_j \frac{\partial f}{\partial v_i} d^3v = \int f 
+                \frac{\partial v_j}{\partial v_i} d^3v = \int f \delta_{ij} d^3v 
+                = \nu \delta_{ij}$$
+
+                Por ende, el término dependiente del potencial se contrae a $\nu 
+                \frac{\partial \Phi}{\partial x_j}$. Seguidamente, descomponemos 
+                el término cuadrático de velocidad $v_i v_j$ empleando la 
+                velocidad media $\bar{v}_i$ y las velocidades aleatorias 
+                intrínsecas locales. Definimos el tensor espacial de dispersión 
+                de velocidades $\sigma_{ij}^2$, el cual mide la varianza 
+                cinemática del campo:
+
+                $$\sigma_{ij}^2 \equiv \overline{v_i v_j} - \bar{v}_i \bar{v}_j 
+                = \frac{1}{\nu} \int (v_i - \bar{v}_i)(v_j - \bar{v}_j) f d^3v$$
+
+                Sustituyendo $\overline{v_i v_j} = \sigma_{ij}^2 + \bar{v}_i 
+                \bar{v}_j$ en las integrales, y utilizando la ecuación de 
+                continuidad para cancelar componentes derivativos acoplados, 
+                obtenemos la Ecuación de Jeans \cite{binney_tremaine_2008}:
+
+                $$\nu \frac{\partial \bar{v}_j}{\partial t} + \nu \bar{v}_i 
+                \frac{\partial \bar{v}_j}{\partial x_i} = -\nu \frac{\partial 
+                \Phi}{\partial x_j} - \frac{\partial (\nu \sigma_{ij}^2)}{
+                \partial x_i}$$
+
+        \subsection{Interpretación Física y Analogía Hidrodinámica}
+                El significado físico de la ecuación de Jeans adquiere profunda 
+                elocuencia cuando se compara con la ecuación de movimiento de 
+                Euler o Navier-Stokes, sin viscosidad cinemática que rige la 
+                dinámica de los gases.
+
+                El lado izquierdo de la ecuación de Jeans, $\nu (\frac{\partial 
+                \bar{v}_j}{\partial t} + \bar{v}_i \frac{\partial \bar{v}_j}{
+                \partial x_i})$, representa la aceleración convectiva de un 
+                volumen infinitesimal del "fluido" de trazadores estelares a lo 
+                largo de las trayectorias de su flujo sistemático medio 
+                \cite{binney_tremaine_2008}.
+
+                En el lado derecho de la ecuación residen las fuerzas 
+                macroscópicas por unidad de volumen  El término $-\nu \nabla 
+                \Phi$ es puramente la fuerza de atracción generada por el pozo 
+                de gravedad. El aspecto crucial reside en el último término: 
+                $-\frac{\partial (\nu \sigma_{ij}^2)}{\partial x_i}$. En un 
+                fluido ordinario, el equivalente a este término es el gradiente 
+                de presión isotrópica térmica $-\nabla P$ 
+                \cite{binney_tremaine_2008}. En un sistema estelar no colisional 
+                puro, la resistencia implosiva frente a la gravedad aplastante 
+                no deviene de fuerzas repulsivas intermoleculares, sino 
+                exclusivamente de la varianza estocástica geométrica de las 
+                órbitas estelares. Por ello, al producto $\nu \sigma_{ij}^2$ se 
+                le denomina el tensor de presión dinámica anisótropa 
+                \cite{mamon2010kinematic}.
+
+                Sin embargo, a diferencia de un gas molecular termalizado por 
+                frecuentes choques donde la dispersión es estadísticamente 
+                idéntica en cualquier eje, las estrellas en un cúmulo o halo 
+                retienen memorias orbitales dictadas por sus constantes de 
+                movimiento, de forma tal que $\sigma_{ij}^2$ no tiene por qué 
+                ser diagonal ni isotrópico. La presión estelar puede tener 
+                dependencias preferenciales o de cizallamiento a través de la 
+                presencia de términos no diagonales \cite{binney_tremaine_2008}. 
+                Si tomamos el primer momento espacial general (multiplicar toda 
+                la ecuación por las coordenadas $x_k$ e integrar sobre el 
+                volumen general del cúmulo), se recupera el Teorema del Virial 
+                en forma tensorial, el cual es el principio gobernante 
+                subyacente para las inferencias iniciales globales sobre masa en 
+                dinámica galáctica \cite{binney_tremaine_2008}.
+
+        \subsection{Formulación Esférica de la Ecuación de Jeans}
+                El tratamiento del tensor de dispersión de velocidades 
+                $\sigma_{ij}^2$ requiere adoptar sistemas de coordenadas 
+                alineados a las simetrías inherentes del modelo astronómico, 
+                reduciendo las seis variables teóricas independientes a un 
+                número conmensurable con las observables. A continuación, se 
+                detalla la formulación esférica de la ecuación de Jeans.
+
+                \subsubsection{Ecuación Esférica de Jeans}
+                    El marco de aplicación por excelencia para los cúmulos 
+                    estelares globulares y para cúmulos abiertos altamente 
+                    masivos es la aproximación esférica. Evaluada en coordenadas 
+                    polares esféricas $(r, \theta, \phi)$, la simetría fuerza a 
+                    que el potencial y la densidad sean únicamente funciones del 
+                    radio $r$, anulando la dependencia azimutal e inclinación 
+                    \cite{mamon2010kinematic}.
+
+                    Por argumentos de simetría fundamental invariante bajo 
+                    rotación, el tensor de esfuerzos cruzados se anula 
+                    ($\sigma_{r\theta}^2 = \sigma_{r\phi}^2 = \sigma_{
+                    \theta\phi}^2 = 0$) \cite{courteau2014galaxy}, asumiendo que 
+                    los ejes principales del elipsoide de velocidades están 
+                    perfectamente alineados con el sistema coordenado. Asumiendo 
+                    estacionalidad ($\partial/\partial t = 0$) y ausencia de 
+                    corrientes netas ($\bar{v} = 0$), el complejo sistema 
+                    matricial se colapsa en una única ecuación diferencial 
+                    ordinaria hidrostática que vincula la presión radial con la 
+                    componente gravitatoria \cite{binney_tremaine_2008}: 
+
+                    $$\frac{d(\nu \sigma_r^2)}{dr} + \frac{2\nu}{r}\left(
+                    \sigma_r^2 - \frac{\sigma_\theta^2 + \sigma_\phi^2}{2} 
+                    \right) = -\nu \frac{d\Phi}{dr}$$
+
+                    Dada la conservación de momento angular isótropa en una 
+                    morfología esférica media, las dispersiones tangenciales 
+                    angulares acaban siendo estocásticamente indiferenciables: 
+                    $\sigma_\theta^2 = \sigma_\phi^2 \equiv \sigma_t^2$. 
+                    Reestructurando el gradiente gravitacional mediante la masa 
+                    contenida newtoniana $M(r)$, la expresión simplificada es 
+                    \cite{mamon2010kinematic}:
+
+                    $$\frac{1}{\nu}\frac{d(\nu \sigma_r^2)}{dr} + \frac{2}{r}(
+                    \sigma_r^2 - \sigma_t^2) = - \frac{GM(r)}{r^2}$$
+            
+            \subsection{Dispersión de Velocidades y Anisotropía}
+                El término divergente en la ecuación esférica de Jeans ha 
+                introducido formalmente las componentes vectoriales de la 
+                varianza de la velocidad orbital: la dispersión radial 
+                $\sigma_r$ y la dispersión tangencial bidimensional $\sigma_t$ 
+                \cite{wolf_etal_2010}. La relación diferencial subraya un pilar 
+                físico de extrema trascendencia: a masa dinámica no puede 
+                inducirse exclusivamente a partir de las dispersiones 
+                individuales sin entender la correlación geométrica conjunta que 
+                adoptan las estrellas orbitantes.
+
+                Esta conjunción orbital se parametriza universalmente a través 
+                del parámetro de anisotropía de velocidad de Binney, denotado 
+                como $\beta(r)$ \cite{binney_tremaine_2008}:
+
+                $$\beta(r) \equiv 1 - \frac{\sigma_\theta^2 + \sigma_\phi^2}{2
+                \sigma_r^2} = 1 - \frac{\sigma_t^2}{\sigma_r^2}$$
+
+                El parámetro $\beta(r)$ es un indicador astrofísico adimensional 
+                que clasifica el ensamble topológico de las órbitas dominantes 
+                en la capa esférica del sistema estelar a una profundidad $r$ 
+                \cite{binney_tremaine_2008}:
+
+                \begin{itemize}
+                    \item $\beta = 0$: El sistema es un rotador isotrópico de 
+                    fase espacial. La presión gravitacional expansiva es 
+                    ejercida equivalentemente en todas las direcciones 
+                    tridimensionales $\sigma_r = \sigma_t$.
+
+                    \item $0 < \beta \leq 1$: Las estrellas ocupan un estado 
+                    anisótropo con sesgo radial. Las partículas se sumergen 
+                    gravitacionalmente hacia el pozo profundo de núcleo y 
+                    vuelven a alejarse en cuerdas elongadas. En el límite ideal 
+                    $\beta = 1$, las órbitas son puramente puras agujas radiales 
+                    y $\sigma_t = 0$.
+
+                    \item $\beta < 0$: El clúster adolece de un sesgo 
+                    tangencial. Las órbitas estelares son predominantemente 
+                    circulares, análogas a discos difusos. A medida que $\beta 
+                    \to -\infty$, $\sigma_r \to 0$.
+                \end{itemize}
+
+                La ecuación de Jeans esférica definitiva en términos de este 
+                coeficiente se consolida finalmente como:
+
+                $$\frac{d}{dr}(\nu \sigma_r^2) + \frac{2\beta(r)}{r} \nu 
+                \sigma_r^2 = - \nu \frac{GM(r)}{r^2}$$
+
+                Dado que el parámetro de anisotropía requiere conocimiento 
+                intrínseco de la función de distribución del espacio de fase 
+                inobservable $f(E, J)$, donde $E$ es la energía orbital y $J$ es 
+                el momento angular, investigaciones adoptan modelos heurísticos 
+                pre-configurados para $\beta(r)$ \cite{mamon2010kinematic}.
