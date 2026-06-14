@@ -53,3 +53,278 @@
             }
         \label{fig:masa_vs_chi2_3d}
     \end{figure}
+
+\section{Relaciones de Estructura Interna}
+
+    \subsection{Masa vs. Radio de Núcleo}
+        El análisis de la relación entre la masa total del cúmulo y su radio de 
+        núcleo revela un ajuste lineal en el espacio logarítmico con una 
+        pendiente de 0.439 y un intercepto de $-0.959$. Teóricamente, si la 
+        densidad estelar $\rho$ se mantuviera constante independientemente de la 
+        masa, se esperaría una relación de la forma $r_c \propto M^{1/3}$, dada 
+        por la expresión:$$r_c = \left(\frac{3M}{4\pi\rho}\right)^{1/3}$$
+
+        El valor obtenido de la pendiente dista del valor esperado de 0.333, lo 
+        que indica que la densidad media de los cúmulos depende de su masa. 
+        Además, la correlación entre ambas variables es débil y presenta una 
+        dispersión intrínseca muy pronunciada. Para un rango de masas de 
+        $\log(M_{tot}/M_\odot) \approx 3.0$ a $3.6$, los radios de núcleo varían 
+        en más de un orden de magnitud como se puede observar en la Figura 
+        \ref{fig:masa_vs_rc}. Esta dispersión no obedece simplemente a ruido 
+        observacional, sino que refleja que el tamaño de la región central 
+        depende fundamentalmente de la historia dinámica individual de cada 
+        sistema estelar.
+
+        Al analizar la distribución de edades, en la región de radios de núcleo 
+        pequeños, $\log r_c$ bajo, la proporción de cúmulos jóvenes, 
+        $\log \text{edad} < 8.5$, respecto a los viejos, $\log \text{edad} \geq 
+        8.5$, es de aproximadamente 0.54, evidenciando casi el doble de cúmulos 
+        maduros. Este comportamiento es coherente con el hecho de que los 
+        sistemas más evolucionados han tenido tiempo suficiente para 
+        experimentar procesos de relajación dinámica o colapso de núcleo, lo 
+        cual reduce drásticamente su $r_c$. Por el contrario, en la parte 
+        superior de la gráfica (radios de núcleo grandes), la proporción es de 
+        uno a uno. Desde la perspectiva de la dinámica estelar, esta paridad se 
+        explica porque un núcleo extendido caracteriza a sistemas que no han 
+        experimentado una contracción significativa. Esta región del espacio de 
+        parámetros es accesible tanto para cúmulos jóvenes que acaban de 
+        formarse, como para cúmulos viejos que, debido a una baja densidad 
+        inicial, aún no han colapsado. Asimismo, el hecho de que los cúmulos 
+        jóvenes se distribuyan a lo largo de todo el rango de $r_c$ responde a 
+        que no han transcurrido suficientes tiempos de relajación para 
+        redistribuir las estrellas y contraer el núcleo. Por tanto, el radio de 
+        núcleo en estas poblaciones jóvenes refleja principalmente las 
+        condiciones iniciales de formación, las cuales poseen una gran 
+        dispersión intrínseca ligada a las propiedades del gas molecular 
+        progenitor, la eficiencia de formación estelar y el entorno galáctico 
+        local.
+
+        \begin{figure}[htbp]
+            \centering
+            \includegraphics[width=0.8\textwidth]{
+                imagenes/masa_vs_radio_nucleo.png
+                } 
+            \caption{
+                \textbf{Relación entre la masa total y el radio de núcleo.} El 
+                eje de las abscisas representa la masa total en escala 
+                logarítmica $\log(M_{tot}/M_\odot)$, mientras que el eje de las 
+                ordenadas indica el radio de núcleo $\log r_c$ en parsecs. La 
+                barra de color codifica la edad de los sistemas en 
+                $\log(\text{años})$; los puntos en color gris corresponden a 
+                cúmulos sin datos de edad disponibles en el catálogo. La línea 
+                discontinua roja ilustra el ajuste lineal empírico de los datos, 
+                el cual presenta una pendiente de $0.439$, desviándose del 
+                valor teórico esperado de $0.333$ para un escenario de densidad 
+                constante, $r_c \propto M^{1/3}$. Se aprecia una pronunciada 
+                dispersión intrínseca, evidenciando que sistemas maduros tienden 
+                a poblar la región de radios comprimidos debido a procesos de 
+                relajación dinámica, mientras que el esparcimiento general 
+                refleja la dependencia del núcleo con las condiciones iniciales 
+                de formación y la historia evolutiva individual.
+                }
+            \label{fig:masa_vs_rc}
+        \end{figure}
+
+    \subsection{Masa vs. Radio de Marea}
+        Al examinar la dependencia del radio de marea con la masa, Figura 
+        \ref{fig:masa_vs_rt}, el ajuste logarítmico arroja una pendiente de 
+        0.216 y un intercepto de 0.825, lo cual también se aleja de la 
+        predicción isométrica de 0.333, reforzando la premisa de que la densidad 
+        global varía en función de la masa. Sin embargo, la correlación 
+        observada es más robusta que en el caso del radio de núcleo. Esto es 
+        esperable desde un marco teórico, ya que el tamaño límite del cúmulo 
+        está dictado directamente por el potencial gravitatorio de la Vía Láctea 
+        mediante la relación aproximada:$$r_t \approx 
+        \left(\frac{M_{tot}}{2M_\text{Gal}}\right)^{1/3} R_\text{Gal}$$ donde 
+        $R_\text{Gal}$ es la distancia galactocéntrica y $M_\text{Gal}$ 
+        representa la masa de la galaxia encerrada en dicho radio. La clara 
+        tendencia positiva confirma este vínculo dinámico, indicando que la 
+        dispersión vertical en $r_t$ para un valor de masa fijo es consecuencia, 
+        en gran medida, de la varianza en las distancias galactocéntricas de la 
+        muestra analizada.
+
+        Un rasgo estructural distintivo de esta relación es la fuerte 
+        estratificación del esparcimiento en función del radio de núcleo. Los 
+        cúmulos con un $r_c$ grande se ubican sistemáticamente en la envolvente 
+        superior de la distribución, valores altos de $r_t$, mientras que 
+        aquellos con un $r_c$ pequeño ocupan la franja inferior. Físicamente, 
+        esta estratificación se comprende de manera natural a través del 
+        parámetro de concentración $c$ de los modelos de King (1962). A una masa 
+        fija, un cúmulo con un núcleo extendido posee un valor de $c$ menor y, 
+        por construcción del perfil de densidad, exhibe un radio de marea 
+        relativamente mayor en comparación con un sistema más concentrado. Es 
+        decir, la posición de un cúmulo en el diagrama masa-radio de marea no 
+        solo está modulada por su masa y el entorno galáctico, sino que es 
+        altamente dependiente de su estado de concentración interna. Los 
+        cúmulos poco concentrados son aquellos que aún no han perdido masa 
+        significativa por evaporación y retienen perfiles espacialmente 
+        extendidos; en contraposición, los cúmulos que han sufrido colapso 
+        exhiben perfiles comprimidos, traduciéndose en radios de marea 
+        aparentemente menores para la misma masa. En cuanto a las edades, no se 
+        observa que los cúmulos viejos presenten de forma sistemática un $r_t$ 
+        mayor o menor; la migración radial continua de los cúmulos en el disco 
+        galáctico introduce una dispersión cinemática adicional que termina por 
+        diluir cualquier efecto sistemático derivado únicamente de la pérdida de 
+        masa por evaporación.
+
+        \begin{figure}[htbp]
+            \centering
+            \includegraphics[width=\textwidth]{imagenes/masa_vs_radio_marea.png} 
+            \caption{
+                \textbf{Dependencia del radio de marea con la masa total del 
+                cúmulo.} Ambos paneles presentan en el eje de las abscisas la 
+                masa total en escala logarítmica $\log(M_{tot}/M_\odot)$ y en 
+                las ordenadas el radio de marea $\log r_t$ en parsecs. 
+                \textbf{Izquierda:} La barra de color codifica la magnitud del 
+                radio de núcleo $\log r_c$. La línea discontinua roja representa 
+                un ajuste empírico con pendiente de 0.216, valor que difiere de 
+                la expectativa isométrica de 0.333. Se destaca una marcada 
+                estratificación vertical: los cúmulos con núcleos extendidos 
+                (tonos cálidos) exhiben sistemáticamente radios de marea 
+                mayores, evidenciando un menor grado de concentración interna de 
+                acuerdo con los modelos de King. \textbf{Derecha:} La barra de 
+                color indica la edad de la población estelar en 
+                $\log(\text{años})$, designando en gris a los sistemas sin 
+                estimación cronológica en el catálogo. En contraste con la 
+                estructura interna, no se observa una estratificación 
+                sistemática en función de la edad cronológica. Esta ausencia 
+                obedece a que la dispersión cinemática, generada por la 
+                migración radial continua de los cúmulos en el disco galáctico, 
+                diluye la correlación teórica ideal $r_t \approx 
+                \left(\frac{M_{tot}}{2M_{\text{Gal}}}\right)^{1/3} 
+                R_{\text{Gal}}$ y enmascara los efectos sistemáticos de la 
+                pérdida de masa por evaporación secular.
+                }
+            \label{fig:masa_vs_rt}
+        \end{figure}
+
+    \subsection{Radio de Núcleo vs. Radio de Marea}
+        La relación empírica entre el radio de núcleo y el radio de marea se 
+        describe de manera óptima mediante un ajuste polinomial de segundo grado 
+        en el espacio logarítmico, descartando la validez de una ley de potencia 
+        simple. Esto implica que la pendiente efectiva, dada por $d\log r_t / 
+        d\log r_c$, aumenta progresivamente a medida que crece el radio de 
+        núcleo. Si esta relación fuese estrictamente lineal, el parámetro de 
+        concentración $c$ peraría como una constante geométrica para toda la 
+        muestra. La naturaleza cuadrática del ajuste demuestra fehacientemente 
+        que la concentración varía de manera estructurada: los cúmulos con 
+        radios de núcleo pequeños son fuertemente concentrados, altos valores de 
+        $c$, mientras que los de radios grandes son difusos, bajos valores de 
+        $c$, como se observa en la Figura \ref{fig:rc_vs_rt}. Este 
+        comportamiento valida empíricamente la aplicabilidad de los perfiles de 
+        King (1966) en estos objetos, cuya familia de soluciones se parametriza 
+        precisamente a través de este gradiente de concentración.
+
+        La distribución demográfica en el plano $r_c-r_t$ revela implicaciones 
+        evolutivas. En el régimen de núcleos fuertemente comprimidos (parte 
+        izquierda del diagrama), la población está claramente enriquecida por 
+        sistemas maduros, contabilizando 22 cúmulos viejos frente a solo 12 
+        jóvenes. Este exceso obedece a que la contracción del núcleo es un 
+        proceso secular impulsado de forma gradual por la relajación dinámica a 
+        lo largo de múltiples tiempos de relajación ($t_\text{relax}$). Un 
+        cúmulo joven raramente dispone del tiempo evolutivo necesario para 
+        comprimir su núcleo hasta tales extremos, a menos que haya colapsado 
+        prematuramente debido a condiciones iniciales de densidad 
+        excepcionalmente altas. Por otro lado, en el régimen de núcleos grandes 
+        (parte derecha del diagrama), se observa una simetría perfecta con 6 
+        sistemas jóvenes y 6 viejos. Esta paridad se explica porque poseer un 
+        radio de núcleo grande es un estado dinámico accesible tanto para 
+        cúmulos jóvenes, que apenas comienzan su evolución y no han contraído su 
+        estructura, como para cúmulos viejos que, favorecidos por un entorno de 
+        fuerzas de marea débil o una densidad de formación muy baja, nunca 
+        experimentaron las condiciones requeridas para el colapso del núcleo.
+
+        \begin{figure}[htbp]
+            \centering
+            \includegraphics[width=0.8\textwidth]{
+                imagenes/radio_nucleo_vs_radio_marea.png
+                } 
+            \caption{
+                \textbf{Relación entre el radio de núcleo y el radio de marea.} 
+                En el eje de las abscisas se presenta el radio de núcleo $\log 
+                r_c$, y en las ordenadas el radio de marea $\log r_t$, ambos 
+                expresados en escala logarítmica y medidos en parsecs. La escala 
+                de color codifica la edad de la población estelar en 
+                $\log(\text{años})$, mientras que los marcadores en color gris 
+                designan a los cúmulos que carecen de una edad reportada. La 
+                curva discontinua roja traza un ajuste polinomial de segundo 
+                grado empírico. La desviación de una ley de potencia simple 
+                demuestra que el parámetro de concentración $c$ varía 
+                sistemáticamente a través de la muestra, validando la 
+                aplicabilidad de la familia de perfiles de King para describir 
+                esta diversidad estructural. Demográficamente, el diagrama 
+                revela que la región de núcleos comprimidos (extremo izquierdo) 
+                se encuentra fuertemente enriquecida por sistemas maduros, lo 
+                cual refleja la contracción secular del núcleo inducida por la 
+                relajación dinámica. En contraste, la región de núcleos 
+                extendidos (extremo derecho) exhibe una paridad de edades, 
+                evidenciando que este régimen estructural es accesible tanto 
+                para cúmulos jóvenes no relajados como para sistemas viejos que 
+                lograron eludir el colapso.
+                }
+            \label{fig:rc_vs_rt}
+        \end{figure}
+
+    \subsection{Masa vs. Parámetro de Concentración}
+        La proyección de la masa total frente al parámetro de concentración $c$ 
+        no exhibe una tendencia correlacional clara, Figura \ref{fig:masa_vs_c}; 
+        el grado de concentración de un cúmulo no crece de forma obvia ni 
+        monótona con su masa. Al caracterizar este espacio según la edad, se 
+        aprecia una dominancia de cúmulos viejos en ambos extremos del espectro 
+        de concentración: existen 11 sistemas viejos frente a 6 jóvenes en la 
+        zona de alta concentración, y 17 viejos frente a 12 jóvenes en la zona 
+        de baja concentración.
+
+        La presencia mayoritaria de poblaciones maduras en todo el rango de 
+        concentración se explica mediante la superposición de dos efectos 
+        físicos e instrumentales. Desde el punto de vista evolutivo, es 
+        esperable que el subgrupo de cúmulos altamente concentrados esté 
+        conformado mayormente por estrellas viejas, dado que los mecanismos de 
+        relajación dinámica incrementan el valor de $c$ de forma progresiva con 
+        el tiempo evolutivo. Sin embargo, un cúmulo viejo también puede 
+        presentar una baja concentración si se formó en un pozo de potencial 
+        tenue, evitando el colapso, o si se encuentra en las etapas finales de 
+        disolución, donde la evaporación estelar avanzada ha expandido sus capas 
+        internas. A nivel estadístico, la dominancia de sistemas viejos en ambas 
+        franjas es un reflejo del sesgo de supervivencia inherente a la muestra. 
+        Los cúmulos estelares con poblaciones masivas se forman continuamente 
+        pero también son progresivamente destruidos por el cizallamiento de la 
+        Vía Láctea y encuentros con nubes moleculares. Por ende, cualquier 
+        catálogo actual de este tipo estará intrínsecamente dominado por una 
+        cohorte de cúmulos robustos que han logrado sobrevivir a estos 
+        mecanismos de destrucción durante cientos de millones de años. En 
+        consecuencia, la abundancia absoluta de cúmulos viejos en este diagrama 
+        evidencia la distribución demográfica de las agrupaciones masivas en el 
+        disco galáctico, indicando que el parámetro de concentración es un 
+        trazador de la historia dinámica interna, mas no un indicador aislado de 
+        la edad cronológica del sistema.
+
+        \begin{figure}[htbp]
+            \centering
+            \includegraphics[width=0.8\textwidth]{
+                imagenes/masa_vs_concentracion.png
+                } 
+            \caption{
+                \textbf{Distribución del parámetro de concentración en función 
+                de la masa.} El eje de las abscisas representa la masa del 
+                cúmulo $\log(M_{tot}/M_\odot)$, y el eje de las ordenadas 
+                ilustra el parámetro de concentración de King $\log(r_t/r_c)$. 
+                La escala de color indica la edad poblacional en 
+                $\log(\text{años})$, designando en gris a los sistemas sin datos 
+                cronológicos reportados en el catálogo. A diferencia de otros 
+                parámetros estructurales, no se observa una correlación empírica 
+                clara o monótona que vincule la masa global con el grado de 
+                concentración interna. Desde una perspectiva demográfica, los 
+                sistemas maduros dominan de manera absoluta ambos extremos del 
+                espectro estructural. En el régimen de alta concentración, esta 
+                abundancia responde al incremento progresivo de $c$ impulsado 
+                por la relajación dinámica secular. Por el contrario, la 
+                presencia de cúmulos viejos con baja concentración señala a 
+                agrupaciones que evitaron el colapso inicial o que atraviesan 
+                fases avanzadas de expansión por evaporación estelar. La 
+                prevalencia global de sistemas maduros en todo el dominio 
+                evidencia el fuerte sesgo de supervivencia inherente a las 
+                poblaciones masivas del disco galáctico.
+                }
+        \label{fig:masa_vs_c}
+        \end{figure}
