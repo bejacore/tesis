@@ -431,3 +431,147 @@
             restricción física del modelo de King acota progresivamente la 
             incertidumbre en la profundidad simulada conforme la posición 
             estelar se aproxima al límite de marea.
+        
+    \subsection{Proyección gnomónica y transformación de coordenadas}
+        Con el propósito de mitigar los efectos de elongación artificial en la 
+        dirección de la línea de la visual, inducidos por las incertidumbres 
+        observacionales inherentes a las distancias individuales de 
+        Bailer-Jones, C. A. L et al., 2021, se procesó la muestra estelar 
+        mediante una estrategia de desacoplamiento geométrico. Para cada cúmulo 
+        bajo análisis, las coordenadas ecuatoriales $(\alpha, \delta)$ de los 
+        miembros confirmados se proyectan sobre un plano tangente bidimensional 
+        cuyo centro se define en el punto de máxima densidad del sistema dado 
+        por el catálogo de Hunt y Reffert, $(\alpha_c, \delta_c)$. Esta 
+        transformación se ejecuta mediante una proyección gnomónica que genera 
+        un conjunto de coordenadas angulares locales $(\xi, \eta)$. 
+        Posteriormente, estas posiciones angulares se escalan multiplicándolas 
+        por la distancia central estimada por Hunt y Reffet para el cúmulo 
+        ($d_0$), lo que permite obtener las posiciones cartesianas físicas 
+        transversales $(X, Y)$ expresadas en unidades de parsecs. A partir de 
+        este marco de referencia plano, se calcula el radio proyectado 
+        bidimensional $R$ de cada estrella respecto al baricentro del sistema 
+        mediante la relación geométrica convencional: 
+        
+        $$R = \sqrt{X^2 + Y^2}$$
+
+    \subsection{Ajuste del perfil de densidad superficial bidimensional}
+        Una vez establecida la distribución radial proyectada, se caracteriza la 
+        morfología bidimensional del cúmulo mediante el modelado de su perfil de 
+        densidad superficial de número de estrellas. El dominio radial del 
+        sistema se discretiza de manera automatizada en $N_{\rm bins}$ 
+        intervalos circulares concéntricos aplicando la regla de la raíz 
+        cuadrada sobre el número total de miembros confirmados, definida como 
+        $N_{\rm bins} = \lfloor \sqrt{N} \rfloor$. Para cada uno de los anillos 
+        radiales delimitados, la densidad superficial observada se calcula 
+        formalmente a través del cociente entre el conteo de fuentes contenidas 
+        y el área geométrica del anillo: 
+        
+        $$\Sigma_i = \frac{n_i}{A_i} = \frac{n_i}{\pi(R_{\rm hi}^2 - R_{\rm lo}^2)}$$ 
+        
+        donde $R_{\rm hi}$ y $R_{\rm lo}$ representan los radios externo e 
+        interno de cada intervalo, respectivamente. La distribución empírica 
+        resultante se modela mediante el ajuste de la formulación analítica de 
+        King para densidad proyectada, Ecuación~\eqref{eq:den_2d}.
+
+        El procedimiento de optimización numérica se realiza por medio de un 
+        algoritmo de mínimos cuadrados no lineales, incorporando una matriz de 
+        ponderación estadística inversamente proporcional a las incertidumbres 
+        de Poisson propagadas formalmente a la densidad como 
+        $\sigma_i = \sqrt{n_i}/A_i$. Para asegurar la convergencia del ajuste 
+        hacia mínimos globales físicamente realistas, se determinan parámetros 
+        iniciales adaptativos basados en los datos observados, donde la 
+        constante de normalización inicial $k_0$ se fija como el valor máximo de 
+        la densidad superficial medida, el radio del núcleo inicial $r_{c,0}$ se 
+        define como el cincuenta por ciento de la mediana de los radios 
+        proyectados, y el radio de marea inicial $r_{t,0}$ se iguala al radio 
+        máximo registrado en la muestra. El proceso converge para derivar el 
+        conjunto de parámetros estructurales bidimensionales del cúmulo: el 
+        radio del núcleo $r_{c,\rm 2D}$, el radio de marea $r_{t,\rm 2D}$ y el 
+        parámetro de normalización central $k_{\rm 2D}$.
+
+    \subsection{Reconstrucción tridimensional mediante muestreo de rechazo} 
+        Con el objetivo de restituir la profundidad espacial del sistema a lo 
+        largo de la línea de la visual de manera consistente con su estructura 
+        global, se aplica un algoritmo estocástico de muestreo de rechazo. Este 
+        método imputa una coordenada cartesiana de profundidad ($Z$) para cada 
+        estrella individual, asumiendo que la distribución volumétrica 
+        subyacente sigue un perfil de densidad simétrico. Para cada miembro 
+        confirmado cuyo radio proyectado satisface la condición de confinamiento 
+        gravitacional preliminar $R < r_{t,\rm 2D}$, se muestrea una coordenada 
+        de prueba $Z$ contenida dentro de un intervalo simétrico definido por 
+        $[-Z_{\rm max}, Z_{\rm max}]$, donde el límite físico de búsqueda se 
+        encuentra acotado por la frontera del radio de marea mediante la 
+        relación: 
+        
+        $$Z_{\rm max} = \sqrt{r_{t,\rm 2D}^2 - R^2}$$
+        
+        El algoritmo evalúa la aceptabilidad de la coordenada simulada 
+        calculando el radio tridimensional resultante, dado por 
+        $r = \sqrt{R^2 + Z^2}$, y evaluándolo en la función de densidad espacial 
+        de número, Ecuación~\eqref{eq:den_3d}. Como criterio de filtrado 
+        probabilístico local, se establece una densidad máxima de referencia 
+        denotada como $\varphi_{\rm max} = \varphi(R)$, la cual equivale al 
+        valor máximo absoluto de la función de densidad para un radio proyectado 
+        fijo, alcanzado geométricamente en el plano medio donde $Z=0$. Aquellas 
+        estrellas cuyas posiciones proyectadas originales se sitúan en las 
+        regiones externas del cúmulo y exceden el límite gravitacional inicial, 
+        de modo que $R \geq r_{t,\rm 2D}$, reciben una asignación de valor no 
+        numérico y se excluyen de los análisis volumétricos subsiguientes, dado 
+        que la probabilidad de existencia bajo las premisas del modelo 
+        estructural de King es nula.
+
+    \subsection{Ajuste espacial tridimensional y criterios de consistencia 
+    estadística}
+        Debido a la naturaleza estocástica que caracteriza el proceso de 
+        imputación de la tercera dimensión, la convergencia hacia un perfil 
+        espacial físicamente consistente se gestiona mediante un procedimiento 
+        iterativo que evalúa rigurosamente la calidad de las realizaciones 
+        macroscópicas. Se ejecuta un bucle numérico que analiza hasta un máximo 
+        de 10\,000 configuraciones espaciales independientes, inicializadas a 
+        partir de semillas pseudoaleatorias obtenidas mediante protocolos 
+        criptográficos de alta entropía. Para cada realización particular, se 
+        genera el vector completo de profundidades $Z$ y se calcula el perfil de 
+        densidad espacial empírico, $\varphi(r)$, discretizando la muestra 
+        tridimensional en $N_{\rm bins} = \lfloor \sqrt{N} \rfloor$ cascarones 
+        esféricos concéntricos. Sobre esta distribución observada, se realiza un 
+        ajuste numérico basado en el modelo espacial analítico de King, 
+        Ecuación~\eqref{eq:den_3d}.
+
+        El ajuste del perfil espacial se pondera en cada cascarón esférico por 
+        la incertidumbre formal de Poisson, expresada como 
+        $\sigma_i = \sqrt{n_i}/V_i$, donde $V_i = \frac{4}{3}\pi(r_{\rm hi}^3 - 
+        r_{\rm lo}^3)$ representa el volumen geométrico del cascarón. La bondad 
+        del ajuste y la validez física de la simulación se examinan mediante el 
+        estadístico de chi-cuadrado, definido como: 
+        
+        $$\chi^2 = \sum_i \left(\frac{n_{{\rm obs}, \, i} - 
+        n_{{\rm model}, \, i}}{\sigma_i}\right)^2$$
+        
+        con un número de grados de libertad dado por $\nu = N_{\rm bins} - 3$. 
+        Una realización estructural se acepta formalmente si satisface de manera 
+        simultánea tres criterios de control de calidad: el chi-cuadrado 
+        reducido debe cumplir la condición $0.3 \leq \chi^2_\nu \leq 3.0$, el 
+        nivel de significancia estadística determinado por el $p$-valor debe ser 
+        mayor o igual a $0.05$, y el radio de marea tridimensional óptimo debe 
+        respetar la restricción física de escala $r_{t,\rm 3D} \leq 
+        5\,r_{t,\rm 2D}$. El algoritmo interrumpe el bucle iterativo al hallar 
+        la primera semilla aleatoria que cumple la totalidad de las condiciones. 
+        Si ninguna de las iteraciones alcanza los umbrales de calidad, el 
+        algoritmo conserva el ajuste que exhiba el menor valor de chi-cuadrado 
+        reducido como solución provisional. Finalmente, se registran de forma 
+        sistemática los parámetros estructurales tridimensionales 
+        ($r_{c,\rm 3D}$, $r_{t,\rm 3D}$, $k_{\rm 3D}$), las métricas de 
+        diagnóstico ($\chi^2$, $\chi^2_\nu$, $p$-valor), la semilla 
+        criptográfica óptima y el número total de intentos requeridos.
+
+\subsection{Modelación de la dispersión de velocidades mediante la ecuación de Jeans}
+
+A partir de la configuración tridimensional consolidada y utilizando las masas individuales de las estrellas válidas dentro del radio de marea, se evalúa el estado dinámico del cúmulo mediante la ecuación de Jeans para sistemas esféricos e isotrópicos en equilibrio hidrostático. La distribución espacial de la masa se determina asumiendo que el perfil de densidad de masa volumétrica es directamente proporcional a la densidad numérica de King optimizada en la etapa previa, de modo que $\rho(r) = M_{\rm mean} \cdot n(r)$, donde $M_{\rm mean}$ representa la masa estelar promedio del sistema. La masa acumulada dentro de una esfera de radio $r$, denotada como $M(<r)$, se calcula a través de la integración numérica del perfil de densidad de masa. Con estos elementos, el perfil teórico de la dispersión de velocidades al cuadrado se determina resolviendo la integral dinámica de Jeans:
+\begin{equation}
+\sigma^2(r) = \frac{G}{\rho(r)} \int_r^{r_t} \rho(r') \frac{M(<r')}{r'^2} \, dr'
+\end{equation}
+donde la constante de gravitación universal $G$ se fija en un valor numérico de $4.3 \times 10^{-3}$ pc $M_\odot^{-1}$ (km/s)$^2$ para mantener la consistencia con las unidades físicas del problema. Para la comparación directa con las observaciones, este perfil cinemático teórico se evalúa sobre una malla numérica densa de 2000 puntos discretos y posteriormente se interpola hacia los radios específicos de los miembros. Por otro lado, el perfil de dispersión de velocidades empírico se calcula directamente en bines a partir de los datos cinemáticos individuales de la muestra. Finalmente, se realiza una optimización numérica por mínimos cuadrados sobre el perfil observado para derivar los parámetros dinámicos fundamentales del cúmulo abiertos: el radio del núcleo dinámico $r_{c,\sigma}$, el radio de marea cinemático $r_{t,\sigma}$ y la constante de escala cinemática $k_\sigma$.
+
+\subsection{Generación de perfiles radiales y catálogo global}
+
+La etapa final del pipeline automatiza la estructuración y exportación de las variables físicas calculadas, organizando los resultados en archivos de texto plano para su posterior interpretación astrofísica. Para cada cúmulo procesado, se generan dos perfiles radiales independientes en formato de valores separados por comas. El primero corresponde al perfil superficial, el cual tabula la densidad de número proyectada por anillo plano y la dispersión de velocidades radiales observadas por bin. El segundo archivo comprende el perfil espacial, donde se detallan la densidad de número volumétrica, la densidad de masa tridimensional y la dispersión de velocidades teórica derivada de la integración de Jeans para cada cascarón esférico. Con el fin de asegurar poblaciones estadísticamente homogéneas y minimizar las fluctuaciones numéricas en las regiones externas, ambos perfiles se construyen empleando bines adaptativos definidos por percentiles de igual número de estrellas. Adicionalmente, el pipeline consolida una tabla global que compendia la totalidad de los parámetros estructurales bidimensionales, tridimensionales y cinemáticos extraídos, junto con sus respectivas métricas de calidad estadística y diagnóstico computacional.
