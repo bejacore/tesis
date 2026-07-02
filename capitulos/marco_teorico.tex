@@ -288,17 +288,15 @@
     forma más simple, es decir, asumiendo un cúmulo esférico o isotrópico, el 
     teorema del virial da $M \approx \frac{5\sigma^2 r_h}{G}$ o similar, donde 
     el factor de 5 depende del perfil. Alternativamente, integrando la ecuación 
-    de Jeans radial se obtiene la masa interior a $r$: $$\frac{\mathrm{d}(\rho
-    \sigma^2_r)}{\mathrm{d}r} + \frac{2\beta\rho\sigma^2_r}{r} = -\rho
-    \frac{\mathrm{d}\Phi}{\mathrm{d}r}$$ donde $\rho(r)$ es la densidad estelar, 
-    $\sigma_r$ la dispersión radial y $\beta$ el parámetro de anisotropía. Al 
-    conocer $\sigma(r)$ y $\rho(r)$, se inferiría el potencial $\Phi(r)$ y por 
-    ende la masa. Sin embargo, sin $\beta$ se suele asumir isotropía ($\beta = 
-    0$). En la práctica se comparan perfiles de velocidad con modelos como King, 
-    Plummer u otros de distribución, que que fijan masa total y M/L. Por 
-    ejemplo, Cantat-Gaudin et al. usaron UPMASK más isocronas para encontrar 
-    masa integrada y distribución de masa \cite{cantat2018gaia}, y Elsanhoury et 
-    al. obtuvieron masas totales directamente de tales ajustes MCMC de Gaia 
+    de Jeans radial, Ecuación~\eqref{eq:jeans_esferica}, se obtiene la masa 
+    interior a $r$. Al conocer $\sigma(r)$ y $\rho(r)$, se inferiría el 
+    potencial $\Phi(r)$ y por ende la masa. Sin embargo, sin $\beta$ se suele 
+    asumir isotropía ($\beta = 0$), Ecuación~\eqref{eq:jeans_integral}. En la 
+    práctica se comparan perfiles de velocidad con modelos como King, Plummer u 
+    otros de distribución, que que fijan masa total y M/L. Por ejemplo, 
+    Cantat-Gaudin et al. usaron UPMASK más isocronas para encontrar masa 
+    integrada y distribución de masa \cite{cantat2018gaia}, y Elsanhoury et al. 
+    obtuvieron masas totales directamente de tales ajustes MCMC de Gaia 
     \cite{Elsanhoury2026}. Los cúmulos más masivos o densos requieren explicar 
     por qué su valor M/L dinámico puede exceder el de la población de estrellas 
     visibles, esto puede ser por la presencia de enanas blancas, estrellas 
