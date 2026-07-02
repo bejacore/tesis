@@ -854,7 +854,29 @@
 
                     $$\frac{1}{\nu}\frac{d(\nu \sigma_r^2)}{dr} + \frac{2}{r}(
                     \sigma_r^2 - \sigma_t^2) = - \frac{GM(r)}{r^2}$$
-            
+
+                    Asumiendo un estado de isotropía total en la dispersión de 
+                    velocidades, la dispersión es idéntica en todas las 
+                    direcciones del sistema, es decir, $\sigma_r^2 = \sigma_t^2 
+                    \equiv \sigma^2$. Con esta consideranción, el término de 
+                    anisotropía cruzada se anula, reduciendo la ecuación 
+                    anterior a la forma:
+
+                    $$\frac{1}{\nu} \frac{d(\nu \sigma^2)}{dr} = 
+                    -\frac{GM(r)}{r^2}$$
+
+                    Esta ecuación diferencial ordinaria permite una solución 
+                    mediante integración directa desde un radio interior de 
+                    interés $r$ hasta el infinito, dando lugar a la formulación 
+                    integral de la ecuación de Jeans 
+                    \cite{binney_tremaine_2008}:
+
+                    \begin{equation}
+                        \sigma^2(r) = \frac{1}{\nu(r)} \int_r^\infty \nu(r') 
+                        \frac{GM(r')}{r'^2} dr'
+                        \label{eq:jeans_integral}
+                    \end{equation}
+       
             \subsection{Dispersión de Velocidades y Anisotropía}
                 El término divergente en la ecuación esférica de Jeans ha 
                 introducido formalmente las componentes vectoriales de la 
