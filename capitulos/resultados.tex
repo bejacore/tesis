@@ -2,707 +2,619 @@
 
 \chapter{Resultados}
 
-\section{Descripción de Datos Filtrados}
+    \section{Caracterización General de la Muestra}
 
-    Para garantizar la robustez estadística de los parámetros estructurales 
-    derivados, la muestra inicial de 100 cúmulos fue sometida a un proceso de 
-    depuración de datos anómalos. Este procedimiento de selección se implementó 
-    aplicando el método del rango intercuartílico (IQR) de forma bivariada sobre 
-    los valores del radio de núcleo tridimensional ($r_c$) y la masa total del 
-    cúmulo ($M_{\text{total}}$). La efectividad de este criterio estadístico es 
-    evidente al analizar la distribución de las escalas espaciales internas, 
-    donde los sistemas excluidos presentaban extensiones extremas; el filtrado 
-    permitió consolidar una muestra refinada cuyos radios de núcleo se 
-    concentran predominantemente en un régimen físicamente cohesivo, por debajo 
-    de los $13\text{ pc}$.
+        La muestra analizada comprende 100 cúmulos estelares del catálogo de 
+        Hunt y Reffert (2023), de los cuales 54 corresponden a cúmulos abiertos 
+        y 46 a cúmulos globulares. Esta heterogeneidad morfológica es el factor 
+        de confusión más relevante del análisis y se tratará explícitamente en 
+        cada subsección. El método usado para el ajuste tridimensional de King 
+        produjo soluciones estadísticamente aceptadas para 59 de los 100 
+        cúmulos, definidas por el cumplimiento simultáneo de los criterios de 
+        $\chi^2_\nu$, p-valor y consistencia física entre los radios de marea 2D 
+        y 3D.
 
-    Al evaluar la bondad de ajuste de los perfiles de densidad espacial 
-    tridimensional mediante el estadístico $\chi^2$, se evidencia una clara 
-    estratificación en la confiabilidad de los modelos analíticos en función de 
-    la masa del cúmulo. En el plano de $\log(\chi^2)$ respecto a 
-    $\log(M_{\text{total}}/\text{M}_\odot)$, los cúmulos retenidos tras el 
-    filtro IQR abarcan un rango de masas totales comprendido mayoritariamente 
-    entre $10^{2.8} \text{ M}_\odot$ y $10^{4.0} \text{ M}_\odot$. Para este 
-    subconjunto robusto, el logaritmo del estadístico de prueba se mantiene 
-    consistentemente acotado, distribuyéndose en un intervalo aproximado de 
-    $-0.2$ a $0.8$. Por el contrario, los sistemas catalogados como atípicos y 
-    excluidos del análisis subsiguiente tienden a segregar hacia el régimen de 
-    masas más elevadas, superando los $10^{4.0} \text{ M}_\odot$, y exhiben 
-    simultáneamente dispersiones mayores en la bondad de ajuste, con valores de 
-    $\log(\chi^2)$ que superan sistemáticamente el umbral de $0.4$ y alcanzan 
-    picos por encima de $1.0$. Esta divergencia paramétrica indica que el modelo 
-    clásico de King resulta notablemente menos representativo, o presenta 
-    mayores discrepancias en la minimización de los residuales, para las 
-    agrupaciones estelares más masivas de la muestra, validando de manera 
-    independiente la idoneidad del corte estadístico implementado.
-    
-    \begin{figure}[htbp]
-        \centering
-        \includegraphics[width=0.8\textwidth]{imagenes/masa_vs_chi2_king3d.png}
-        \caption{
-            Relación entre la masa total de los cúmulos, 
-            $\log(M_{\text{tot}}/\text{M}_\odot)$, y la bondad de ajuste de sus 
-            respectivos perfiles de densidad espacial de King, evaluada mediante 
-            el estadístico $\chi^2$ reducido ($\log \chi^2_{\nu,\text{3D}}$). 
-            Los puntos en color naranja identifican la muestra consolidada de 
-            cúmulos tras aplicar el filtro IQR. En contraste, los puntos azules 
-            representan los sistemas estadísticamente atípicos que fueron 
-            excluidos del análisis. Se evidencia una tendencia en la que las 
-            agrupaciones estelares de mayor masa exhiben desviaciones más 
-            pronunciadas respecto al modelo analítico.
-            }
-        \label{fig:masa_vs_chi2_3d}
-    \end{figure}
+        El Cuadro \ref{tab:estadisticas} resume las estadísticas por tipo 
+        morfológico. La separación más pronunciada entre ambas poblaciones es 
+        espacial y másica como ilustra la Figura \ref{fig:d_vs_rt__N_vs_masa}: 
+        la distancia heliocéntrica mediana de los globulares, 7 853 pc, supera 
+        en un factor de aproximadamente 3.7 a la de los cúmulos abiertos, 2 096 
+        pc. Las pruebas t de Welch confirman diferencias significativas en 
+        $r_{t,\, 3{\rm D}}$ ($t = -2.612$, $p = 0.011$), masa total ($t = 
+        -3.429$, $p = 0.001$), número de miembros ($t = -3.295$, $p = 0.002$) y 
+        distancia al cúmulo ($t = -9.563$, $p = 2.6 \times 10^{-13}$), mientras 
+        que los radios de núcleo ($t = -1.240$, $p = 0.219$) y el parámetro de 
+        concentración ($t = +0.973$, $p = 0.333$) no difieren significativamente 
+        entre tipos. Este resultado indica que el perfil de King describe 
+        estructuraciones nucleares cualitativamente similares en ambas 
+        poblaciones, pese a sus diferencias de masa y posición galáctica.
 
-\section{Relaciones de Estructura Interna}
-    Para comprender el estado evolutivo de los cúmulos estelares, resulta 
-    fundamental analizar las correlaciones existentes entre sus parámetros 
-    físicos intrínsecos. En esta sección se examinan las relaciones entre la 
-    masa total y los radios espaciales característicos, así como la variación 
-    del parámetro de concentración, con el propósito de deducir el grado de 
-    influencia de la masa y el tiempo sobre la dinámica estructural de la 
-    muestra.
+        El parámetro de concentración $c_{3{\rm D}}$ presenta una distribución 
+        centrada en valores intermedios (${\rm media} = 0.984 \pm 0.245$, 
+        ${\rm mediana} = 0.986$) con un único cúmulo superando $c_{3{\rm D}} > 
+        1.5$: Trumpler 10 ($c_{3{\rm D}} = 1.887$), cuyo radio de núcleo de 3.35 
+        pc contrasta con un radio de marea excepcionalmente extendido de 258.4 
+        pc. Este objeto se aborda con mayor detalle en la Sección 
+        \ref{sec:t_relax}.
 
-    \subsection{Masa vs. Radio de Núcleo}
-       La Figura \ref{fig:masa_vs_rc} muestra el diagrama log-log de masa total 
-       vs. radio de núcleo, con la línea del ajuste lineal superpuesta y los 
-       puntos coloreados por edad logarítmica. El ajuste lineal en este espacio 
-       arroja una pendiente de 0.439 y un intercepto de -0.959. Se espera 
-       teóricamente que el radio de núcleo se relacione con la masa mediante la 
-       expresión:
+        \begin{table}[h]
+            \centering
+            \begin{subtable}{\textwidth}
+                \centering
+                \begin{tabular}{|l|c|c|c|c|c|c|}
+                    \hline
+                    \textbf{Parámetro} & \textbf{Unidad} & \textbf{Media} & \textbf{Mediana} & \textbf{Desv. est.} & \textbf{Mínimo} & \textbf{Máximo} \\
+                    \hline
+                    $r_c$ & pc & 4.87 & 2.52 & 7.61 & 1.36 & 47.77 \\ 
+                    \hline
+                    $r_t$ & pc & 38.77 & 28.68 & 37.58 & 13.56 & 258.36 \\
+                    \hline
+                    $c$ & - & 1.01 & 1.00 & 0.28 & -0.03 & 1.89 \\
+                    \hline
+                    $M_{\rm tot}$ & $M_\odot$ & 2487 & 2081 & 1325 & 770 & 6323 \\
+                    \hline
+                    $N$ miembros & - & 1901 & 1566 & 902 & 1056 & 4193 \\
+                    \hline
+                    Distancia & pc & 2225 & 2096 & 1426 & 135 & 5036 \\
+                    \hline
+                    $\log({\rm años})$ & $\log{a}$ & 8.699 & 8.730 & 0.544 & 7.44 & 9.58 \\
+                    \hline
+                \end{tabular}
+                \caption{Cúmulos abiertos (n = 54)}
+            \end{subtable}
 
-       $$r_c = \left(\frac{3M}{4\pi\rho}\right)^{1/3}$$
+            \vspace{0.5cm}
 
-       donde $\rho$ representa la densidad central. La desviación observada 
-       respecto al valor teórico de 1/3 implica que la densidad $\rho$ de los 
-       cúmulos no es constante, sino que depende directamente de su masa. 
-       Adicionalmente, se evidencia una correlación débil caracterizada por una 
-       dispersión intrínseca muy pronunciada. Por ejemplo, en el intervalo de 
-       masas $\log(M/M_\odot) \approx 3.0$–$3.6$, los radios de núcleo varían en 
-       más de un orden de magnitud ($\log r_c \approx 0.1$–$1.1$ pc). Esta 
-       dispersión responde a fenómenos físicos y no observacionales; refleja que 
-       el radio de núcleo está dictado por la historia dinámica individual de 
-       cada sistema, incluyendo la relajación dinámica, la evaporación estelar y 
-       el colapso de núcleo, y no de forma exclusiva por su masa, demostrando 
-       que los cúmulos más masivos no desarrollan sistemáticamente núcleos más 
-       extensos.
+            \begin{subtable}{\textwidth}
+                \centering
+                \begin{tabular}{|l|c|c|c|c|c|c|}
+                    \hline
+                    \textbf{Parámetro} & \textbf{Unidad} & \textbf{Media} & \textbf{Mediana} & \textbf{Desv. est.} & \textbf{Mínimo} & \textbf{Máximo} \\
+                    \hline
+                    $r_c$ & pc & 6.29 & 5.94 & 3.27 & 1.50 & 20.59 \\ 
+                    \hline
+                    $r_t$ & pc & 58.76 & 46.11 & 38.62 & 13.56 & 240.89 \\
+                    \hline
+                    $c$ & - & 0.96 & 0.98 & 0.20 & 0.28 & 1.33 \\
+                    \hline
+                    $M_{\rm tot}$ & $M_\odot$ & 10685 & 4904 & 16171 & 1425 & 99612 \\
+                    \hline
+                    $N$ miembros & - & 7232 & 3317 & 10943 & 1081 & 65860 \\
+                    \hline
+                    Distancia & pc & 8017 & 7853 & 3892 & 1771 & 19971 \\
+                    \hline
+                    $\log({\rm años})$ & $\log{a}$ & - & - & - & - & - \\
+                    \hline
+                \end{tabular}
+                \caption{Cúmulos globulares (n = 46)}
+            \end{subtable}
 
-       Al analizar la distribución por edades, la mitad inferior de la gráfica, 
-       correspondiente a radios de núcleo pequeños, muestra una proporción de 12 
-       cúmulos jóvenes ($\log\text{edad} < 8.5$) frente a 22 viejos 
-       ($\log\text{edad} \geq 8.5$). Esta mayoría de sistemas antiguos es 
-       consistente con poblaciones dinámicamente evolucionadas que tienden a 
-       presentar eventos de colapso de núcleo, reduciendo así su dimensión 
-       central $r_c$. En contraste, en la mitad superior, radios amplios, la 
-       proporción de edades se equilibra a 6 jóvenes y 6 viejos. Esto argumenta 
-       que los sistemas estelares con un $r_c$ grande pueden ser tanto jóvenes, 
-       en los cuales la contracción secular aún no ha ocurrido, como sistemas 
-       viejos que han evitado el colapso por encontrarse en entornos galácticos 
-       de muy baja densidad. Finalmente, se observa que los cúmulos jóvenes se 
-       extienden a lo largo de todo el dominio de $r_c$. Dicho comportamiento 
-       obedece a que el tamaño nuclear en edades tempranas encapsula las 
-       condiciones iniciales de formación, tales como las propiedades 
-       intrínsecas de la nube molecular progenitora y la eficiencia de formación 
-       estelar. Para estos sistemas, el lapso temporal transcurrido resulta 
-       insuficiente para que la dinámica colectiva logre homogenizar las 
-       estructuras iniciales. 
+            \caption{
+                Estadisticas de los parámetros físicos de la muestra, separadas 
+                por tipo morfológico. $\log({\rm años})$ no está disponible para 
+                cúmulos globulares. Se presentan el total de cúmulos de cada 
+                tipo, no solo los aceptados por el ajuste. Los rangos extremos 
+                de masa total y número de miembros de los globulares reflejan la 
+                heterogeneidad intrínseca de esa población.
+                }
+            \label{tab:estadisticas}
+        \end{table}
 
         \begin{figure}[htbp]
             \centering
-            \includegraphics[width=0.8\textwidth]{
-                imagenes/masa_vs_radio_nucleo.png
-                } 
+            \includegraphics[width=\textwidth]{imagenes/d_vs_rt__N_vs_mtot.png}
             \caption{
-                \textbf{Relación entre la masa total y el radio de núcleo.} El 
-                eje de las abscisas representa la masa total en escala 
-                logarítmica $\log(M_{tot}/M_\odot)$, mientras que el eje de las 
-                ordenadas indica el radio de núcleo $\log r_c$ en parsecs. La 
-                barra de color codifica la edad de los sistemas en 
-                $\log(\text{años})$; los puntos en color gris corresponden a 
-                cúmulos sin datos de edad disponibles en el catálogo. La línea 
-                discontinua roja ilustra el ajuste lineal empírico de los datos, 
-                el cual presenta una pendiente de $0.439$, desviándose del 
-                valor teórico esperado de $0.333$ para un escenario de densidad 
-                constante, $r_c \propto M^{1/3}$. Se aprecia una pronunciada 
-                dispersión intrínseca, evidenciando que sistemas maduros tienden 
-                a poblar la región de radios comprimidos debido a procesos de 
-                relajación dinámica, mientras que el esparcimiento general 
-                refleja la dependencia del núcleo con las condiciones iniciales 
-                de formación y la historia evolutiva individual.
+                Diagramas de dispersión de $r_{t,\, 3{\rm D}}$ vs. distancia y 
+                masa total vs. número de miembros, coloreados por tipo 
+                morfológico ilustrando la separación entre ambas poblaciones en 
+                extensión tidial, masa y posición.
                 }
-            \label{fig:masa_vs_rc}
+            \label{fig:d_vs_rt__N_vs_masa}
         \end{figure}
 
-    \subsection{Masa vs. Radio de Marea}
-        La Figura \ref{fig:masa_vs_rt} presenta el diagrama de masa total vs. 
-        radio de marea en escala logarítmica. El panel izquierdo colorea los 
-        puntos por $\log r_c$ y el panel derecho por edad logarítmica. El ajuste 
-        posee una pendiente de 0.216 y un intercepto de 0.825. La dependencia 
-        analítica esperada sigue una ley de proporcionalidad dada por:
+    \section{Validación del Método Frente al Catálogo}
+        \subsection{Validación de Radios de Núcleo y de Marea}
+            La comparación entre los parámetros obtenidos del método y los 
+            valores del catálogo permite evaluar la consistencia del método de 
+            ajuste tridimensional. Para el radio de núcleo, Figura 
+            \ref{fig:val_radios} panel izquierdo, la correlación método-catálogo 
+            es alta ($r = +0.809$, $p = 2.7 \times 10^{-24}$, $n = 100$), con la 
+            regresión lineal $r_{c,\, 3{\rm D}} = 0.51 \times 
+            r_{c,\, {\rm cat}} + 0.86$ pc. El método produce valores 
+            sistemáticamente menores que el catálogo, comportamiento esperado de 
+            la deconvolución tridimensional: el perfil de King proyectado sobre 
+            el plano del cielo sobreestima el radio de núcleo respecto al ajuste 
+            volumétrico 3D. La consistencia interna 2D al 3D del método es aún 
+            más alta ($r = +0.963$, $p = 9.0 \times 10^{-58}$, $n = 100$), con 
+            el 87.0\% de los cúmulos presentando $r_{c,\, 3{\rm D}} > 
+            r_{c,\, 2{\rm D}}$.
 
-        $$r_t \approx \left(\frac{M}{2M_{\rm Gal}}\right)^{1/3} R_{\rm Gal}$$
-
-        Al comparar la pendiente observada con la fracción teórica de 1/3, se 
-        confirma, en consonancia con la relación del radio de núcleo, que la 
-        densidad superficial de los cúmulos exhibe una variación sistemática con 
-        la masa. Sin embargo, la correlación en el radio de marea es 
-        notablemente más clara debido a que el $r_t$ se halla anclado de forma 
-        directa al potencial gravitatorio galáctico externo. En consecuencia, 
-        la dispersión vertical observada para una masa constante refleja de 
-        manera prioritaria la varianza en las distancias galactocéntricas 
-        intrínsecas a la muestra, y no un grado elevado de incertidumbre física.
-
-        El diagrama coloreado por $\log r_c$ revela que la dispersión se 
-        estratifica en función de la concentración estructural del sistema. Los 
-        cúmulos provistos de radios de núcleo amplios, y por ende de baja 
-        concentración, $c$, tienden a agruparse en la región superior de la 
-        distribución paramétrica del $r_t$. Por el contrario, los cúmulos con 
-        radio de núcleo reducido, alta concentración, dominan la franja inferior 
-        de la nube de datos. El fundamento físico de esta distribución reside en 
-        que, para una masa equivalente, un cúmulo con un $r_c$ grande se 
-        presenta como un sistema más difuso, lo que propicia una mayor extensión 
-        total del campo de marea; de manera inversa, aquellos perfiles 
-        fuertemente concentrados empaquetan la masa en un volumen interior muy 
-        confinado, resultando en radios de marea comparativamente menores frente 
-        a la dispersión global esperada.
-
-        Respecto al indicador de edad, la zona superior de altos radios de marea 
-        se encuentra equilibrada, mostrando 4 sistemas jóvenes frente a 3 
-        viejos. En cambio, en la región de menor extensión mareal dominan los 
-        cúmulos viejos en una proporción de 14 frente a 25. Estos datos 
-        demuestran que los cúmulos más evolucionados no conservan de forma 
-        sistemática un radio de marea mayor, contrariamente a lo esperado si se 
-        considerara que han perdido cohesión. Aunque la pérdida de miembros por 
-        evaporación estelar erosiona la masa total del sistema limitando 
-        mecánicamente el $r_t$, este fenómeno interactúa competitivamente con la 
-        migración radial del cúmulo a través del disco. Las modificaciones 
-        subsecuentes en la posición galactocéntrica introducen, por tanto, 
-        alteraciones adicionales sobre el radio de marea y diluyen cualquier 
-        señal evolutiva pura.
-
-        \begin{figure}[htbp]
-            \centering
-            \includegraphics[width=\textwidth]{imagenes/masa_vs_radio_marea.png} 
-            \caption{
-                \textbf{Dependencia del radio de marea con la masa total del 
-                cúmulo.} Ambos paneles presentan en el eje de las abscisas la 
-                masa total en escala logarítmica $\log(M_{tot}/M_\odot)$ y en 
-                las ordenadas el radio de marea $\log r_t$ en parsecs. 
-                \textbf{Izquierda:} La barra de color codifica la magnitud del 
-                radio de núcleo $\log r_c$. La línea discontinua roja representa 
-                un ajuste empírico con pendiente de 0.216, valor que difiere de 
-                la expectativa isométrica de 0.333. Se destaca una marcada 
-                estratificación vertical: los cúmulos con núcleos extendidos 
-                (tonos cálidos) exhiben sistemáticamente radios de marea 
-                mayores, evidenciando un menor grado de concentración interna de 
-                acuerdo con los modelos de King. \textbf{Derecha:} La barra de 
-                color indica la edad de la población estelar en 
-                $\log(\text{años})$, designando en gris a los sistemas sin 
-                estimación cronológica en el catálogo. En contraste con la 
-                estructura interna, no se observa una estratificación 
-                sistemática en función de la edad cronológica. Esta ausencia 
-                obedece a que la dispersión cinemática, generada por la 
-                migración radial continua de los cúmulos en el disco galáctico, 
-                diluye la correlación teórica ideal $r_t \approx 
-                \left(\frac{M_{tot}}{2M_{\text{Gal}}}\right)^{1/3} 
-                R_{\text{Gal}}$ y enmascara los efectos sistemáticos de la 
-                pérdida de masa por evaporación secular.
-                }
-            \label{fig:masa_vs_rt}
-        \end{figure}
-
-    \subsection{Radio de Núcleo vs. Radio de Marea}
-        La Figura \ref{fig:rc_vs_rt} muestra el diagrama $\log r_c$ vs. 
-        $\log r_t$ con el ajuste polinomial de grado 2 superpuesto. La presencia 
-        de un perfil de mejor ajuste de carácter cuadrático sobre un dominio 
-        logarítmico indica que la interdependencia estructural no obedece a una 
-        ley de potencia simple, sino que la pendiente efectiva de la relación, 
-        $d\log r_t / d\log r_c$, se incrementa a medida que crece el tamaño del 
-        núcleo.
-
-        Si la relación observacional consistiera en una configuración 
-        estrictamente lineal, $\log r_t = \alpha \log r_c + \text{const}$, el 
-        parámetro de concentración evaluado como $c = r_t/r_c$ permanecería 
-        constante a lo largo de toda la población estudiada. Sin embargo, la 
-        naturaleza curvilínea del ajuste prueba que la concentración $c$ está 
-        sujeta a variaciones sistemáticas: los cúmulos caracterizados por un 
-        $r_c$ pequeño poseen parámetros $c$ sistemáticamente altos, 
-        comportamiento propio de núcleos extremadamente compactos en fases 
-        maduras de colapso, mientras que los sistemas expansivos con gran $r_c$ 
-        operan bajo concentraciones globales menores. Esta variabilidad 
-        concuerda estrechamente con la fenomenología dictada por la familia de 
-        modelos de King (1966), donde $c$ ejerce como el principal parámetro de 
-        forma para moldear el perfil gravitatorio de densidad radial.
-
-        La distribución de edades de la muestra revalida la implicación 
-        dinámica: la región izquierda del diagrama asociada a radios de núcleo 
-        reducidos alberga 12 poblaciones jóvenes en contraste con 22 viejas. Por 
-        su parte, la mitad derecha donde los radios son extendidos muestra una 
-        partición simétrica de 6 frente a 6. Estos resultados sustentan 
-        formalmente que la población de cúmulos más antigua tiende a alojar 
-        núcleos considerablemente más compactos, lo cual es predecible en el 
-        marco de la evolución secular galáctica. A escalas temporales afines al 
-        tiempo de relajación de dos cuerpos, la distribución de la energía 
-        orbital conduce inexorablemente hacia la contracción térmica del núcleo; 
-        aquellos cúmulos de reciente formación, carentes del horizonte temporal 
-        requerido para sostener esta contracción estructural, trazan todavía la 
-        disposición probabilística derivada de sus nubes formativas.
-
-        \begin{figure}[htbp]
-            \centering
-            \includegraphics[width=0.8\textwidth]{
-                imagenes/radio_nucleo_vs_radio_marea.png
-                } 
-            \caption{
-                \textbf{Relación entre el radio de núcleo y el radio de marea.} 
-                En el eje de las abscisas se presenta el radio de núcleo $\log 
-                r_c$, y en las ordenadas el radio de marea $\log r_t$, ambos 
-                expresados en escala logarítmica y medidos en parsecs. La escala 
-                de color codifica la edad de la población estelar en 
-                $\log(\text{años})$, mientras que los marcadores en color gris 
-                designan a los cúmulos que carecen de una edad reportada. La 
-                curva discontinua roja traza un ajuste polinomial de segundo 
-                grado empírico. La desviación de una ley de potencia simple 
-                demuestra que el parámetro de concentración $c$ varía 
-                sistemáticamente a través de la muestra, validando la 
-                aplicabilidad de la familia de perfiles de King para describir 
-                esta diversidad estructural. Demográficamente, el diagrama 
-                revela que la región de núcleos comprimidos (extremo izquierdo) 
-                se encuentra fuertemente enriquecida por sistemas maduros, lo 
-                cual refleja la contracción secular del núcleo inducida por la 
-                relajación dinámica. En contraste, la región de núcleos 
-                extendidos (extremo derecho) exhibe una paridad de edades, 
-                evidenciando que este régimen estructural es accesible tanto 
-                para cúmulos jóvenes no relajados como para sistemas viejos que 
-                lograron eludir el colapso.
-                }
-            \label{fig:rc_vs_rt}
-        \end{figure}
-
-    \subsection{Masa vs. Parámetro de Concentración}
-        La Figura \ref{fig:masa_vs_c} muestra el diagrama de masa total vs. 
-        parámetro de concentración $c$, coloreado por edad logarítmica. De la 
-        inspección topológica de los datos se concluye que no emerge una 
-        tendencia global discernible que correlacione la masa con la 
-        concentración de los cúmulos estelares. El hallazgo de sistemas de masas 
-        estadísticamente similares que exhiben niveles de concentración 
-        profundamente discordantes fortalece la premisa de que la concentración 
-        opera a nivel físico como un medidor avanzado del estado evolutivo 
-        dinámico, y no como una propiedad directa dependiente del contenido 
-        másico.
-        
-        En lo tocante a la distribución por edades, la franja de mayor 
-        concentración alberga 6 cúmulos jóvenes en comparación con 11 viejos, en 
-        tanto que la franja inferior de menor concentración agrupa a 12 jóvenes 
-        frente a 17 viejos. Se verifica un predominio transversal de las 
-        poblaciones de mayor edad en ambas subregiones paramétricas. Esto es 
-        consecuente con los sesgos poblacionales intrínsecos al inventario 
-        estelar, pues la muestra analizada está dominada por objetos en etapas 
-        maduras dado que la tasa de disolución y fragmentación de los cúmulos 
-        jóvenes es alta dentro del disco de la Galaxia. No obstante, el exceso 
-        diferencial reportado para la población evolucionada en la zona de alta 
-        concentración sugiere fuertemente que las tensiones dinámicas inducidas 
-        por la relajación secular y los procesos de colapso de núcleo aumentan 
-        la concentración volumétrica general en escalas cosmológicas tardías, 
-        incluso ante la alta dispersión del conjunto.
-
-        \begin{figure}[htbp]
-            \centering
-            \includegraphics[width=0.8\textwidth]{
-                imagenes/masa_vs_concentracion.png
-                } 
-            \caption{
-                \textbf{Distribución del parámetro de concentración en función 
-                de la masa.} El eje de las abscisas representa la masa del 
-                cúmulo $\log(M_{tot}/M_\odot)$, y el eje de las ordenadas 
-                ilustra el parámetro de concentración de King $\log(r_t/r_c)$. 
-                La escala de color indica la edad poblacional en 
-                $\log(\text{años})$, designando en gris a los sistemas sin datos 
-                cronológicos reportados en el catálogo. A diferencia de otros 
-                parámetros estructurales, no se observa una correlación empírica 
-                clara o monótona que vincule la masa global con el grado de 
-                concentración interna. Desde una perspectiva demográfica, los 
-                sistemas maduros dominan de manera absoluta ambos extremos del 
-                espectro estructural. En el régimen de alta concentración, esta 
-                abundancia responde al incremento progresivo de $c$ impulsado 
-                por la relajación dinámica secular. Por el contrario, la 
-                presencia de cúmulos viejos con baja concentración señala a 
-                agrupaciones que evitaron el colapso inicial o que atraviesan 
-                fases avanzadas de expansión por evaporación estelar. La 
-                prevalencia global de sistemas maduros en todo el dominio 
-                evidencia el fuerte sesgo de supervivencia inherente a las 
-                poblaciones masivas del disco galáctico.
-                }
-        \label{fig:masa_vs_c}
-        \end{figure}
-
-\section{Efectos Ambientales}
-        A fin de constatar de forma íntegra los drivers morfológicos de los 
-        cúmulos, el presente bloque explora si las variables tridimensionales de 
-        localización del sistema estelar respecto a la estructura anfitriona, la 
-        distancia galactocéntrica, la longitud y la latitud galáctica, imprimen 
-        una huella observable en su disposición morfológica fina.
-
-        \subsection{Distancia Galactocéntrica vs. Concentración}
-            La Figura \ref{fig:rgc_vs_c}  muestra el diagrama de $\log R_{gc}$ 
-            vs. $\log(r_t/r_c)$. El ploteo identifica una tendencia positiva 
-            moderadamente débil mediante la cual los objetos estelares alojados 
-            a distancias mayores respecto al centro galáctico propenden a 
-            desplegar estados de mayor concentración estructural.
-
-            La física de este fenómeno se apoya directamente en la naturaleza 
-            del potencial tridimensional de la Galaxia: conforme la distancia 
-            $R_{gc}$ se incrementa, la profundidad local del pozo de potencial 
-            decrece y, con ello, las fuerzas perturbadoras de marea. Esta 
-            reducción progresiva de la tensión externa permite que las 
-            dimensiones físicas totales del cúmulo reaccionen extendiendo 
-            drásticamente el radio de marea límite. Ya que las variables que 
-            dictaminan el radio de núcleo no se modifican con igual intensidad, 
-            la variable dependiente de concentración se incrementa 
-            orgánicamente; o bien, la concentración crece de manera puramente 
-            relativa puesto que $r_c$ se mantiene estable mientras que $r_t$ 
-            experimenta expansiones sistemáticas considerables. Dicho dictamen 
-            ambiental es firmemente validado por los resultados de radio de 
-            núcleo en periferias, véase Figura \ref{fig:rgc_vs_rc}, y por el 
-            contraste con la ausencia de patrones de longitud, véase Figura 
-            \ref{fig:glon_vs_c}.
+            Para los radios de marea, la correlación método-catálogo es 
+            moderada, Figura \ref{fig:val_radios} panel derecho, 
+            ($r = +0.523$, $p = 2.3 \times 10^{-8}$, $n = 100$), con la relación 
+            $r_{t,\, 3{\rm D}} = 1.52 \times r_{t,\, {\rm cat}} + 16.04$ pc. La 
+            pendiente superior a la unidad indica que el método produce radios 
+            de marea sistemáticamente mayores que el catálogo: el ajuste 
+            volumétrico 3D engloba un volumen esférico más extenso que el radio 
+            de marea proyectado. La consistencia interna $r_{t,\, 2{\rm D}}$ vs. 
+            $r_{t,\, 3{\rm D}}$ es también elevada ($r = +0.786$, $p = 3.2 
+            \times 10^{-22}$, $n = 100$), aunque solo el 25.0\% de los cúmulos 
+            presenta $r_{t,\, 3{\rm D}} > r_{t,\, 2{\rm D}}$ (ratio mediano 
+            $0.903 \pm 0.226$). Esta asimetría es esperable: la reconstrucción 
+            3D introduce estrellas de línea de visión que populan 
+            preferentemente las regiones internas del cúmulo, reduciendo el 
+            radio de marea aparente en la mayoría de los casos respecto a la 
+            proyección 2D.
 
             \begin{figure}[htbp]
                 \centering
-                \includegraphics[width=0.8\textwidth]{imagenes/rgc_vs_c.png}
+                \includegraphics[width=\textwidth]{imagenes/val_radios.png}
                 \caption{
-                    \textbf{Relación entre la distancia galactocéntrica y el 
-                    parámetro de concentración.} El diagrama de dispersión 
-                    muestra el logaritmo de la distancia galactocéntrica 
-                    ($\log R_{gc}$) frente al logatirmo del parámetro de 
-                    concentración $c$, donde $r_t$ y $r_c$ son los radios de 
-                    marea y núcleo respectivamente, ambos en pc. El color de los 
-                    marcadores codifica la edad de los cúmulos en escala 
-                    logarítmica ($\log(\text{edad/años})$); los puntos grises 
-                    representan sistemas para los cuales no se dispone de una 
-                    estimación de edad. Se advierte una alta dispersión 
-                    acompañada de una leve tendencia positiva, lo que sugiere 
-                    que en regiones galactocéntricas exteriores, caracterizadas 
-                    por un potencial galáctico y campo mareal más débiles, los 
-                    cúmulos pueden sostener radios de marea más extendidos y, en 
-                    consecuencia, configuraciones de mayor concentración.
-                    }
-                \label{fig:rgc_vs_c}
+                    Diagramas de dispersión $r_{c,\, {\rm cat}}$ vs. 
+                    $r_{c,\, 3{\rm D}}$ (panel izquierdo) y $r_{t,\, {\rm cat}}$ 
+                    vs. $r_{t,\, 3{\rm D}}$ (panel derecho), coloreados por tipo 
+                    morfológico, con la regresión lineal y la bisectriz 1:1 
+                    superpuestas.
+                }
+                \label{fig:val_radios}
             \end{figure}
 
-        \subsection{Longitud Galáctica vs. Concentración}
-            La Figura \ref{fig:glon_vs_c} muestra el diagrama de longitud 
-            galáctica $l$ vs. el parámetro de concentración $c$. A diferencia de 
-            la distancia al núcleo galáctico, el rastreo a través del plano del 
-            disco evidencia la completa ausencia de cualquier dependencia 
-            sistemática respecto al ángulo de longitud $l$. La dispersión 
-            general del parámetro se preserva de manera ruidosa pero 
-            espacialmente uniforme en torno al ecuador de la Galaxia, 
-            permaneciendo invariable tanto si el cúmulo se visualiza dirigido 
-            hacia el bulbo central ($l \approx 0^\circ$) como si es trazado 
-            hacia la región del anticentro ($l \approx 180^\circ$).
+        \subsection{Validación del Parámetro de Concentración}
+            La correlación entre el parámetro de concentración del catálogo y el 
+            derivado por el método es débil pero estadísticamente significativa 
+            ($r = +0.309$, $p = 1.7 \times 10^{-3}$, $n = 100$). La consistencia 
+            cualitativa en la jerarquía de concentraciones está presente, aunque 
+            los valores numéricos no son directamente comparables: el catálogo 
+            obtiene $c$ a partir del ajuste 2D proyectado mientras que el método 
+            lo deriva del ajuste 3D volumétrico.
 
-            Esta notable carencia de anisotropías contrasta con las 
-            observaciones espaciales puramente radiales discutidas previamente 
-            (véase Figura \ref{fig:rgc_vs_c}) y refuerza un principio 
-            observacional vital: el agente físico que perturba y moldea la 
-            estructura extendida del cúmulo no es la posición angular o 
-            direccional azimutal dentro de la rotación del disco galáctico, sino 
-            su lejanía absoluta frente al centro másico. La concentración debe 
-            abordarse, por consiguiente, como una cualidad modulada externamente 
-            bajo el imperio del campo mareal como una función escalar 
-            dependiente de $R_{gc}$.
+        \subsection{Validación de Masas (Cúmulos Abiertos)}
+            La validación de masas se restringe a los 54 cúmulos abiertos con 
+            masa total disponible en el catálogo, dado que los globulares no 
+            tienen estimación de masa total en Hunt y Reffert, aunque estas no 
+            se pueden validad, se asume que la derivación propia es razonable 
+            dada la relación $M_{\rm tot} - N$, Figura 
+            \ref{fig:d_vs_rt__N_vs_masa} panel derecho. La correlación 
+            logarítmica entre ambas estimaciones es muy alta ($r = +0.867$, 
+            $p = 2.4 \times 10^{-17}$, $n = 54$), lo que indica que el método 
+            reproduce con alta fidelidad el orden de masas del catálogo y valida 
+            el uso de las masas del método como estimadores confiables de la 
+            masa total para cúmulos abiertos.
+
+    \section{Relaciones de Estructura Interna}
+
+        \subsection{Ley de Escala Masa-Radio}
+            Se exploró la dependencia de los radios estructurales con la masa 
+            total sobre la muestra completa ($n = 100$). La correlación 
+            $\log(M)-\log(r_{c,\, 3{\rm D}})$ es positiva y significativa 
+            ($r = +0.383$, $p = 8.4 \times 10^{-5}$, $n = 100$), con la ley 
+            potencial ajustada: 
+
+            $$r_{c,\, 3{\rm D}} = 0.362\, M^{0.297} \quad (\alpha = 0.297,\ R^2 
+            = 0.147)$$
+
+            El exponente $\alpha \approx 0.3$ es inferior al valor esperado 
+            ($\alpha \approx 0.5$) para sistemas en equilibrio virial con 
+            densidad central constante, indicando que la densidad central varía 
+            entre cúmulos y que el historial de formación estelar modula la 
+            relación masa-radio de núcleo. El bajo coeficiente de determinación 
+            ($R^2 = 0.147$) refleja la dispersión interna considerable de la 
+            muestra. La correlación entre masa y radio de marea es más débil 
+            ($r = +0.283$, $p = 4.4 \times 10^{-3}$, $n = 100$), y la 
+            correlación con la concentración no es estadísticamente 
+            significativa ($r = -0.191$, $p = 0.057$, $n = 100$). La correlación 
+            entre $\log(r_{c,\, 3{\rm D}})$ y $\log(r_{t,\, 3{\rm D}})$ es 
+            significativa ($r = +0.635$, $p = 1.3 \times 10^{-12}$, $n = 100$), 
+            indicando que los radios de núcleo y de marea no son independientes 
+            y que los cúmulos pertenecen a una familia estructural común con 
+            varianza interna considerable.
+
+        \subsection{Consistencia Cinemática: Radios de King vs. Radios de Jeans}
+            El método deriva radios de núcleo y de marea adicionales mediante el 
+            ajuste de la ecuación de Jeans isotrópica ($\sigma(r)$, 
+            $r_{c,\, \sigma^2}$, $r_{t,\, \sigma^2}$). La convergencia del 
+            ajuste cinemático fue completa: 59/59 cúmulos aceptados produjeron 
+            radios cinemáticos válidos. La correlación $r_{c,\, \sigma^2}$ vs. 
+            $r_{c,\, 3{\rm D}}$ es fuerte ($r = +0.760$, $p = 3.1 \times 
+            10^{-12}$, $n = 59$), con ratio mediano $r_{c,\, \sigma^2}$/
+            $r_{c,\, 3{\rm D}} = 0.285 \pm 0.141$: el radio de núcleo cinemático 
+            es sistemáticamente menor que el estructural en un factor 
+            $\sim 3.5$, comportamiento coherente con el perfil de King en 
+            equilibrio, donde el perfil de $\sigma^2(r)$ cae más abruptamente 
+            que el perfil de densidad. La correlación $r_{t,\, \sigma^2}$ vs. 
+            $r_{t,\, 3{\rm D}}$ es moderada ($r = +0.685$, $p = 2.1 \times 
+            10^{-9}$, $n = 59$), con ratio $r_{t,\, \sigma^2}$/
+            $r_{t,\, 3{\rm D}} = 1.200 \pm 0.273$: el radio de marea cinemático 
+            supera ligeramente al estructural, posiblemente reflejo de estrellas 
+            en proceso de escape tidal.
+
+            Un resultado particularmente relevante es que ninguno de los 59 
+            cúmulos aceptados presenta una discrepancia mayor a un factor de 2 
+            en ninguno de los dos radios, lo que constituye un indicador robusto 
+            de coherencia interna entre el ajuste de densidad (King 3D) y el 
+            ajuste cinemático (Jeans). Los cúmulos con mayor tensión en $r_t$ 
+            son Melotte 22 ($r_{t,\, \sigma^2}$/$r_{t,\, 3{\rm D}} = 1.994$), 
+            NGC 6388 (1.809) y Stock 2 (1.751), todos por debajo del umbral de 
+            factor 2.
+
+            \begin{figure}[htbp]
+                \centering
+                \includegraphics[width=\textwidth]{imagenes/rad_cin_vs_estruc.png}
+                \caption{
+                    Diagramas de dispersión $r_{c,\, \sigma^2}$ vs. 
+                    $r_{c,\, 3{\rm D}}$ y $r_{t,\, \sigma^2}$ vs. 
+                    $r_{t,\, 3{\rm D}}$, con bisectriz 1:1 y lineas de factor 2.
+                }
+                \label{fig:rad_cin_vs_estruc}
+            \end{figure}
+
+        \subsection{Dispersión de Velocidades Interna vs. Estructura}
             
-            \begin{figure}[htbp]
-                \centering
-                \includegraphics[width=0.8\textwidth]{imagenes/glon_vs_c.png}
-                \caption{
-                    \textbf{Relación entre la longitud galáctica y el parámetro 
-                    de concentración.} Diagrama de dispersión que vincula la 
-                    coordenada de longitud galáctica, $l$, expresada en grados, 
-                    con el parámetro de concentración estructural del cúmulo, 
-                    $c$. El mapa de color indica la edad logarítmica de los 
-                    sistemas ($\log(\text{edad/años})$), mientras que los 
-                    marcadores en gris representan aquellos cúmulos para los 
-                    cuales no se dispone de este dato. Se evidencia la ausencia 
-                    de una tendencia sistemática a lo largo del plano galáctico; 
-                    la dispersión de la concentración se mantiene relativamente 
-                    uniforme independientemente de si la línea de visión apunta 
-                    hacia el centro ($l \approx 0^\circ$) o hacia la dirección 
-                    del anticentro galáctico ($l \approx \pm 180^\circ$). Esto 
-                    corrobora que la concentración es una propiedad 
-                    independiente de la posición azimutal en el disco, estando 
-                    dictada primordialmente por la distancia radial al centro 
-                    galáctico.
-                }
-                \label{fig:glon_vs_c}
-            \end{figure}
+            Para los 53 cúmulos abiertos con al menos cinco mediciones de 
+            velocidad radial en el catálogo, la correlación entre la dispersión 
+            interna $s_{RV}$ y $\log(r_{c,\, 3{\rm D}})$ es positiva y 
+            significativa ($r = +0.520$, $p = 6.5 \times 10^{-5}$, $n = 53$), 
+            resultado cualitativamente consistente con el teorema del virial: 
+            cúmulos con núcleos más extendidos sostienen mayor energía cinética. 
+            La correlación $s_{RV}$ vs. $\log(r_{t,\, 3{\rm D}})$ es también 
+            positiva ($r = +0.422$, $p = 1.6 \times 10^{-3}$, $n = 53$). La 
+            correlación con el parámetro de concentración $c_{3{\rm D}}$ muestra 
+            únicamente una tendencia negativa no significativa ($r = −0.259$, 
+            $p = 0.061$, $n = 53$).
 
-        \subsection{Longitud Galáctica vs. Radio de Núcleo}
-            La Figura \ref{fig:glon_vs_rc} muestra el diagrama de longitud 
-            galáctica $l$ vs. radio de núcleo $r_c$ medido en escala lineal. 
-            Dentro de la nube de dispersión observable, se manifiesta que 
-            aquellos sistemas ubicados hacia las visuales directas del centro 
-            galáctico ($l \approx 0^\circ$) desarrollan un sesgo notable que 
-            favorece radios de núcleo manifiestamente más grandes en valores 
-            netamente absolutos.
+    \section{Relaciones Evolutivas} \label{sec:rel_evo}
 
-            Este efecto aparente no emana primariamente de las leyes de 
-            formación estelar per se, sino de la óptica demográfica y de 
-            supervivencia intrínseca a la observación de nuestra muestra. De 
-            forma predeterminada, los objetos localizados hacia la dirección 
-            referencial del centro de la Vía Láctea residen a una menor 
-            distancia orbital heliocéntrica y se circunscriben en intervalos de 
-            $R_{gc}$ drásticamente más bajos. Dicha inmersión interior conlleva 
-            la exposición a intensísimos entornos de interacción gravitacional y 
-            elevadas densidades estelares periféricas. Como consecuencia 
-            directa, cualquier sistema difuso sufre de inestabilidad y 
-            perturbación resultando en la rápida disolución de sus ligaduras 
-            gravitacionales. Este fenómeno genera que los cúmulos más 
-            resilientes, los masivos y dotados de extensión central protectora, 
-            prevalezcan, imponiendo sobre la base de datos observable en esa 
-            línea de visión un notorio sesgo de supervivencia dominado por un 
-            núcleo mayor.
+        Para la submuestra de 52 cúmulos abiertos con ajuste 3D aceptado y edad 
+        logarítmica válida ($\log({\rm años}) > 0$; intervalo 7.44-9.58 
+        $\log(a)$, equivalente a $\sim 27 {\rm Ma}-3.8 {\rm Ga}$), ninguna 
+        correlación entre edad y parámetros estructurales alcanza significancia 
+        estadística, Figura \ref{fig:edad_vs_para_estruc}: $\log({\rm años})$ 
+        vs. $c_{3{\rm D}}$ ($r = -0.158$, $p = 0.263$), $\log({\rm años})$ vs. 
+        $\log(r_{c,\, 3{\rm D}})$ ($r = +0.169$, $p = 0.230$), 
+        $\log({\rm años})$ vs. $\log(r_{t,\, 3{\rm D}})$ ($r = +0.051$, 
+        $p = 0.722$) y $\log({\rm años})$ vs. $\log(M_{\rm tot})$ ($r = +0.172$, 
+        $p = 0.222$). En todos los casos $n = 52$.
 
-            \begin{figure}[htbp]
-                \centering
-                \includegraphics[width=0.8\textwidth]{imagenes/glon_vs_rc.png}
-                \caption{
-                    \textbf{Relación entre la longitud galáctica y el radio de 
-                    núcleo.} Diagrama de dispersión de la longitud galáctica 
-                    ($l$), medida en grados, frente al radio de núcleo ($r_c$), 
-                    expresado en parsecs (nótese el uso de escala lineal para el 
-                    eje de las ordenadas). La escala cromática codifica el 
-                    logaritmo de la edad de los cúmulos 
-                    ($\log(\text{edad/años})$), mientras que los sistemas 
-                    graficados en gris carecen de una estimación de edad en el 
-                    catálogo. A pesar de la notable dispersión global a lo largo 
-                    del disco, se distingue una propensión de los cúmulos 
-                    ubicados hacia la línea de visión del centro galáctico 
-                    ($l \approx 0^\circ$) a poseer radios de núcleo absolutos 
-                    más grandes. Este comportamiento es atribuible a un sesgo de 
-                    supervivencia poblacional: en los rigurosos entornos 
-                    dinámicos e interacciones de marea propios de las regiones 
-                    galácticas internas, las agrupaciones laxas o difusas se 
-                    disuelven con rapidez, prevaleciendo principalmente los 
-                    cúmulos robustos caracterizados por núcleos más extensos.
-                    }
-                \label{fig:glon_vs_rc}
-            \end{figure}
-
-        \subsection{Distancia Galactocéntrica vs. Radio de Núcleo}
-            La Figura \ref{fig:rgc_vs_rc} muestra el diagrama de distancia 
-            galactocéntrica $R_{gc}$ [pc] vs. radio de núcleo $r_c$ [pc]. A 
-            pesar de que las series de puntos no delimitan una correlación 
-            fuerte en el conjunto entero, al restringir la inspección a los 
-            objetos más distantes del centro ($R_{gc} \gtrsim 12{,}000$ pc), 
-            se evidencia de manera sistemática la preponderancia de radios 
-            nucleares notablemente estrechos.
-
-            Estos valores menores para los $r_c$ distantes engarzan 
-            conceptualmente con la física propuesta previamente (véase Figura 
-            \ref{fig:rgc_vs_c}). En los lindes exteriores del pozo de potencial 
-            de la Vía Láctea, el carácter frágil del campo mareal imperante 
-            garantiza que el radio de marea perimetral asuma proporciones 
-            elevadas y sostenga así altas concentraciones. No obstante, esto no 
-            impone una extensión correlativa del núcleo central de masa. Por el 
-            contrario, dada la ausencia de perturbaciones cinemáticas severas 
-            que podrían sobreexcitar y expandir el núcleo, este evoluciona 
-            dinámicamente con alta estabilidad, manteniéndose naturalmente 
-            compacto. De forma antagónica, en el régimen radial puramente 
-            interior estipulado para $R_{gc} \lesssim 10{,}000$ pc, las 
-            perturbaciones masivas difuminan sistemáticamente las trayectorias 
-            dinámicas, superponiendo cúmulos en dispares y complejos estadios 
-            cinemáticos que terminan desdibujando de los gráficos cualquier 
-            trazador ecológico generalizado.
-
-            \begin{figure}[htbp]
-                \centering
-                \includegraphics[width=0.8\textwidth]{imagenes/rgc_vs_rc.png}
-                \caption{
-                    \textbf{Relación entre la distancia galactocéntrica y el 
-                    radio de núcleo.} Diagrama de dispersión de la distancia 
-                    galactocéntrica ($R_{gc}$) frente al radio de núcleo 
-                    ($r_c$), ambos cuantificados en parsecs [pc]. El color de 
-                    los marcadores indica el logaritmo de la edad del cúmulo 
-                    ($\log(\text{edad/años})$), mientras que los puntos en gris 
-                    representan sistemas carentes de este parámetro en el 
-                    catálogo. Aunque en el rango interior 
-                    ($R_{gc} \lesssim 10{,}000$ pc) la elevada dispersión 
-                    refleja la coexistencia de cúmulos en estados dinámicos muy 
-                    distintos, diluyendo cualquier tendencia ambiental clara, en 
-                    los cúmulos más alejados del centro 
-                    ($R_{gc} \gtrsim 12{,}000$ pc) se observa una predominancia 
-                    sistemática de radios de núcleo menores. En la periferia 
-                    galáctica, la baja densidad ambiental y el débil campo 
-                    mareal posibilitan un proceso de evolución más tranquilo con 
-                    una baja tasa de interacciones, lo que favorece que el 
-                    núcleo se mantenga compacto a pesar de que el radio de marea 
-                    total sea extenso.
-                    }
-                \label{fig:rgc_vs_rc}
-            \end{figure}
-        
-        \subsection{Latitud Galáctica vs. Radio de Marea}
-            La figura \ref{fig:glat_vs_rt} muestra el diagrama de latitud 
-            galáctica $b$ vs. $\log r_t$. Se verifica en los registros del 
-            catálogo una franca geometría de simetría en torno al plano 
-            galáctico inercial ($b \approx 0^\circ$). Las poblaciones con radios 
-            mareales amplios se encuentran apelotonadas en regiones convergentes 
-            a $b \approx 0^\circ$ y decaen en cantidad a medida que la altura 
-            galáctica crece. Esta estructuración enuncia un acoplamiento 
-            coherente con el mapa general de latitudes analizado al final de la 
-            presente sección (véanse Figuras 12 y 13), estableciendo a este 
-            grupo poblacional como objetos intrínsecamente anclados a la franja 
-            física del disco delgado.
-
-            Para las lecturas de los radios de marea menores en el diagrama, se 
-            comprueba una prevalencia sustancial de cúmulos clasificados 
-            evolutivamente como maduros o viejos, reportándose frecuencias de 14 
-            jóvenes en oposición a 25 viejos. Al retroalimentar la 
-            interpretación postulada (véase Figura \ref{fig:masa_vs_rt}), se 
-            atestigua con claridad que los estragos temporales provocados por la 
-            evaporación estelar en poblaciones longevas reducen 
-            irreversiblemente la masa total del pozo y, por tanto, encojen 
-            dinámicamente los límites del $r_t$. En consecuencia, las tasas de 
-            merma de materia derivadas de la evaporación prevalecen 
-            jerárquicamente en peso evolutivo final por encima de las 
-            alteraciones impuestas por la migración del cúmulo respecto de la 
-            Galaxia en sistemas de avanzada edad. Por su parte, para la fracción 
-            de la muestra dotada de grandes magnitudes verticales $|b|$, que 
-            debiera gozar de escenarios menos densos promotores de extensos 
-            $r_t$ (véanse discusiones en las Figuras \ref{fig:rgc_vs_c} y 
-            \ref{fig:rgc_vs_rc}), los muestreos reportan una gran escasez 
-            estadística acompañada de altos índices de dispersión.
-
-            \begin{figure}[htbp]
-                \centering
-                \includegraphics[width=0.8\textwidth]{imagenes/glat_vs_rt.png}
-                \caption{
-                    \textbf{Relación entre la latitud galáctica y el radio de 
-                    marea.} Diagrama de dispersión de la latitud galáctica 
-                    ($b$), medida en grados, frente al logaritmo del radio de 
-                    marea ($\log r_t$). La escala cromática codifica la edad 
-                    logarítmica de los sistemas ($\log(\text{edad/años})$), 
-                    mientras que los puntos grises señalan aquellos sin 
-                    estimación de edad. La distribución muestra una simetría 
-                    aproximada respecto al plano ecuatorial de la Galaxia 
-                    ($b \approx 0^\circ$), concentrándose allí los cúmulos con 
-                    mayores radios de marea, un comportamiento característico de 
-                    las poblaciones pertenecientes al disco delgado. Asimismo, 
-                    se observa que los radios de marea pequeños corresponden 
-                    mayoritariamente a sistemas viejos; esto indica que la 
-                    pérdida continua de masa por evaporación estelar secular 
-                    reduce paulatinamente la extensión mareal del cúmulo, un 
-                    efecto que termina dominando sobre los procesos de migración 
-                    radial en edades avanzadas. Aunque a mayores latitudes 
-                    ($|b|$ grande) el entorno de menor densidad propiciaría 
-                    teóricamente radios más grandes, la muestra observacional en 
-                    estas alturas es escasa y presenta alta dispersión.
-                    }
-                \label{fig:glat_vs_rt}
-            \end{figure}
-
-    \subsection{Latitud Galáctica vs. Radio de Núcleo}
-        La Figura \ref{fig:glat_vs_rc} muestra el diagrama de latitud galáctica 
-        $b$ vs. $\log r_c$. La morfología de la gráfica denota una fuerte y 
-        continua acumulación sobre las trayectorias afines al eje ecuatorial de 
-        la Galaxia, observándose la máxima densidad de empaquetamiento estelar 
-        en los límites de latitud de $|b| < 10^\circ$. Sin embargo, la métrica 
-        nuclear interna $r_c$ no sigue un patrón de dependencia sistemática o 
-        asimétrica en correlación a los cambios de altura respecto al disco.
-        
-        Al revisar las subdivisiones categóricas temporales y de edad, la zona 
-        superior poblada de $r_c$ arroja valores de 6 agrupaciones jóvenes 
-        frente a 6 de viejas, mientras que el sector inferior poblado arroja 
-        resultados de 12 agrupaciones estelares de tipo joven frente a 22 
-        viejas. Estos resultados demográficos replican la tendencia y el régimen 
-        macroscópico del modelo nuclear fundamental detectado (véase Figura 
-        \ref{fig:masa_vs_rc}). Esto demuestra que a la altura topográfica más 
-        adyacente del plano mayor, subsiste abrumadoramente una población que al 
-        estar envejecida y evolucionada dinámicamente es proclive a sustentar en 
-        sus núcleos estructuras altamente colapsadas y compactas. El nexo 
-        orgánico visual entre estos densos aglomerados frente al mapa global se 
-        hace explícito al cruzarlo con el espectro numérico general del 
-        histograma demográfico.
+        La ausencia de correlaciones significativas puede obedecer a varias 
+        explicaciones no excluyentes: (i) la dispersión intrínseca en las 
+        condiciones iniciales de formación domina sobre cualquier tendencia 
+        evolutiva secular en el rango de edades muestreada; (ii) la muestra 
+        incluye objetos de muy distintas masas y posiciones galácticas, cuyas 
+        trayectorias evolutivas difieren sustancialmente; (iii) el tamaño 
+        muestral puede resultar insuficiente para detectar correlaciones 
+        intrínsecamente débiles. Los datos disponibles no permiten afirmar que 
+        la edad sea un predictor estadísticamente relevante de la estructura 
+        interna de los cúmulos abiertos de esta muestra. Este resultado 
+        aparentemente negativo adquirirá un significado más nítido al 
+        contrastarse con los resultados de la Sección \ref{sec:t_relax}, donde 
+        el estado dinámico de relajación sí muestra evolución temporal 
+        significativa.
 
         \begin{figure}[htbp]
             \centering
-            \includegraphics[width=0.8\textwidth]{imagenes/glat_vs_rc.png}
+            \includegraphics[width=\textwidth]{imagenes/edad_vs_para_estruc.png}
             \caption{
-                \textbf{Relación entre la latitud galáctica y el radio de 
-                núcleo.} Diagrama de dispersión que relaciona la latitud 
-                galáctica ($b$), medida en grados, con el logaritmo del radio de 
-                núcleo ($\log r_c$). La escala de color codifica la edad 
-                logarítmica de las agrupaciones estelares 
-                ($\log(\text{edad/años})$), dejando en gris aquellos sistemas 
-                que carecen de este dato. La distribución de los cúmulos muestra 
-                una fuerte concentración hacia el plano ecuatorial de la 
-                Galaxia, albergando la mayor densidad de puntos en la franja de 
-                $|b| < 10^\circ$, sin evidenciar una tendencia sistemática clara 
-                del radio de núcleo en función de la altura vertical. A pesar de 
-                esta ausencia de gradiente espacial, la demografía en las 
-                cercanías del plano replica el patrón evolutivo intrínseco de la 
-                muestra general: se observa una clara predominancia de cúmulos 
-                viejos con radios de núcleo reducidos (mitad inferior), lo cual 
-                es coherente con su estado dinámico avanzado y la consecuente 
-                contracción central producto de la relajación secular.}
-            \label{fig:glat_vs_rc}
+                Diagramas de dispersión de $\log({\rm años})$ vs. 
+                $c_{3{\rm D}}$, $\log(r_{c,\, 3{\rm D}})$, 
+                $\log(r_{t,\, 3{\rm D}})$ y $\log(M_{\rm tot})$ para la 
+                submuestra de 52 cúmulos abiertos, ilustrando la ausencia de 
+                tendencias significativas. 
+            }
+            \label{fig:edad_vs_para_estruc}
         \end{figure}
 
-    \subsection{Latitud Galáctica vs. Concentración}
-        La dispersión de la concentración estructural respecto al plano 
-        ecuatorial de la Galaxia permite evaluar si el gradiente de densidad 
-        vertical del disco afecta la morfología de los cúmulos. Como se 
-        evidencia en la Figura \ref{fig:glat_vs_c} de latitud galáctica $b$ 
-        frente a la concentración $r_t/r_c$, la distribución no revela una 
-        dependencia funcional sistemática de la concentración con la altura 
-        vertical. La concentración exhibe una alta varianza intrínseca que se 
-        mantiene uniforme independientemente de $b$. Este resultado se alinea 
-        con lo observado en el análisis azimutal (véase la sección de Longitud 
-        Galáctica vs. Concentración) y reafirma que la concentración es 
-        gobernada primordialmente por la distancia radial $R_{gc}$ y el tiempo 
-        de relajación interna, más que por fluctuaciones locales en la latitud.
+    \section{Efectos ambientales}
 
-        Un aspecto demográfico fundamental que revela esta relación es la 
-        distribución de las edades respecto al plano. En una inspección 
-        detallada, la submuestra de 28 cúmulos jóvenes ($\log\text{edad} < 9$) 
-        presenta una dispersión vertical $\sigma_b = 8.90^\circ$, mientras que 
-        la submuestra de 18 cúmulos maduros ($\log\text{edad} \geq 9$) registra 
-        una dispersión estadísticamente equivalente de $\sigma_b = 8.81^\circ$. 
-        Aunque la teoría de evolución dinámica galáctica predice que las 
-        poblaciones más antiguas experimentan un calentamiento cinemático que 
-        debería incrementar paulatinamente su dispersión vertical, la similitud 
-        de estos valores delata un fuerte sesgo de supervivencia. Los cúmulos 
-        viejos detectados en el catálogo no representan a toda su generación, 
-        sino únicamente a aquellos supervivientes cuyas órbitas de baja 
-        inclinación les permitieron permanecer en entornos cinemáticamente 
-        estables cerca de $b \approx 0^\circ$. Los sistemas que adquirieron 
-        altas dispersiones verticales probablemente sufrieron una disolución 
-        acelerada producto de violentos cruces de disco, perdiendo su cohesión 
-        estructural antes de poder ser censados en la actualidad.
-        
-        \begin{figure}[htbp]
-            \centering
-            \includegraphics[width=0.8\textwidth]{imagenes/glat_vs_c.png}
-            \caption{
-                \textbf{Relación entre la latitud galáctica y el parámetro de 
-                concentración.} Diagrama de dispersión de la latitud galáctica 
-                ($b$), expresada en grados, frente al logaritmo del parámetro de 
-                concentración $\log(r_t/r_c)$. La barra de color representa el 
-                logaritmo de la edad de los cúmulos ($\log(\text{edad/años})$), 
-                con los marcadores grises indicando ausencia de este dato. No se 
-                aprecia una tendencia sistemática de la concentración en función 
-                de la distancia al plano galáctico, sugiriendo que la tensión 
-                mareal vertical no es el controlador principal de este parámetro 
-                morfológico respecto a la muestra estudiada. Asimismo, las 
-                poblaciones jóvenes ($\log\text{edad} < 9$) y viejas 
-                ($\log\text{edad} \geq 9$) comparten dispersiones verticales 
-                casi idénticas ($\sigma_b \approx 8.9^\circ$), lo cual es 
-                indicativo de un sesgo de supervivencia en la población longeva: 
-                los cúmulos viejos que perduran conservando su integridad física 
-                son aquellos que han mantenido órbitas ligadas estrechamente al 
-                disco delgado.
+        \subsection{Radio galactocéntrico y estructura interna} 
+            \label{subsec:rgc_vs_estruc}
+
+            El análisis de efectos ambientales se restringe inicialmente a los 
+            54 cúmulos abiertos para evitar contaminación por los distintos 
+            regímenes orbitales de los globulares. La correlación 
+            $\log(R_{gc})-\log(r_{c,\, 3{D}})$ es negativa y significativa 
+            ($r = -0.440$, $p = 8.8 \times 10^{-4}$, $n = 54$): los cúmulos 
+            situados a menor radio galactocéntrico poseen núcleos más 
+            extendidos. Este resultado se enmarca en la física de las fuerzas de 
+            marea galácticas, donde los cúmulos más cercanos al centro galáctico 
+            experimentan un gradiente de potencial gravitacional más intenso. La 
+            correlación $\log(R_{gc})-\log(r_{t,\, 3{D}})$ es también negativa 
+            pero más débil ($r = -0.329$, $p = 1.5 \times 10^{-2}$, $n = 54$). 
+            Las correlaciones con $c_{3{\rm D}}$ ($r = +0.242$, $p = 0.078$) y 
+            con $\log(M_{\rm tot})$ ($r = -0.216$, $p = 0.117$) no alcanzan 
+            significancia estadística.
+
+            \begin{figure}[htbp]
+                \centering
+                \includegraphics[width=\textwidth]{imagenes/rgc_vs_estruc.png}
+                \caption{
+                    Diagramas de dispersión de $\log(R_{gc})$ vs. 
+                    $\log(r_{c,\, 3{D}})$, $\log(r_{t,\, 3{D}})$, 
+                    $c_{3{\rm D}}$, $\log(M_{\rm tot})$ para los 54 cúmulos 
+                    abiertos, con regresiones lineales.
                 }
-            \label{fig:glat_vs_c}
-        \end{figure}
+                \label{fig:rgc_vs_estruc}
+            \end{figure}
+
+        \subsection{Altura galáctica} \label{subsec:abs_z}
+            Al calcular la correlación $\log(|Z|)-\log(r_{t,\, 3{D}})$ sobre la 
+            muestra completa de 100 cúmulos, se obtiene ($r = +0.531$, 
+            $p = 1.3 \times 10^{-8}$, $n = 100$), lo que aparentemente sugeriría 
+            que los cúmulos más alejados del plano galáctico poseen radios de 
+            marea más extendidos. Sin embargo, este resultado es producido por 
+            la mezcla de dos poblaciones morfológicamente distintas y 
+            espacialmente segregadas.
+
+            Al separar por tipo morfológico, Figura \ref{fig:z_vs_rt}, la 
+            correlación dentro de los cúmulos abiertos resulta no significativa 
+            ($r = +0.169$, $p = 0.222$, $n = 54$), mientras que dentro de los 
+            globulares es altamente significativa ($r = +0.664$, $p = 5.0 
+            \times 10^{-7}$, $n = 46$). La correlación global surge porque los 
+            globulares son simultáneamente más extendidos en $r_{t,\, 3{D}}$, 
+            más masivos y residen a mayores alturas galácticas que los cúmulos 
+            abiertos; un análisis que no controle por tipo morfológico confunde 
+            estas características en una correlación espuria. Dentro de los 
+            globulares, la correlación positiva $\log(|Z|)-\log(r_{t,\, 3{D}})$ 
+            es interpretable como supervivencia diferencial: los globulares que 
+            actualmente residen a grandes alturas galácticas han pasado menos 
+            tiempo en regiones de alta intensidad tidal y han conservado mayores 
+            radios de marea.
+
+            \begin{figure}[htbp]
+                \centering
+                \includegraphics[width=\textwidth]{imagenes/z_vs_rt.png}
+                \caption{
+                    Diagramas de dispersión de $\log(|Z|)$ vs. 
+                    $\log(r_{t,\, 3{D}})$: muestra total ($r = +0.531$), solo 
+                    cúmulos globulares ($r = +0.661$), solo cúmulos abiertos 
+                    ($r = +0.169$). La desaparición de la correlación al 
+                    controlar por tipo evidencia la variable de confusión.
+                }
+                \label{fig:z_vs_rt}
+            \end{figure}
+
+        \subsection{Latitud galáctica}
+            La latitud galáctica absoluta $|b|$ reproduce el mismo patrón de 
+            confusión. La correlación $|b|$ vs. $\log(r_{t,\, 3{D}})$ es 
+            significativa en la muestra total ($r = +0.417$, 
+            $p = 1.6 \times 10^{-5}$, $n = 100$), desaparece dentro de los 
+            cúmulos abiertos ($r = -0.089$, $p = 5.2 \times 10^{-1}$, $n = 54$) 
+            y es moderada dentro de los globulares ($r = +0.440$, 
+            $p = 2.2 \times 10^{-3}$, $n = 46$). La correlación $|b|$ vs. 
+            $\log(M_{\rm tot})$ cambia incluso de signo entre la muestra total 
+            ($r = +0.357$, $p = 2.6 \times 10^{-4}$) y los cúmulos abiertos 
+            ($r = -0.422$, $p = 1.5 \times 10^{-3}$). Estos resultados confirman 
+            que $|b|$ refleja  principalmente la separación espacial entre tipos 
+            morfológicos y no un efecto ambiental independiente verificable con 
+            la presente muestra.
+
+    \section{Tiempos de Relajación de dos Cuerpos} \label{sec:t_relax}
+        
+        \subsection{
+            Distribución de Tiempo de Relajación al Radio de Marea por Tipo 
+            Morfológico
+            }
+            La distribución del tiempo de relajación al radio de marea varía 
+            moderadamente entre tipos. Los 52 cúmulos abiertos aceptados 
+            presentan una mediana de $t_{{\rm relax},\, r_t } = 2.48\, {\rm Ga}$ 
+            intervalo de percentiles [16-84: 1.59-6.25 Ga], con un rango 
+            completo de 0.66 a 38.9 Ga. Los 7 cúmulos globulares aceptados, 
+            submuestra reducida, ya que la mayoría de los globulares no superó 
+            los criterios de aceptación del método, muestran una mediana de 
+            3.54 Ga rango [1.82-44.1 Ga]. La distribución de 
+            $\log(t_{{\rm relax},\, r_t})$ mostrada en la Figura 
+            \ref{fig:dist:trel_rt} es aproximadamente log-normal para los 
+            cúmulos abiertos, con asimetría positiva producida por los objetos 
+            más jóvenes cuyos tiempos de relajación son excepcionalmente largos.
+
+            \begin{figure}[htbp]
+                \centering
+                \includegraphics[width=\textwidth]{imagenes/dist_trel_rt.png}
+                \caption{
+                    Histograma de $\log(t_{{\rm relax},\, r_t})$ para los 
+                    cúmulos aceptados por el método abiertos (azul) y globulares 
+                    (naranja). Las medianas de cada tipo se indican con líneas 
+                    verticales discontinuas.
+                }
+                \label{fig:dist:trel_rt}
+            \end{figure}
+
+        \subsection{Regiones Relajadas y Validez de la Aproximación de Jeans}
+            
+            El radio de relajación $r_{{\rm relax}}$, radio máximo donde 
+            $t_{{\rm relax}}(r) < t_{{\rm edad}}$, se calculó para los 52 
+            cúmulos abiertos aceptados con edad disponible. Un total de 48 de 
+            ellos satisfacen $r_{\rm relax} \geq r_{c,\, 3{\rm D}}$, es decir, 
+            tienen el núcleo completamente relajado. La fracción media del radio 
+            total cubierta por la región termalizada es 0.486 (mediana 
+            $= 0.463$, desviación estándar $= 0.256$), indicando que, en 
+            promedio, aproximadamente la mitad de la extensión radial del cúmulo 
+            se encuentra en equilibrio dinámico de dos cuerpos, Figura 
+            \ref{fig:rrelax_vs_rc__hist} panel derecho. La correlación entre 
+            $r_{\rm relax}$ y $r_{c,\, 3{\rm D}}$ es positiva y significativa 
+            tanto en escala lineal ($r = +0.423$, $p = 1.8 \times 10^{-3}$, 
+            $n = 52$) como logarítmica ($r = +0.436$, $p = 1.2 \times 10^{-3}$, 
+            $n = 52$), Figura \ref{fig:rrelax_vs_rc__hist} panel izquierdo, 
+            siendo consistente con la interpretación de que el radio de núcleo 
+            del modelo de King captura la región termalizada del cúmulo, lo que 
+            respalda el uso de la ecuación de Jeans isotrópica en las regiones 
+            nucleares. 
+
+            Los cuatro cúmulos para los cuales el núcleo no está completamente 
+            relajado se detallan en el Cuadro \ref{tab:cumulos_no_relajados}. La 
+            característica más relevante es que todos tienen edades inferiores a 
+            0.4 Ga, lo que explica directamente sus largos tiempos de relajación 
+            locales. Para estos objetos, la hipótesis de equilibrio termal 
+            subyacente a la ecuación de Jeans isotrópica está cuestionada en la 
+            región nuclear, y los parámetros de King obtenidos allí deben 
+            interpretarse con cuidado. 
+
+            \begin{table}[htbp]
+                \centering
+                \caption{
+                    Cúmulos con núcleo no completamente relajado 
+                    ($r_{\rm relax} < r_{c,\, 3{\rm D}}$, $n = 52$), submuestra 
+                    de cúmulos abiertos con edad disponible. Todos presentan 
+                    edades menores a 0.4 Ga
+                    }
+                \label{tab:cumulos_no_relajados}
+                \begin{tabular}{|l|c|c|c|c|c|}
+                    \hline
+                    \textbf{Nombre} & $r_{c,\, 3{\rm D}}$ [pc] & $r_{\rm relax} [pc]$ & \textbf{Ratio} $r_t$ & \textbf{Edad} [Ga] & $t_{{\rm relax},\, r_t}$ [Ga]\\
+                    \hline
+                    Trumpler 10  & 3.351 & 2.689 & 1059.2 & 0.037 & 38.9 \\
+                    \hline
+                    NGC 663 & 2.909 & 2.819 & 76.19 & 0.027 & 2.09 \\
+                    \hline
+                    HSC 655 & 47.773 & 14.144 & 37.97 & 0.345 & 13.1 \\
+                    \hline
+                    HSC 561 & 20.913 & 12.055 & 23.49 & 0.185 & - \\
+                    \hline
+                \end{tabular}
+            \end{table}
+
+            \begin{figure}[htbp]
+                \centering
+                \includegraphics[width=\textwidth]{imagenes/rrelax_vs_rc__hist.png}
+                \caption{
+                    Diagrama de dispersión $r_{\rm relax}$ vs. 
+                    $r_{c,\, 3{\rm D}}$ (izquierda) para la submuestra de 52 
+                    cúmulos abiertos con edad disponible, coloreado por 
+                    $\log({\rm ratio} r_t)$. LA bisectriz 1:1 separa los cúmulos 
+                    con núcleo relajado de los no relajados. El histograma de 
+                    $r_{\rm relax}/r_{c,\, 3{\rm D}}$ (derecha) muestra que la 
+                    mayoria de los cúmulos tienen núcleos completamente 
+                    relajados.
+                }
+                \label{fig:rrelax_vs_rc__hist}
+            \end{figure}
+
+        \subsection{Correlaciones Evolutivas}
+            
+            La relación $\log({\rm ratio}\ r_t)-\log({\rm años})$ es fuertemente 
+            negativa ($r = -0.793$, $p = 2.4 \times 10^{-12}$, $n = 52$), Figura 
+            \ref{fig:corr_evo} panel izquierdo: los cúmulos más jóvenes 
+            presentan ratio $r_t \gg 1$, mientras que los más viejos reducen 
+            este cociente hasta valores próximos o inferiores a la unidad. La 
+            correlación complementaria frac$_{\rm relax}-\log({\rm años})$ es 
+            igualmente robusta y de signo opuesto ($r = +0.804$, $p = 7.4 
+            \times 10^{-13}$, $n = 52$), Figura \ref{fig:corr_evo} panel 
+            derecho: los cúmulos de mayor edad tienen una fracción mayor de su 
+            volumen ya termalizada.
+
+            Ambas correlaciones presentan una magnitud ($|r| \approx 0.80$) muy 
+            superior a cualquier correlación estructural con la edad reportada 
+            en la Sección \ref{sec:rel_evo} (máximo $|r| = 0.172$).  Este 
+            contraste revela que la evolución secular de los cúmulos estelares 
+            se expresa más claramente en su estado dinámico de relajación que en 
+            sus parámetros geométricos. Mientras que la estructura observable, 
+            $r_c$, $r_t$, $c$, puede ser insensible a la edad por el dominio de 
+            la varianza en condiciones iniciales, el avance del frente de 
+            termalización registra de forma acumulativa el tiempo total de 
+            evolución. Este resultado es coherente con las predicciones de los 
+            modelos de N-cuerpos de sistemas estelares autogravitantes 
+            (Spitzer 1987) y reconcilia la aparente ausencia de evolución 
+            estructural de la Sección \ref{sec:rel_evo} con la existencia de una 
+            evolución dinámica mensurable en la misma muestra.
+
+            \begin{figure}[htbp]
+                \centering
+                \includegraphics[width=\textwidth]{imagenes/corr_evo.png}
+                \caption{
+                    Diagramas de dispersión $\log({\rm ratio}\ r_t)$ vs. 
+                    $\log({\rm años})$ (izquierda) y frac$_{\rm relax}$ vs. 
+                    $\log({\rm años})$ para la submuestra de 52 cúmulos 
+                    abiertos con edad disponible, con regresiones lineales. La 
+                    linea horizontal ratio $r_t = 1$ en el panel izquierdo marca 
+                    el umbral de relajación al radio de marea.
+                }
+                \label{fig:corr_evo}
+            \end{figure}
+
+        \subsection{Correlaciones ambientales}
+            
+            La correlación $\log(t_{{\rm relax},\, r_t})-\log(R_{gc})$ para los 
+            52 cúmulos abiertos es negativa y significativa ($r = -0.335$, 
+            $p = 1.5 \times 10^{-2}$, $n = 52$): los cúmulos más internos 
+            presentan tiempos de relajación al radio de marea más cortos. Este 
+            resultado conecta directamente con el hallazgo de la Sección 
+            \ref{subsec:rgc_vs_estruc} ($r = 0.440$, $R_{gc}-r_{c,\, 3{\rm D}}$) 
+            y con la correlación positiva $r_{c,\, 3{\rm D}}-
+            t_{{\rm relax},\, r_t}$ ($r = +0.656$, $p = 1.7 \times 10^{-8}$, 
+            $n = 59$): la compactación estructural inducida por las mareas 
+            galácticas internas se traduce en tiempos de relajación más cortos. 
+            La relación entre el estado relativo de relajación (ratio $r_t$) y 
+            la posición galáctica no alcanza significancia estadística 
+            ($r = -0.261$, $p = 0.062$, $n = 52$), lo que sugiere que el efecto 
+            ambiental opera a través de la estructura interna y no directamente 
+            sobre el grado de avance dinámico relativo.
+
+            Para la correlación $\log(t_{{\rm relax},\, r_t})$ vs. $\log(|Z|)$, 
+            el mismo patrón de confusión morfológica identificado en la Sección 
+            \ref{subsec:abs_z} se reproduce fielmente. La correlación sobre la 
+            muestra total aceptada es débilmente significativa ($r = +0.275$, 
+            $p = 3.5 \times 10^{-2}$, $n = 59$), pero desaparece al aislar los 
+            cúmulos abiertos ($r = +0.159$, $p = 0.260$, $n = 52$) y resulta 
+            significativa exclusivamente dentro de los globulares ($r = +0.829$, 
+            $p = 2.1 \times 10^{-2}$, $n = 7$). La correlación total observada 
+            no refleja un efecto ambiental real sobre los tiempos de relajación 
+            de los cúmulos abiertos, sino el arrastre estadístico de los 
+            globulares, que son simultáneamente más masivos, más extendidos, con 
+            mayores $t_{{\rm relax},\, r_t}$ y situados a mayor $|Z|$. El patrón 
+            de confusión por tipo morfológico es, por tanto, ubicuo en el 
+            análisis de esta muestra heterogénea y debe documentarse 
+            explícitamente en cada correlación que involucre variables 
+            ambientales.
+
+    \section{Síntesis de Resultados}
+
+        En primer lugar, el método de ajuste de perfiles de King muestra una 
+        consistencia interna y una validación frente al catálogo de Hunt y 
+        Reffert suficientemente robustas para garantizar la fiabilidad de los 
+        parámetros derivados. Las correlaciones método-catálogo para radios de 
+        núcleo, radios de marea, concentración y masas son todas 
+        estadísticamente significativas, y las discrepancias sistemáticas, 
+        $r_{c,\, 3{\rm D}} < r_{c,\, {\rm cat}}$; $r_{t,\, 3{\rm D}} > 
+        r_{t,\, {\rm cat}}$, son cuantitativamente consistentes con las 
+        diferencias esperadas entre el ajuste proyectado 2D del catálogo y el 
+        ajuste volumétrico 3D del método. De manera especialmente relevante, la 
+        ausencia total de discrepancias superiores a un factor de 2 entre los 
+        radios cinemáticos (Jeans) y los estructurales (King 3D) en los 59 
+        cúmulos aceptados refuerza la coherencia global del método y avala el 
+        uso de la ecuación de Jeans isotrópica como descripción válida de la 
+        dinámica interna.
+
+        En segundo lugar, los parámetros puramente geométricos del modelo de 
+        King, ($r_c$, $r_t$, $c$), no muestran correlaciones estadísticamente 
+        significativas con la edad de los cúmulos abiertos. Este resultado es 
+        consistente con el dominio de la dispersión en las condiciones iniciales 
+        sobre cualquier tendencia evolutiva secular, o con la influencia 
+        simultánea de múltiples procesos, formación, mareas galácticas, pérdida 
+        de masa, cuya huella temporal sobre la geometría del cúmulo no puede 
+        separarse con la muestra disponible. La posición galáctica, sin embargo, 
+        sí afecta la estructura: los cúmulos abiertos más cercanos al centro 
+        galáctico presentan núcleos sistemáticamente más pequeños ($r = -0.440$, 
+        $p < 0.001$), revelando la huella de las fuerzas de marea galácticas 
+        sobre la morfología observable. El análisis del parámetro $|Z|$ ilustró 
+        además la necesidad de controlar siempre por tipo morfológico en esta 
+        muestra heterogénea: la aparente correlación $|Z|-r_{t,\, 3{\rm D}}$ 
+        sobre la muestra total (r = +0.531) es un artefacto de la mezcla de 
+        poblaciones que desaparece al separar por tipo.
+
+        En tercer lugar, y como resultado de mayor relevancia física, el estado 
+        dinámico de relajación sí muestra una evolución temporal clara y 
+        cuantitativamente robusta. Los cúmulos de mayor edad han termalizado una 
+        fracción mayor de su volumen ($r = +0.804$, $p = 7.4 \times 10^{-13}$) y 
+        presentan cocientes ratio $r_t$ más bajos ($r = -0.793$, 
+        $p = 2.4 \times 10^{-12}$), con coeficientes de correlación un factor 
+        $\thicksim 5$ superiores a cualquier correlación estructural con la 
+        edad. Adicionalmente, la coincidencia entre la región relajada 
+        $r_{\rm relax}$ y el radio de núcleo $r_{c,\, 3{\rm D}}$ del modelo de 
+        King, verificada en el 92.3\% de los casos, sustenta que el perfil de 
+        King captura precisamente la zona termalizada del cúmulo, lo que 
+        respalda el uso de la ecuación de Jeans isotrópica como descripción 
+        válida de las regiones nucleares. Los cuatro cúmulos para los cuales 
+        esta condición no se cumple comparten una característica diagnóstica: 
+        todos son objetos jóvenes ($< 0.4$ Ga) que no han tenido tiempo 
+        suficiente para termalizarse, lo que representa en sí mismo una 
+        evidencia interna de la consistencia entre la física del tiempo de 
+        relajación y los parámetros estructurales derivados del método.
