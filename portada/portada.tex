@@ -1,16 +1,45 @@
 % !TeX root = ../main.tex
 
 \begin{titlepage}
+    % Marca de agua
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[opacity=0.1, inner sep=0pt] at (current page.center) {
+            \includegraphics[width=0.8\textwidth]{imagenes/escudo.png}
+        };
+    \end{tikzpicture}
 
-\centering
+    \centering
 
-{\Large Universidad de Antioquia}\\[1cm]
+    % 1. Encabezado institucional
+    {\Large \textbf{Universidad de Antioquia}}\\[0.3cm]
+    {\large Facultad de Ciencias Exactas y Naturales}\\[0.3cm]
+    {\large Instituto de Física}\\[0.3cm]
+    {\large Programa de Astronomía}\\[2.5cm]
 
-{\Huge\bfseries Caracterización Estructural y Dinámica de Cúmulos Estelares en 
-la Galaxia}\\[1.5cm]
+    % 2. Título del trabajo
+    {
+        \LARGE \bfseries Caracterización Estructural y Dinámica de Cúmulos 
+        Estelares en la Galaxia
+    }\\[2.5cm]
 
-{\Large Carlos Bejarano}\\[1cm]
+    % 3. Autor
+    {\Large \textbf{Carlos Arturo Bejarano--Hernandez}}\\[2cm]
 
-{\large \today}
+    % 4. Leyenda de titulación
+    {
+        \normalsize Trabajo final de grado presentado como requisito para optar 
+        al título de
+        }\\[0.2cm]
+    {\large \textbf{Astrónomo}}\\[2cm]
+
+    % 5. Director/Asesor
+    {\normalsize \textbf{Asesor:}}\\[0.2cm]
+    {\large Juan Carlos Muñoz--Cuartas}\\[2cm]
+
+    \vfill
+
+    % 6. Ciudad y Fecha
+    {\large Medellín, Colombia}\\[0.2cm]
+    {\large 2026}
 
 \end{titlepage}
