@@ -1,0 +1,143 @@
+% !TeX root = ../main.tex
+
+\chapter{Introducción} 
+\label{cap:introduccion}
+
+    Los cúmulos estelares son conjuntos de estrellas coetáneas, unidas por su 
+    propia gravedad tras formarse a partir del colapso de una misma nube de gas 
+    y polvo. Al compartir edad, composición química y distancia, constituyen 
+    poblaciones prácticamente libres de la degeneración que afecta a las 
+    estrellas de campo, lo que los convierte en laboratorios naturales para 
+    poner a prueba modelos de estructura y evolución dinámica. Su distribución 
+    espacial, cinemática y edades codifican además información sobre el 
+    ensamblaje y la historia química de la Vía Láctea, por lo que su 
+    caracterización sistemática constituye una herramienta central de la 
+    arqueología galáctica. El Capítulo \ref{cap:marco_teorico} desarrolla en 
+    detalle los fundamentos físicos de estos sistemas y de los modelos 
+    empleados para describirlos; basta aquí con señalar que su estudio depende 
+    críticamente de la calidad de la astrometría disponible.
+
+    En este sentido, la misión Gaia de la ESA transformó el panorama 
+    observacional al proveer posiciones, paralajes y movimientos propios de una 
+    precisión sin precedentes para cientos de millones de estrellas 
+    \cite{Brown2018}. Combinada con algoritmos de agrupamiento no supervisado, 
+    esta astrometría permitió construir catálogos homogéneos de cúmulos a una 
+    escala impensable con misiones anteriores. El más reciente de estos 
+    esfuerzos, el catálogo de Hunt y Reffert (2023) \cite{hunt2023improving} a 
+    partir de Gaia DR3, reconoce 7167 cúmulos y reúne 1\,291\,929 estrellas 
+    miembro, consolidándose como una de las bases de datos más completas 
+    disponibles para el estudio estructural y dinámico de cúmulos estelares en 
+    la Galaxia.
+
+    No obstante, catálogos de esta escala privilegian necesariamente la 
+    homogeneidad y la automatización sobre la caracterización dinámica 
+    individual de cada sistema. Los parámetros estructurales reportados por 
+    estos catálogos, radios de núcleo, radios de marea, parámetros de 
+    concentración, se derivan típicamente del ajuste de perfiles de densidad 
+    proyectados sobre el plano del cielo, sin una validación sistemática de si 
+    dicha estructura resulta también consistente con la cinemática interna 
+    observada. Asimismo, es poco frecuente que un mismo procedimiento se aplique 
+    de forma homogénea tanto a cúmulos abiertos como a cúmulos globulares, pese 
+    a que ambas poblaciones comparten el mismo formalismo físico de King y de 
+    Jeans; esta separación metodológica dificulta comparar directamente su 
+    estructura y su estado dinámico bajo un marco común. Finalmente, cuando se 
+    buscan relaciones entre la estructura de los cúmulos y su entorno galáctico, 
+    el tipo morfológico, estrechamente asociado a la masa, la edad y la posición 
+    en la Galaxia, puede actuar como variable de confusión si no se controla 
+    explícitamente por él, generando correlaciones aparentes que no reflejan 
+    necesariamente un efecto ambiental real.
+
+    Este trabajo aborda estos tres vacíos mediante un método que ajusta el 
+    perfil de densidad de King \cite{king1962structure} tanto en su forma 
+    proyectada (2D) como en una reconstrucción tridimensional obtenida por 
+    proyección gnomónica y muestreo de rechazo de Monte Carlo (hasta 10\,000 
+    realizaciones por cúmulo), aceptando como válidas únicamente las soluciones 
+    que satisfacen simultáneamente criterios de bondad de ajuste ($\chi^2_\nu 
+    \in [0{,}3,\,3{,}0]$, $p\geq0{,}05$) y de consistencia física entre los 
+    radios de marea 2D y 3D ($r_{t,\, 3{\rm D}}\leq 5\,r_{t,\, 2{\rm D}}$). La 
+    estructura así obtenida se contrasta de forma independiente con un 
+    modelamiento cinemático basado en la ecuación de Jeans esférica isotrópica 
+    \cite{Jeans1919}, Ecuacion~\eqref{eq:jeans_integral}, y se complementa con 
+    el cálculo del tiempo de relajación de dos cuerpos \cite{Spitzer1987} para 
+    evaluar el estado dinámico de cada sistema. El procedimiento se aplica bajo 
+    un mismo marco metodológico a una muestra combinada de cúmulos abiertos y 
+    globulares del catálogo de Hunt y Reffert, controlando explícitamente por 
+    tipo morfológico en el análisis de correlaciones estructurales, evolutivas y 
+    ambientales.
+
+    \section{Objetivo General}
+
+        Caracterizar estructural y dinámicamente una muestra de cúmulos 
+        estelares abiertos y globulares de la Vía Láctea a partir de datos 
+        astrométricos de Gaia DR3 (catálogo de Hunt y Reffert, 2023), mediante 
+        el ajuste de perfiles de densidad de King en dos y tres dimensiones y su 
+        validación cinemática con la ecuación de Jeans isotrópica, evaluando su 
+        relación con la edad, el tiempo de relajación de dos cuerpos y el 
+        entorno galáctico.
+
+    \section{Objetivos Específicos}
+
+        \begin{enumerate}
+            \item Construir una muestra depurada de cúmulos estelares a partir 
+            del catálogo de Hunt y Reffert (2023), aplicando criterios de 
+            riqueza estelar y simetría morfológica.
+            \item Implementar un método de ajuste del perfil de densidad de 
+            King, en su forma proyectada (2D) y en su reconstrucción 
+            tridimensional mediante proyección gnomónica y muestreo de rechazo 
+            de Monte Carlo.
+            \item Validar los radios estructurales, el parámetro de 
+            concentración y, para los cúmulos abiertos, las masas totales 
+            obtenidas, frente a los valores reportados en el catálogo de origen.
+            \item Modelar el perfil de dispersión de velocidades mediante la 
+            ecuación de Jeans isotrópica y contrastar los radios cinemáticos 
+            ($r_{c,\, \sigma^2}$, $r_{t,\, \sigma^2}$) con los radios 
+            estructurales del ajuste 3D.
+            \item Determinar el tiempo de relajación de dos cuerpos 
+            ($t_{\rm relax}$) y el radio de relajación ($r_{\rm relax}$) de cada 
+            sistema para caracterizar su estado dinámico.
+            \item Analizar las relaciones entre los parámetros estructurales y 
+            dinámicos y las propiedades físicas y ambientales de los cúmulos 
+            (edad, masa, radio galactocéntrico, altura y latitud galáctica), 
+            controlando por tipo morfológico.
+        \end{enumerate}
+
+    \section{Alcance y Limitaciones}
+
+        El análisis se restringe a cúmulos con al menos 1000 miembros 
+        confirmados y con simetría espacial suficiente para justificar un ajuste 
+        esférico, criterios que redujeron el catálogo original a una muestra 
+        final de 100 cúmulos (54 abiertos y 46 globulares). El ajuste 
+        tridimensional y su validación cinemática, al depender de la 
+        convergencia de un procedimiento estocástico bajo criterios de calidad, 
+        solo resultaron estadísticamente aceptados para 59 de estos 100 
+        sistemas, por lo que las conclusiones de naturaleza dinámica se apoyan 
+        principalmente en esta submuestra. El modelamiento cinemático asume, 
+        además, simetría esférica e isotropía en la distribución de velocidades, 
+        y la reconstrucción de la profundidad tridimensional depende de las 
+        distancias fotométricas bayesianas de Bailer-Jones et al. (2018) 
+        \cite{bailer2018estimating}, cuyas incertidumbres se propagan a los 
+        parámetros estructurales derivados. Finalmente, la ausencia de edades 
+        fotométricas para los cúmulos globulares en el catálogo de origen 
+        restringe el análisis evolutivo, la relación entre estructura, 
+        relajación dinámica y edad, exclusivamente a la submuestra de cúmulos 
+        abiertos.
+
+    \section{Estructura del Documento}
+
+        El resto del documento se organiza de la siguiente manera. El 
+        Capítulo~\ref{cap:marco_teorico} presenta el marco teórico: la misión 
+        Gaia, las propiedades físicas de los cúmulos estelares, el modelo de 
+        densidad de King y la formulación de las ecuaciones de Jeans para 
+        sistemas esféricos. El Capítulo~\ref{cap:metodologia} describe el 
+        catálogo de Hunt y Reffert, los criterios de selección y limpieza de la 
+        muestra, y el método de procesamiento: la proyección gnomónica, el 
+        ajuste del perfil de King en dos y tres dimensiones mediante muestreo de 
+        rechazo de Monte Carlo, y el modelamiento cinemático a través de la 
+        ecuación de Jeans. El Capítulo~\ref{cap:resultados} presenta los 
+        resultados: la caracterización general de la muestra, la validación del 
+        método frente al catálogo, las relaciones de estructura interna, las 
+        correlaciones evolutivas y ambientales, y los tiempos de relajación de 
+        dos cuerpos, cerrando con una síntesis integradora de los hallazgos. 
+        Finalmente, el Capítulo~\ref{cap:conclusiones} sintetiza las 
+        conclusiones del trabajo, discute sus limitaciones y propone líneas de 
+        trabajo futuro.
