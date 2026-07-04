@@ -479,6 +479,115 @@
         indispensable para los conductos modernos de arqueología galáctica y las 
         simulaciones computacionales de evolución estelar.
 
+\section{Tiempo de Relajación}
+\label{sec:tiempo_de_relajacion}
+
+    En dinámica estelar, el tiempo de relajación es la escala temporal en la 
+    cual la acumulación de muchas deflexiones gravitacionales débiles entre 
+    estrellas modifica de forma apreciable sus velocidades y sus órbitas, de 
+    modo que el cúmulo pierde memoria detallada de sus condiciones cinemáticas 
+    iniciales y evoluciona secularmente hacia un estado más mezclado 
+    \cite{Spitzer1987,BinneyTremaine2008}. En el contexto de cúmulos estelares 
+    galácticos, la acepción más relevante para este trabajo es la relajación de 
+    dos cuerpos, ya que permite cuantificar cuándo las interacciones 
+    gravitacionales internas pasan a ser dinámicamente importantes para la 
+    estructura observada del sistema \cite{Spitzer1987,MeylanHeggie1997}. 
+
+    Conviene distinguir este concepto de la relajación violenta. Esta última 
+    ocurre cuando el potencial gravitatorio global cambia rápidamente, por 
+    ejemplo durante la formación o revirialización de un sistema, y opera en 
+    unas pocas escalas dinámicas; en cambio, la relajación de dos cuerpos es un 
+    proceso mucho más lento y acumulativo, gobernado por la granularidad del 
+    potencial producida por la naturaleza discreta de las estrellas 
+    \cite{LyndenBell1967,BinneyTremaine2008}. Aunque hoy existen formulaciones 
+    cinéticas más rigurosas de la relajación secular, la definición clásica 
+    sigue siendo la más utilizada en trabajos observacionales y en estudios 
+    comparativos de cúmulos \cite{Hamilton2018,Spitzer1987}.
+
+    De manera local, una estimación clásica del tiempo de relajación puede 
+    escribirse como:
+    
+    \begin{equation}
+        t_r(r) \simeq \frac{0.34\,\sigma^3(r)}{G^2\,\bar{m}^2\,n(r)\,\ln\Lambda}
+        = \frac{0.34\,\sigma^3(r)}{G^2\,\bar{m}\,\rho(r)\,\ln\Lambda},
+    \end{equation}
+    
+    donde $\sigma(r)$ es la dispersión de velocidades unidimensional, $n(r)$ es 
+    la densidad numérica estelar, $\rho(r)=\bar{m}\,n(r)$ es la densidad de 
+    masa, $\bar{m}$ es la masa estelar media, $G$ es la constante de gravitación 
+    universal y $\ln\Lambda$ es el logaritmo de Coulomb, que resume el efecto 
+    acumulado de encuentros con distintos parámetros de impacto 
+    \cite{BinneyTremaine2008,Spitzer1987}. En aplicaciones prácticas a cúmulos 
+    suele adoptarse una aproximación del tipo $\ln\Lambda \simeq \ln(0.4N)$, con 
+    $N$ el número total de estrellas, aunque este término introduce una de las 
+    ambigüedades conocidas de la teoría clásica \cite{Spitzer1987,Hamilton2018}.
+
+    Para caracterizar el sistema completo suele preferirse el tiempo de 
+    relajación a la media masa, $t_{rh}$, porque proporciona una escala global 
+    más útil que la definición estrictamente local. Una forma habitual es:
+    
+    \begin{equation}
+        t_{rh} \simeq \frac{0.138\,N^{1/2}\,r_h^{3/2}}{G^{1/2}\,\bar{m}^{1/2}\,
+        \ln\Lambda}
+        = \frac{0.138\,N}{\ln\Lambda}\left(\frac{r_h^3}{G\,M}\right)^{1/2},
+    \end{equation}
+    
+    donde $r_h$ es el radio de media masa, $M=N\bar{m}$ es la masa total del 
+    cúmulo y $N$ es adimensional \cite{Spitzer1987}. Si $r_h$ se expresa en pc, 
+    $M$ y $\bar{m}$ en $M_\odot$, y se usa una forma coherente de $G$, el tiempo 
+    se obtiene en unidades astronómicas convenientes como Ma o Ga. Esta 
+    expresión muestra que el tiempo de relajación aumenta con el número de 
+    estrellas y con el tamaño del sistema, y disminuye cuando la densidad media 
+    es mayor.
+
+    Una relación útil para la interpretación física conecta el tiempo de 
+    relajación con el tiempo de cruce,
+    
+    \begin{equation}
+        t_{rh} \sim \frac{0.1\,N}{\ln N}\,t_{cr},
+    \end{equation}
+
+    donde $t_{cr}\sim r_h/\sigma$ es, en orden de magnitud, el tiempo que tarda 
+    una estrella en atravesar el cúmulo \cite{BinneyTremaine2008,Spitzer1987}. 
+    Esta relación deja claro que la relajación es un proceso secular: en un 
+    sistema con muchas estrellas, una órbita individual se ve primero dominada 
+    por el potencial medio y solo tras muchos cruces aparecen cambios 
+    acumulativos significativos debidos a encuentros gravitacionales.
+
+    Desde el punto de vista físico, la relajación debe entenderse como un 
+    proceso de difusión en el espacio de velocidades y de transporte interno de 
+    energía, más cercano a una viscosidad efectiva o a un término colisional de 
+    tipo Fokker--Planck que a una disipación molecular ordinaria 
+    \cite{BinneyTremaine2008,Hamilton2018}. Las estrellas de un cúmulo no suelen 
+    colisionar físicamente; por el contrario, la evolución está impulsada, en 
+    primera aproximación, por innumerables encuentros gravitacionales pequeños. 
+    Por eso, un cúmulo puede ser colisional en sentido dinámico aunque las 
+    colisiones estelares directas sean raras. Estas últimas sólo se vuelven 
+    especialmente relevantes en los núcleos más densos de algunos cúmulos 
+    compactos \cite{MeylanHeggie1997,PortegiesZwart2010}. La relajación, además, 
+    favorece la segregación de masas, la isotropización parcial de velocidades, 
+    la contracción del núcleo y la evaporación gradual de estrellas del halo 
+    externo \cite{Spitzer1987,MeylanHeggie1997}.
+
+    Para la caracterización estructural y dinámica de cúmulos estelares, el 
+    tiempo de relajación es importante porque permite comparar una escala 
+    interna del sistema con su edad. Si el cociente $\mathrm{edad}/t_{rh}\gg 1$, 
+    el cúmulo puede considerarse dinámicamente evolucionado: habrá tenido tiempo 
+    suficiente para redistribuir energía, desarrollar segregación de masas y 
+    modificar su perfil estructural. Si, en cambio, 
+    $\mathrm{edad}/t_{rh}\lesssim 1$, es más probable que conserve memoria de 
+    sus condiciones iniciales y que su morfología actual refleje todavía 
+    procesos de formación o una evolución secular incompleta 
+    \cite{Spitzer1987,MeylanHeggie1997}. En presencia del campo de marea 
+    galáctico, la relevancia de $t_{rh}$ aumenta aún más, porque la pérdida de 
+    masa y el tiempo de disolución dependen no sólo del tiempo de relajación, 
+    sino también del tiempo de cruce y del entorno dinámico del cúmulo 
+    \cite{Lamers2005}. En consecuencia, dentro de este trabajo, $t_{rh}$ 
+    constituye un parámetro clave para interpretar el estado dinámico de los 
+    cúmulos, contextualizar otros observables estructurales y distinguir entre 
+    sistemas relativamente jóvenes desde el punto de vista dinámico y sistemas 
+    ya fuertemente procesados por su evolución interna.
+
 \section{Ecuaciones de Jeans y Dinámica de Sistemas Gravitacionales}
         La dinámica estelar constituye una rama cardinal de la astrofísica que 
         se enfoca en el estudio del movimiento colectivo de un gran número de 
@@ -565,80 +674,74 @@
 
             \subsubsection{Sistemas Colisionales, No Colisionales y el Tiempo 
             de Relajación}
-                El andamiaje de la CBE y, consecuentemente, de las ecuaciones de 
-                Jeans estándar, descansa sobre la presunción de que el sistema 
-                es "no colisional". En dinámica gravitacional, una colisión no 
-                implica el impacto físico de las superficies estelares, sino una 
-                interacción de dos cuerpos lo suficientemente cercana como para 
-                que la trayectoria de una estrella se desvíe significativamente 
-                respecto a la órbita dictada exclusivamente por el potencial 
-                global suavizado \cite{hamilton_2021_kinetic}.
+                La Ecuación de Boltzmann No Colisional y las ecuaciones de Jeans 
+                que se derivan de ella describen la evolución de un sistema 
+                estelar bajo la acción de un potencial gravitacional medio y 
+                suavizado. Por tanto, el término \emph{no colisional} no debe 
+                interpretarse como ausencia total de encuentros gravitacionales 
+                entre estrellas, sino como la condición de que tales encuentros 
+                discretos no modifican de forma apreciable la función de 
+                distribución durante la escala temporal en la que se analiza el 
+                sistema \cite{BinneyTremaine2008,Hamilton2018}. En este sentido, 
+                el tiempo de relajación introduce el criterio físico que permite 
+                decidir cuándo la aproximación de campo medio es adecuada y 
+                cuándo la granularidad del sistema debe incorporarse de manera 
+                explícita.
 
-                La escala temporal que demarca la transición entre un régimen 
-                gobernado por el potencial medio (no colisional) y uno dominado 
-                por interacciones discretas (colisional) es el tiempo de 
-                relajación de dos cuerpos, $t_\text{relax}$ . Este se define 
-                heurísticamente como el tiempo necesario para que las pequeñas 
-                deflexiones acumuladas por encuentros estelares generen un 
-                cambio en la velocidad de la estrella del mismo orden de 
-                magnitud que su velocidad inicial \cite{hamilton_2021_kinetic}.
+                Como se discutió en la Sección~\ref{sec:tiempo_de_relajacion}, 
+                la relajación de dos cuerpos es un proceso acumulativo: muchas 
+                deflexiones gravitacionales débiles producen una difusión lenta 
+                en el espacio de velocidades. Su escala característica, 
+                $t_{\mathrm{relax}}$, puede interpretarse como el tiempo 
+                requerido para que la velocidad de una estrella cambie en una 
+                cantidad comparable con su propia velocidad inicial. En orden de 
+                magnitud, esta escala se relaciona con el tiempo de cruce 
+                $t_{\mathrm{cr}}$ mediante
 
-                Siguiendo el formalismo clásico de Chandrasekhar 
-                \cite{Chandrasekhar1942} y Spitzer \cite{Spitzer1987}, si 
-                consideramos una estrella cruzando un sistema de tamaño $R$ con 
-                una velocidad típica $v$, el cambio cumulativo en la varianza de 
-                su velocidad ortogonal debido a encuentros sucesivos conduce a 
-                una caminata aleatoria en el espacio de velocidades. El tiempo 
-                de relajación se relaciona íntimamente con el tiempo dinámico o 
-                tiempo de cruce, $t_\text{cross} \sim R/v$, y el número total de 
-                estrellas del sistema $N$ mediante la relación aproximada:
+                \begin{equation}
+                    t_{\mathrm{relax}} \sim 
+                    \frac{0.1\,N}{\ln \Lambda}\,t_{\mathrm{cr}},
+                \end{equation}
 
-                $$t_\text{relax} \approx \frac{N}{10 \ln \Lambda} t_\text{cross}
-                $$
+                donde $N$ es el número de estrellas del sistema y 
+                $\ln \Lambda$ es el logaritmo de Coulomb, que suele aproximarse 
+                como $\ln \Lambda \sim \ln N$. Esta relación muestra que, para 
+                sistemas con muchos miembros, el movimiento orbital se ajusta 
+                rápidamente al potencial medio en unas pocas escalas de cruce, 
+                mientras que los cambios producidos por encuentros de dos 
+                cuerpos aparecen sólo de forma secular 
+                \cite{Spitzer1987,BinneyTremaine2008}.
 
-                donde $\ln \Lambda \approx \ln(N)$ es el logaritmo de Coulomb, 
-                un factor proveniente de la integración sobre todos los posibles 
-                parámetros de impacto entre un mínimo que produce una deflexión 
-                de 90 grados y un máximo típicamente el tamaño del sistema 
-                \cite{binney_tremaine_2008}.
+                La relevancia de $t_{\mathrm{relax}}$ dentro del formalismo de 
+                Jeans no consiste en reemplazar las ecuaciones por una 
+                descripción colisional, sino en delimitar su dominio de 
+                aplicabilidad. Si $t_{\mathrm{relax}}$ es mucho mayor que el 
+                tiempo dinámico del sistema, las ecuaciones de Jeans pueden 
+                emplearse como una descripción del equilibrio instantáneo o 
+                cuasi-estacionario. Incluso en sistemas que han evolucionado 
+                colisionalmente a lo largo de su vida, como muchos cúmulos 
+                globulares, suele cumplirse $t_{\mathrm{cr}}\ll 
+                t_{\mathrm{relax}}$, de modo que el equilibrio mecánico de corto 
+                plazo puede modelarse mediante Jeans, aunque la interpretación 
+                evolutiva de sus parámetros debe reconocer procesos seculares 
+                como segregación de masas, evaporación y contracción del núcleo 
+                \cite{Spitzer1987,MeylanHeggie1997}.
 
-                La distinción entre sistemas astronómicos basada en 
-                $t_\text{relax}$ es drástica:
-
-                \begin{itemize}
-                    \item \textbf{Galaxias y halos de materia oscura:} Con $N 
-                    \sim 10^{11}$, los tiempos de relajación exceden los 
-                    $10^{14}$ años, siendo varios órdenes de magnitud mayores a 
-                    la edad del universo \cite{hamilton_2021_kinetic}. Son 
-                    sistemas estrictamente no colisionales donde las ecuaciones 
-                    de Jeans operan en su forma más pura.
-
-                    \item \textbf{Cúmulos Globulares:} Compuestos por 
-                    $N \sim 10^5 - 10^6$ estrellas confinadas en radios de 
-                    escasos parsecs. Su tiempo de relajación oscila entre $10^8$ 
-                    y $10^9$ años. Al ser menores que sus edades intrínsecas que 
-                    son usualmente $> 10^{10}$ años, os cúmulos globulares han 
-                    experimentado una evolución secular mediada por la 
-                    relajación colisional, e.g., colapso del núcleo, segregación 
-                    de masa y evaporación estelar 
-                    \cite{chandrasekhar2005principles}. No obstante, el tiempo 
-                    de cruce orbital sigue siendo muy inferior a 
-                    $t_\text{relax}$, permitiendo que las ecuaciones de Jeans 
-                    describan acertadamente el equilibrio instantáneo 
-                    cuasi-estático sobre el cual operan los lentos procesos 
-                    colisionales \cite{hamilton_2021_kinetic}.
-
-                    \item \textbf{Cúmulos Abiertos:} Entornos escasamente 
-                    poblados, $N \sim 10^2 - 10^4$, que habitan en los discos 
-                    galácticos. Su $t_\text{relax}$ puede ser del orden de 
-                    $10^7$ años \cite{clarke1999formation}. Representan el 
-                    límite desafiante del análisis de Jeans. Las formulaciones 
-                    no colisionales deben emplearse con cautela y acompañarse de 
-                    simulaciones de N-cuerpos directas, ya que las colisiones 
-                    proporcionan la semilla ruidosa inicial de interacciones 
-                    rápidas y disrupción por el campo de marea galáctico 
-                    \cite{bamber2025evolution}.
-                \end{itemize}
+                En cúmulos abiertos galácticos, que constituyen un caso de 
+                especial interés para este trabajo, el número de estrellas es 
+                menor y el tiempo de relajación puede ser comparable con la edad 
+                del sistema o con su tiempo de disolución. Por ello, el cociente 
+                entre la edad del cúmulo y $t_{\mathrm{relax}}$ funciona como un 
+                indicador del grado de evolución dinámica: valores grandes 
+                sugieren que la estructura observada ha sido modificada por 
+                encuentros internos, mientras que valores cercanos o menores que 
+                la unidad indican que el cúmulo puede conservar memoria de sus 
+                condiciones iniciales. En consecuencia, al utilizar las 
+                ecuaciones de Jeans en cúmulos estelares, el tiempo de 
+                relajación debe entenderse como una condición de consistencia 
+                física que permite distinguir entre una descripción de equilibrio 
+                de corto plazo y una evolución secular dominada por efectos 
+                colisionales \cite{Spitzer1987,BinneyTremaine2008}.
 
             \subsubsection{Equilibrio Dinámico}
                 La aplicación práctica de la teoría asume que el sistema ha 
