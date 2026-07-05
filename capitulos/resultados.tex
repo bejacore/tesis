@@ -468,7 +468,7 @@
                 \label{tab:cumulos_no_relajados}
                 \begin{tabular}{|l|c|c|c|c|c|}
                     \hline
-                    \textbf{Nombre} & $r_{c,\, 3{\rm D}}$ [pc] & $r_{\rm relax} [pc]$ & \textbf{Ratio} $r_t$ & \textbf{Edad} [Ga] & $t_{{\rm relax},\, r_t}$ [Ga]\\
+                    \textbf{Nombre} & $r_{c,\, 3{\rm D}}$ [pc] & $r_{\rm relax} [pc]$ & $\mathcal{R}_{r_t}$ & \textbf{Edad} [Ga] & $t_{{\rm relax},\, r_t}$ [Ga]\\
                     \hline
                     Trumpler 10  & 3.351 & 2.689 & 1059.2 & 0.037 & 38.9 \\
                     \hline
@@ -476,7 +476,7 @@
                     \hline
                     HSC 655 & 47.773 & 14.144 & 37.97 & 0.345 & 13.1 \\
                     \hline
-                    HSC 561 & 20.913 & 12.055 & 23.49 & 0.185 & - \\
+                    HSC 561 & 20.913 & 12.055 & 23.49 & 0.185 & 4.3 \\
                     \hline
                 \end{tabular}
             \end{table}
@@ -488,31 +488,31 @@
                     Diagrama de dispersión $r_{\rm relax}$ vs. 
                     $r_{c,\, 3{\rm D}}$ (izquierda) para la submuestra de 52 
                     cúmulos abiertos con edad disponible, coloreado por 
-                    $\log({\rm ratio} r_t)$. LA bisectriz 1:1 separa los cúmulos 
-                    con núcleo relajado de los no relajados. El histograma de 
-                    $r_{\rm relax}/r_{c,\, 3{\rm D}}$ (derecha) muestra que la 
-                    mayoria de los cúmulos tienen núcleos completamente 
-                    relajados.
+                    $\log(\mathcal{R}_{r_t})$. La bisectriz 1:1 separa los 
+                    cúmulos con núcleo relajado de los no relajados. El 
+                    histograma de $r_{\rm relax}/r_{c,\, 3{\rm D}}$ (derecha) 
+                    muestra que la mayoria de los cúmulos tienen núcleos 
+                    completamente relajados.
                 }
                 \label{fig:rrelax_vs_rc__hist}
             \end{figure}
 
         \subsection{Correlaciones Evolutivas}
             
-            La relación $\log({\rm ratio}\ r_t)-\log({\rm años})$ es fuertemente 
-            negativa ($r = -0.793$, $p = 2.4 \times 10^{-12}$, $n = 52$), Figura 
-            \ref{fig:corr_evo} panel izquierdo: los cúmulos más jóvenes 
-            presentan ratio $r_t \gg 1$, mientras que los más viejos reducen 
-            este cociente hasta valores próximos o inferiores a la unidad. La 
-            correlación complementaria $f_{\rm relax}-\log({\rm años})$ es 
-            igualmente robusta y de signo opuesto ($r = +0.804$, $p = 7.4 
-            \times 10^{-13}$, $n = 52$), Figura \ref{fig:corr_evo} panel 
-            derecho: los cúmulos de mayor edad tienen una fracción mayor de su 
-            volumen ya termalizada.
+            La relación $\log(\mathcal{R}_{r_t})-\log({\rm años})$ es 
+            fuertemente negativa ($r = -0.793$, $p = 2.4 \times 10^{-12}$, 
+            $n = 52$), Figura \ref{fig:corr_evo} panel izquierdo: los cúmulos 
+            más jóvenes presentan $\mathcal{R}_{r_t} \gg 1$, mientras que los 
+            más viejos reducen este cociente hasta valores próximos o inferiores 
+            a la unidad. La correlación complementaria $f_{\rm relax}-
+            \log({\rm años})$ es igualmente robusta y de signo opuesto 
+            ($r = +0.804$, $p = 7.4 \times 10^{-13}$, $n = 52$), Figura 
+            \ref{fig:corr_evo} panel derecho: los cúmulos de mayor edad tienen 
+            una fracción radial mayor ya termalizada.
 
             Ambas correlaciones presentan una magnitud ($|r| \approx 0.80$) muy 
             superior a cualquier correlación estructural con la edad reportada 
-            en la Sección \ref{sec:rel_evo} (máximo $|r| = 0.172$).  Este 
+            en la Sección~\ref{sec:rel_evo} (máximo $|r| = 0.172$).  Este 
             contraste revela que la evolución secular de los cúmulos estelares 
             se expresa más claramente en su estado dinámico de relajación que en 
             sus parámetros geométricos. Mientras que la estructura observable, 
@@ -522,19 +522,19 @@
             evolución. Este resultado es coherente con las predicciones de los 
             modelos de N-cuerpos de sistemas estelares autogravitantes 
             (Spitzer 1987) y reconcilia la aparente ausencia de evolución 
-            estructural de la Sección \ref{sec:rel_evo} con la existencia de una 
+            estructural de la Sección~\ref{sec:rel_evo} con la existencia de una 
             evolución dinámica mensurable en la misma muestra.
 
             \begin{figure}[htbp]
                 \centering
                 \includegraphics[width=\textwidth]{imagenes/corr_evo.png}
                 \caption{
-                    Diagramas de dispersión $\log({\rm ratio}\ r_t)$ vs. 
+                    Diagramas de dispersión $\log(\mathcal{R}_{r_t})$ vs. 
                     $\log({\rm años})$ (izquierda) y $f_{\rm relax}$ vs. 
                     $\log({\rm años})$ para la submuestra de 52 cúmulos 
                     abiertos con edad disponible, con regresiones lineales. La 
-                    linea horizontal ratio $r_t = 1$ en el panel izquierdo marca 
-                    el umbral de relajación al radio de marea.
+                    linea horizontal $\mathcal{R}_{r_t} = 1$ en el panel 
+                    izquierdo marca el umbral de relajación al radio de marea.
                 }
                 \label{fig:corr_evo}
             \end{figure}
@@ -556,11 +556,11 @@
             también mayores. Por tanto, el patrón ambiental no debe 
             interpretarse como compactación estructural, sino como una expansión 
             relativa del núcleo en las regiones galácticas internas. La relación 
-            entre el estado relativo de relajación (ratio $r_t$) y la posición 
-            galáctica no alcanza significancia estadística ($r = -0.261$, 
-            $p = 0.062$, $n = 52$), lo que sugiere que el efecto ambiental opera 
-            a través de la estructura interna y no directamente sobre el grado 
-            de avance dinámico relativo.
+            entre el estado relativo de relajación ($\mathcal{R}_{r_t}$) y la 
+            posición galáctica no alcanza significancia estadística 
+            ($r = -0.261$, $p = 0.062$, $n = 52$), lo que sugiere que el efecto 
+            ambiental opera a través de la estructura interna y no directamente 
+            sobre el grado de avance dinámico relativo.
 
             Para la correlación $\log(t_{{\rm relax},\, r_t})$ vs. $\log(|Z|)$, 
             el mismo patrón de confusión morfológica identificado en la Sección 
@@ -618,8 +618,8 @@
         En tercer lugar, y como resultado de mayor relevancia física, el estado 
         dinámico de relajación sí muestra una evolución temporal clara y 
         cuantitativamente robusta. Los cúmulos de mayor edad han termalizado una 
-        fracción mayor de su volumen ($r = +0.804$, $p = 7.4 \times 10^{-13}$) y 
-        presentan cocientes ratio $r_t$ más bajos ($r = -0.793$, 
+        fracción radial mayor ($r = +0.804$, $p = 7.4 \times 10^{-13}$) y 
+        presentan cocientes $\mathcal{R}_{r_t}$ más bajos ($r = -0.793$, 
         $p = 2.4 \times 10^{-12}$), con coeficientes de correlación un factor 
         $\thicksim 5$ superiores a cualquier correlación estructural con la 
         edad. Adicionalmente, la coincidencia entre la región relajada 
