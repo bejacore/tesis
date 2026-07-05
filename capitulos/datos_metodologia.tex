@@ -489,3 +489,157 @@
         totalidad de los parámetros estructurales bidimensionales, 
         tridimensionales y cinemáticos extraídos, junto con sus respectivas 
         métricas de calidad estadística y diagnóstico computacional.
+
+    \subsection{Cálculo de los Tiempos de Relajación de Dos Cuerpos}
+    \label{sec:cal_tiempo_relajacion}
+
+        Con el propósito de cuantificar el grado de evolución dinámica interna 
+        de los cúmulos de la muestra, se calculó un perfil radial del tiempo de 
+        relajación de dos cuerpos para cada sistema estelar. Este procedimiento 
+        se fundamenta en la relación entre el tiempo de relajación, el número de 
+        estrellas encerradas y el tiempo de cruce local, discutida en la 
+        Sección~\ref{sec:tiempo_de_relajacion}. En este trabajo, dicha escala 
+        temporal se evalúa de forma radial, permitiendo distinguir entre 
+        regiones internas dinámicamente procesadas y zonas externas que podrían 
+        conservar memoria de condiciones iniciales o de perturbaciones 
+        ambientales recientes.
+
+        El cálculo se realizó a partir de los perfiles radiales tridimensionales 
+        generados previamente para los 100 cúmulos de la muestra. Para cada bin 
+        se dispuso del número de estrellas contenido en el intervalo, 
+        $n_{{\rm bin}}$, de la densidad volumétrica de número de King, 
+        Ecuación~\eqref{eq:den_3d}, de la densidad superficial proyectada de 
+        King, Ecuación~\eqref{eq:den_2d}, de la masa acumulada, $M(<r)$, y de la 
+        dispersión de velocidades local, $\sigma(r)$, derivada del ajuste 
+        dinámico mediante la ecuación de Jeans isotrópica, 
+        Ecuación~\eqref{eq:jeans_integral}. El radio representativo de cada bin, 
+        denotado como $r_k$, se definió como el borde exterior del intervalo 
+        correspondiente, de manera que cada punto del perfil describe las 
+        propiedades acumuladas hasta dicho radio.
+
+        Para cada cúmulo, el primer paso consistió en calcular el número 
+        acumulado de estrellas dentro de cada radio radial. Esta cantidad se 
+        obtuvo mediante la suma progresiva del número de miembros contenidos en 
+        todos los bines interiores hasta el bin $k$. Esto garantiza que $N(<r)$ 
+        sea una función no decreciente del radio, como corresponde físicamente 
+        al número total de estrellas encerradas dentro de una esfera de radio 
+        creciente. Posteriormente, se estimó el tiempo de cruce local como el 
+        cociente entre la escala radial del bin y la dispersión de velocidades 
+        evaluada en esa misma región.
+
+        Debido a la condición de frontera impuesta por el modelo de King, la 
+        dispersión de velocidades tiende a cero cuando el radio se aproxima al 
+        radio de marea. En consecuencia, el último bin del perfil radial 
+        presenta $\sigma = 0$ y produce un tiempo de cruce no definido. Por esta 
+        razón, dicho punto fue excluido sistemáticamente del cálculo del tiempo 
+        de relajación, conservando únicamente los bines con dispersión de 
+        velocidades estrictamente positiva.
+
+        Una vez calculado el tiempo de cruce local, se evaluó el logaritmo de 
+        Coulomb mediante la aproximación clásica utilizada para sistemas 
+        estelares autogravitantes \cite{Spitzer1987}. En cada radio, este 
+        término se definió en función del número acumulado de estrellas como
+
+        \begin{equation*}
+            \ln \Lambda(r_k) = \ln \left[0.4\,N(<r_k)\right].
+        \end{equation*}
+
+        Dado que los primeros bines pueden contener valores pequeños de 
+        $N(<r)$, se impuso una cota inferior de $0.1$ sobre 
+        $\ln \Lambda(r_k)$, evitando así valores no definidos o numéricamente 
+        inestables en las regiones más internas del cúmulo. Finalmente, el 
+        tiempo de relajación radial se obtuvo combinando el número acumulado de 
+        estrellas, el logaritmo de Coulomb y el tiempo de cruce local mediante 
+        la expresión
+
+        \begin{equation*}
+            t_{\rm relax}(r_k) =
+            \frac{0.138\,N(<r_k)}{\ln \Lambda(r_k)}\,t_{\rm cr}(r_k).
+        \end{equation*}
+
+        El resultado corresponde a un perfil discreto $t_{\rm relax}(r)$ 
+        expresado en Ga para cada cúmulo. Debido a la exclusión del bin externo 
+        con $\sigma = 0$, el número final de puntos de cada perfil es igual al 
+        número total de bines radiales menos uno.
+
+    \subsection{Evaluación del Estado Dinámico}
+
+        A partir del perfil $t_{\rm relax}(r)$ se derivaron varias métricas 
+        escalares con el fin de comparar de manera sistemática el estado 
+        dinámico de los cúmulos. En primer lugar, se definió el tiempo de 
+        relajación en el núcleo, $t_{{\rm relax},\, r_c}$, como el valor del 
+        perfil evaluado en el bin cuyo radio es más cercano al radio del núcleo 
+        tridimensional, $r_{c,\, \rm 3D}$. De manera análoga, se calculó el 
+        tiempo de relajación asociado al radio de marea, 
+        $t_{{\rm relax},\, r_t}$, tomando el bin válido más cercano a 
+        $r_{t,\, \rm 3D}$. Como se mencionó en la 
+        Sección~\ref{sec:cal_tiempo_relajacion}, esta definición no evalúa el 
+        tiempo de relajación exactamente en $r_{t,\, \rm 3D}$, en su lugar, se 
+        utiliza el último bin físicamente válido del perfil, lo cual proporciona 
+        una estimación representativa de la escala de relajación en la periferia 
+        del sistema.
+
+        Para los cúmulos abiertos con estimación de edad disponible, se 
+        calcularon además métricas dependientes del tiempo evolutivo del objeto. 
+        La edad del cúmulo se obtuvo a partir del parámetro $\log({\rm años})$ 
+        del catálogo. Con esta escala temporal se definió el radio de 
+        relajación, $r_{\rm relax}$, como el radio máximo para el cual el tiempo 
+        de relajación local es menor que la edad del cúmulo, si existe al menos 
+        un bin que cumple la condición, en caso contrario $r_{\rm relax} = 0$.
+
+        Esta métrica representa la extensión radial de la región que ha tenido 
+        tiempo suficiente para experimentar relajación dinámica de dos cuerpos. 
+        A partir de ella se calculó la fracción relajada del cúmulo, definida 
+        como
+
+        \begin{equation*}
+            f_{\rm relax} =
+            \frac{r_{\rm relax}}{r_{{\rm bin},\, \max}},
+        \end{equation*}
+
+        donde $r_{{\rm bin},\, \max}$ corresponde al radio del último bin válido 
+        con $\sigma(r)>0$. Esta fracción varía entre 0 y 1, representando, 
+        respectivamente, un sistema sin regiones radialmente relajadas o un 
+        cúmulo relajado hasta el borde externo del perfil válido.
+
+        También se definió el cociente dinámico en el radio de marea,
+
+        \begin{equation*}
+            \mathcal{R}_{r_t} =
+            \frac{t_{{\rm relax},r_t}}{t_{\rm edad}},
+        \end{equation*}
+
+        el cual permite evaluar si incluso las regiones externas del cúmulo han 
+        tenido tiempo suficiente para relajarse. Valores 
+        $\mathcal{R}_{r_t}<1$ indican que el tiempo de relajación en la periferia 
+        es menor que la edad del sistema, mientras que valores mucho mayores que 
+        la unidad sugieren que el cúmulo es dinámicamente joven en sus regiones 
+        externas. Finalmente, se introdujo un indicador del estado 
+        dinámico del núcleo, donde si $r_{\rm relax} \geq r_{c,\, \rm 3D}$, el 
+        núcleo se considera relajado, mientras que si $r_{\rm relax} < 
+        r_{c,\, \rm 3D}$ indica que la región central del cúmulo no ha tenido 
+        tiempo suficiente para alcanzar un estado de equilibrio dinámico.
+
+        Este indicador permite determinar si la región nuclear del cúmulo se 
+        encuentra contenida dentro de la zona dinámicamente relajada. Su 
+        interpretación es relevante para la consistencia física del modelo, ya 
+        que una región central no relajada puede limitar la validez de la 
+        hipótesis de equilibrio utilizada en la modelación mediante la ecuación 
+        de Jeans, Ecuación~\eqref{eq:jeans_integral}.
+
+        El cálculo del perfil $t_{\rm relax}(r)$ se llevó a cabo para la 
+        totalidad de los 100 cúmulos de la muestra, independientemente de su 
+        tipo morfológico y del resultado del criterio de aceptación del ajuste 
+        tridimensional. No obstante, el análisis comparativo de las métricas 
+        escalares se restringió a submuestras específicas para garantizar una 
+        interpretación estadísticamente consistente. Para las métricas 
+        $t_{{\rm relax},\, r_c}$ y $t_{{\rm relax},\, r_t}$ se consideraron 
+        únicamente los cúmulos aceptados por el método, de manera que los radios 
+        $r_{c,\, \rm 3D}$ y $r_{t,\, \rm 3D}$ empleados como referencias 
+        provinieran de ajustes estructurales confiables. Por su parte, las 
+        métricas dependientes de la edad, como $r_{\rm relax}$, $f_{\rm relax}$, 
+        $\mathcal{R}_{r_t}$ y el indicador del estado dinámico del núcleo, se 
+        evaluaron solamente en los cúmulos abiertos aceptados por el método, y 
+        con $\log({\rm años}) > 0$. Los cúmulos globulares fueron excluidos de 
+        este subconjunto debido a la ausencia de estimaciones de edad en el 
+        catálogo.
